@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css"/>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+    <title>수소경제종합포털 웹접근성</title>
+    <style>
+        *{margin:0;padding:0;font:inherit;color:inherit;font-family: 'Noto Sans KR', sans-serif;}
+        *, :after, :before {box-sizing:border-box;flex-shrink:0;}
+        :root {-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;text-size-adjust:100%;cursor:default;line-height:1.5;overflow-wrap:break-word;-moz-tab-size:4;tab-size:4}
+        html, body {height:100%;scroll-behavior: smooth;}
+        img, picture, video, canvas, svg {display: block;max-width:100%;}
+        button {background:none;border:0;cursor:pointer;}
+        a {text-decoration:none}
+        table {border-collapse:collapse;border-spacing:0}
+        ul, li{padding:0;margin:0;list-style:none;}
+
+        .d-flex{display:flex;}
+        .w-20{width:20%;}
+        .w-30{width:30%;}
+        .w-50{width:50%;}
+        .w-70{width:70%;}
+        .w-80{width:80%;}
+        .color--blue{color:#0066b3;}
+        .color--red{color:red;}
+        .mt-10{margin-top:10px;}
+        .mt-20{margin-top:20px;}
+        .mt-30{margin-top:30px;}
+
+        .webAbb__inner{overflow:hidden;padding:1rem;}
+        .webAbb-cont{float:left;width:calc(100% - 17rem)}
+        .webAbb-item{margin-top:2rem;}
+        .webAbb-nav{float:left;width:17rem;}
+        .webAbb-tit{margin-bottom:1rem;font-size:2rem;font-weight:700;}
+        .webAbb-subtit{margin-top:1rem;margin-bottom:.5rem;font-size:1.3rem;font-weight:700;}
+        .webAbb-info{margin-left:-.5rem;}
+        .webAbb-info .table-wrap{margin-left:.5rem;}
+        .table-basic{width:100%;font-size:.8rem;border-collapse: collapse;}
+        .table-basic caption{position:absolute;top:-999px;left:-999px;}
+        .table-basic thead th{font-size:.9rem;border-bottom:none;}
+        .table-basic th, .table-basic td{padding:.5rem;border:1px solid #ccc;}
+        .table-basic th{background-color:#f1f1f1;font-size:.8rem;font-weight:600;}
+        .table-basic td{color:#555;}
+        .lists li{position:relative;padding-left:.7rem;}
+        .lists li + li{margin-top:.5rem;}
+        .lists li::before{position:absolute;top:0;left:0;content:""}
+        .lists--bar li::before{content:"-"}
+        .anchor{padding-bottom:.3rem;border-bottom:1px solid #0a58ca;}
+        .label-item{width:calc(25% - 1rem);margin-left:1rem;margin-top:1rem;}
+        .webAbb-labeling{display:flex;flex-wrap:wrap;margin-left:-1rem;margin-top:1rem;}
+        .webAbb-labeling button{position:relative;display:flex;flex-flow:column wrap;width:100%;background-color:rgb(115, 95, 228);border:1px solid #000;}
+        .webAbb-labeling button > span{display:block;width:100%;}
+        .webAbb-labeling .label-item__bottom{position:absolute;top:117px;left:-1px;display:none;width:calc(100% + 2px);height:0;height:317px;padding:1rem;border:1px solid #000;background-color:#fff;z-index:1;}
+        .label-item .active .label-item__tit{background-color:#000;color:#fff;}
+        .label-item__tit{display:block;padding:.5rem 0;padding-left:.5rem;font-size:.9rem;background-color:#ccc;text-align:left;}
+        .label-item__url{display:block;height:5rem;padding:.5rem 0;padding-left:.5rem;font-size:.9rem;background-color:#fff;text-align:left;}
+        .label-item__top{padding-left:.5rem;}
+        .webAbb-item{border:1px solid #555;}
+        .webAbb-item__tit{padding:1rem;font-size:1rem;background-color:#ffefcf}
+        .webAbb-item__tit span{display:block;margin-bottom:1rem;font-size:1.5rem;}
+        .webAbb-item__txt{padding:1rem;margin-bottom:0;}
+        .webAbb-error__cont{display:grid;grid-template-columns:5rem calc(100% - 5rem);grid-auto-flow:dense;padding:1rem;}
+        .webAbb-error__cont > span{display:block;}
+        .webAbb-error__tit{display:flex;align-items:center;justify-content:center;grid-column:1/2;grid-row:1/3;width:5rem;height:100%;margin-bottom:0;background-color:#eee;font-weight:500;font-size:.8rem;}
+        .webAbb-error__img{grid-column:2/3;grid-row:1/2;width:calc(100% - 5rem);padding:1rem;margin-top:-1rem;}
+        .webAbb-error__img img{display:inline-block;margin-top:1rem;}
+        .webAbb-error__txt{grid-column:2/3;grid-row:2/3;width:calc(100% - 5rem);padding:1rem;}
+        .webAbb-solve__cont{padding:1rem;padding-top:0;}
+        .webAbb-solve__tit{padding:1rem;background-color:#eee}
+        .webAbb-solve__txt{padding:1rem;}
+
+        .webAbb-nav{position:fixed;top:1rem;right:0;height:100%;}
+        .navbar{height:100vh;padding:.5rem;justify-content: flex-start;}
+        .navbar__tit{font-size:1rem;}
+        .nav-link{margin-top:1rem;padding:0;color:#777;font-size:.9rem;}
+    
+        .nav-link:hover{color:#000;text-decoration:underline}
+        #btn-back-to-top {position: fixed;bottom: 20px;right: 20px;display: none;border-radius:100%;}
+        [data-simplebar] {overflow: auto;height:calc(100% - 7rem);padding-right:.5rem;}
+        .simplebar-track.simplebar-vertical{width:.3rem;background-color:#ddd;}
+        .simplebar-scrollbar:before{left:1px;width:.2rem;opacity:1;background-color:rgb(115, 95, 228)}
+
+        @media screen and (max-width:1920px){
+            .table__pageEvaluate{width:1920px;}
+        }
+        @media screen and (max-width:1400px){
+            .label-item{width:calc(33% - 1rem)}
+        }
+        @media screen and (max-width:1200px){
+            .label-item{width:calc(50% - 1rem)}
+        }
+        @media screen and (max-width:800px){
+            .label-item{width:100%}
+        }
+
+        @media screen and (min-width:1024px){
+            .anchor:hover{color:red;border-bottom:1px solid red;}
+            .webAbb-labeling button:hover .webAbb-item__tit{background-color:#333;color:#fff;}
+            .webAbb-labeling button:hover .webAbb-item__url{text-decoration:underline;}
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <section class="webAbb-wrap">
+            <div class="webAbb__inner">
+                <div class="webAbb-cont" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-smooth-scroll="true" class="scrollspy">
+                    <h1 class="webAbb-tit color--blue">수소경제종합포털 - 웹접근성</h1>
+                    <article class="webAbb-info" style="width:500px">
+                        <div class="table-wrap">
+                            <table class="table-basic">
+                                <caption>수소경제종합포털 웹접근성 관련 정보 테이블</caption>
+                                <colgroup>
+                                    <col style="width:30%">
+                                    <col style="width:auto;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" colspan="2">
+                                            수소경제종합포털 웹접근성 정보
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">퍼블리싱</th>
+                                        <td>워드앤코드</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">개발</th>
+                                        <td>앤드와이즈</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+                    <article class="webAbb-info mt-10">
+                        <div class="table-wrap">
+                            <table class="table-basic">
+                                <caption>웹접근성평가 버전 정보 테이블</caption>
+                                <colgroup>
+                                    <col style="width:8%">
+                                    <col style="width:25%">
+                                    <col style="width:8%">
+                                    <col style="width:25%">
+                                    <col style="width:8%">
+                                    <col style="width:auto;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" colspan="6">
+                                            웹접근성평가 버전 정보
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">업체</th>
+                                        <td>한국장애인단체총연합회</td>
+                                        <th scope="row">버전정보</th>
+                                        <td>2022년 10월 19일 기준</td>
+                                        <th scope="row" rowspan="2">합격기준</th>
+                                        <td rowspan="2">
+                                            <ul class="lists lists--bar">
+                                                <li>전문가심사 : 95% 이상시 합격 | 사용자심사 : 100% 이상시 합격</li>
+                                                <li>2차심사 보완기간 - 1차 심사에서 불합격후 최대 7일 이내<br/>(시스템 운영 특성상 최대 30일까지 연장 가능)</li>
+                                                <li>2차심사 범위 - 1차 심사에서 정한 샘플링의 최소 20% 이상의 페이지 또는 콘텐츠를 신규로 선정</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">심사적용지침</th>
+                                        <td>
+                                            한국형 웹 콘텐츠 접근성 지침 2.1 (KWCAG 2.1)<br/>
+                                            과학기술정보통신부 웹 접근성 품질인증 표준 운영지침 과 심사지침<br/>
+                                            ( 2015년 10월 30일자 )
+                                        </td>
+                                        <th scope="row">전문가 심사환경</th>
+                                        <td>
+                                            <ul class="lists lists--bar">
+                                                <li>PC 웹: 크롬(Chrome) 최신 버전</li>
+                                                <li>모바일 웹: 모바일 환경으로 User Agent 변경 가능한 브라우저 최신버전</li>
+                                                <li>User Agent 설정은 최신 OS 설치가 가능한 기기</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+                    <article class="webAbb-caution">
+                        <h2 class="webAbb-subtit">
+                            * 웹접근성 페이지별 평가
+                        </h2>
+                        <ul class="lists lists--bar">
+                            <li>5% 이상일 경우 적합, 85% 이하일 경우 최종부적합</li>
+                            <li>항목 준수도: 통과(95% 이상) 단, 한 항목이라도 과락(95% 미만)시에는 점수에 상관없이 불합격처리</li>
+                            <li>2번 항목은 콘텐츠 수 기준 (95% 이상 준수), 그 외 항목은 페이지 수로 준수여부 확인</li>
+                            <li>공통오류( )는 반드시 전체 페이지의 수정을 하셔야 하며 미수정 시 점수에 상관없이 불합격처리</li>
+                        </ul>
+                        <div class="btn-wrap mt-30">
+                            <a href="https://docs.google.com/spreadsheets/d/12TGtrb2GobCcplmi99pmHn561a18PHGV7GUA53FifZg/edit?usp=sharing" target="_blank" class="anchor">
+                                수소경제종합포털 웹접근성 평가표 이동
+                            </a>
+                        </div>
+                    </article>
+                    <article class="webAbb-labeling">
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem01">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">1. 메인페이지</em>
+                                    <a href="http://218.39.176.210:81/main/index.do" class="label-item__url" target="_blank">http://218.39.176.210:81/main/index.do</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/1.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">2. 통합검색</em>
+                                    <a href="http://218.39.176.210:81/main/cmm/integrated-search.do" class="label-item__url" target="_blank">http://218.39.176.210:81/main/cmm/integrated-search.do</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/2.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">3. 사이트맵</em>
+                                    <a href="http://218.39.176.210:81/main/cmm/site-map.do" class="label-item__url" target="_blank">http://218.39.176.210:81/main/cmm/site-map.do</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/3.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem04">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">4. 이용약관, 저작권정책, </em>
+                                    <a href="http://218.39.176.210:81/main/terms/terms-of-service.do" class="label-item__url" target="_blank">http://218.39.176.210:81/main/terms/terms-of-service.do</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/4.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem05">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">5. 수소의 이해 &gt; 개념</em>
+                                    <a href="http://218.39.176.210:81/main/econ/concept.do" class="label-item__url" target="_blank">http://218.39.176.210:81/main/econ/concept.do</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/5.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem06">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">6. 수소의 이해 &gt; 활용처 및 안전선</em>
+                                    <a href="http://218.39.176.210:81/main/econ/use-safety.do" class="label-item__url" target="_blank">http://218.39.176.210:81/main/econ/use-safety.do</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/6.JPG" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem07">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">7. 수소경제 소개 &gt; 소개</em>
+                                    <a href="http://218.39.176.210:81/main/econ/intro.do" class="label-item__url" target="_blank">http://218.39.176.210:81/main/econ/intro.do</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/7.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem08">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">8. 수소경제 소개 &gt; 정책현황</em>
+                                    <a href="http://218.39.176.210:81/main/econ/policy-status.do" class="label-item__url" target="_blank">http://218.39.176.210:81/main/econ/policy-status.do</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/8.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem09">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">9. 통계 &gt; 생산 &gt; 국내 수소 생산량(생산방식별)</em>
+                                    <a href="http://218.39.176.210:81/main/stat/production.do" class="label-item__url" target="_blank">http://218.39.176.210:81/main/stat/production.do</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/9.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem10">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">10. 통계 &gt; 생산 &gt; 국내 수소 생산량(권역별)</em>
+                                    <a href="http://218.39.176.210:81/main/stat/production.do?mode=user_list&srSearchYear=&srSearchMonth=&srSearchVal=&srCategoryId=96" class="label-item__url" target="_blank">http://218.39.176.210:81/main/stat/production.do?mode=user_list&srSearchYear=&srSearchMonth=&srSearchVal=&srCategoryId=96</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/10.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem11">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">11. 통계 &gt; 생산 &gt; 국내 수소 생산량(업종별)</em>
+                                    <a href="http://218.39.176.210:81/main/stat/production.do?mode=user_list&srSearchYear=&srSearchMonth=&srSearchVal=&srCategoryId=97" class="label-item__url" target="_blank">http://218.39.176.210:81/main/stat/production.do?mode=user_list&srSearchYear=&srSearchMonth=&srSearchVal=&srCategoryId=97</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/11.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem12">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">12 . 통계 &gt; 생산 &gt; 국내 수소 생산량(업종별)</em>
+                                    <a href="http://218.39.176.210:81/main/stat/production.do?mode=user_list&srSearchYear=&srSearchMonth=&srSearchVal=&srCategoryId=97" class="label-item__url" target="_blank">http://218.39.176.210:81/main/stat/production.do?mode=user_list&srSearchYear=&srSearchMonth=&srSearchVal=&srCategoryId=97</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/12.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem13">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">13 . 국내 수소 생산기지 및 출하센터 구축 현황</em>
+                                    <a href="http://218.39.176.210:81/main/stat/production.do?mode=user_list&srSearchYear=&srSearchMonth=&srSearchVal=&srCategoryId=97" class="label-item__url" target="_blank">http://218.39.176.210:81/main/stat/production.do?mode=user_list&srSearchYear=&srSearchMonth=&srSearchVal=&srCategoryId=97</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/13.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem14">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">14 . 정보공간 &gt; 법령정보</em>
+                                    <a href="http://218.39.176.210:81/main/info/statutory-information.do" class="label-item__url" target="_blank">http://218.39.176.210:81/main/info/statutory-information.do</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/14.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem15">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">15 . 정보공간 &gt; 정책/산업/기술정보</em>
+                                    <a href="http://218.39.176.210:81/main/info/policy-industry-techinfo.do" class="label-item__url" target="_blank">http://218.39.176.210:81/main/info/policy-industry-techinfo.do</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/15.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem16">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">16 . 정보공간 &gt; 규제개선 &gt; 소개 및 접수</em>
+                                    <a href="http://218.39.176.210:81/main/info/intro-application.do" class="label-item__url" target="_blank">http://218.39.176.210:81/main/info/intro-application.do</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/16.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem17">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">17 . 정보공간 &gt; 규제개선 &gt; 주요 성과</em>
+                                    <a href="http://218.39.176.210:81/main/info/achievements.do" class="label-item__url" target="_blank">http://218.39.176.210:81/main/info/achievements.do</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/17.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem18">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">18 . 정보공간 &gt; 인력양성 &gt; 수소전문인력 정부사업</em>
+                                    <a href="http://218.39.176.210:81/main/info/government-project.do" class="label-item__url" target="_blank">http://218.39.176.210:81/main/info/government-project.do</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/18.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem19">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">19 . 정보공간 &gt; 인력양성 &gt; H2KOREA 인력양성사업단</em>
+                                    <a href="http://218.39.176.210:81/main/info/h2korea-project.do" class="label-item__url" target="_blank">http://218.39.176.210:81/main/info/h2korea-project.do</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/19.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem20">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">20 . 알림공간 &gt; 공지사항</em>
+                                    <a href="http://218.39.176.210:81/main/yard/notice.do" class="label-item__url" target="_blank">http://218.39.176.210:81/main/yard/notice.do</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/20.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem21">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">21 . 알림공간 &gt; 보도자료</em>
+                                    <a href="http://218.39.176.210:81/main/yard/press-release.do" class="label-item__url" target="_blank">http://218.39.176.210:81/main/yard/press-release.do</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/21.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem22">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">22 . 알림공간 &gt; 사업공고</em>
+                                    <a href="http://218.39.176.210:81/main/yard/business.do" class="label-item__url" target="_blank">http://218.39.176.210:81/main/yard/business.do</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/22.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem23">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">23 . 알림공간 &gt; 행사정보</em>
+                                    <a href="http://218.39.176.210:81/main/yard/event.do" class="label-item__url" target="_blank">http://218.39.176.210:81/main/yard/event.do</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/23.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem24">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">24 . 알림공간 &gt; 채용정보</em>
+                                    <a href="http://218.39.176.210:81/main/yard/jobs.do" class="label-item__url" target="_blank">http://218.39.176.210:81/main/yard/jobs.do</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/24.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem25">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">25 . 알림공간 &gt; 홍보자료 &gt; 홍보자료</em>
+                                    <a href="http://218.39.176.210:81/main/yard/promotional-materials.do" class="label-item__url" target="_blank">http://218.39.176.210:81/main/yard/promotional-materials.do</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/25.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem26">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">26 . 알림공간 &gt; 홍보자료 &gt; 카드뉴스</em>
+                                    <a href="http://218.39.176.210:81/main/yard/card-news.do" class="label-item__url" target="_blank">http://218.39.176.210:81/main/yard/card-news.do</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/26.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="label-item">
+                            <button type="button" data-anchor="navItem27">
+                                <span class="label-item__top">
+                                    <em class="label-item__tit">27 . 알림공간 &gt; 홍보자료 &gt; 정기간행물</em>
+                                    <a href="http://218.39.176.210:81/main/yard/periodicals.do" class="label-item__url" target="_blank">http://218.39.176.210:81/main/yard/periodicals.do</a>
+                                </span>
+                                <span class="label-item__bottom">
+                                    <em class="label-item__img">
+                                        <img src="./image/27.jpg" alt="">
+                                    </em>
+                                </span>
+                            </button>
+                        </div>
+                    </article>
+                    <article class="webAbb-list">
+                        <div class="webAbb-item" id="navItem01">
+                            <div class="webAbb-item__inner">
+                                <h3 class="webAbb-item__tit">
+                                    <span>사용자심사</span>
+                                    
+                                </h3>
+                                <p class="txt webAbb-item__txt">
+                                </p>
+                                <div class="webAbb-error__cont">
+                                    <p class="webAbb-error__tit">오류내용</p>
+                                    <span class="webAbb-error__img">
+                                        <img src="./image/img-0101.JPG" alt="">
+                                    </span>
+                                    <span class="webAbb-error__txt">
+                                        슬라이드 탭에 title로 선택됨 속성값이 누락됨
+                                    </span>
+                                </div>
+                                <div class="webAbb-solve__cont">
+                                    <div class="webAbb-solve__tit">해결방안</div>
+                                    <div class="webAbb-solve__txt">
+                                        <img src="./image/img-0102.JPG" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="webAbb-item" id="navItem02">
+                            <div class="webAbb-item__inner">
+                                <h3 class="webAbb-item__tit">
+                                    <span>검사항목 1.</span>
+                                    (적절한 대체 텍스트 제공) 텍스트 아닌 콘텐츠는 그 의미나 용도를 이해할 수 있도록 대체 텍스트를 제공해야 한다.
+                                </h3>
+                                <p class="txt webAbb-item__txt">
+                                    1-2. 불릿이나 배경이미지 등 의미 없는 이미지에 alt 속성을 제공하지 않거나 공백이 아닌 불필요한 대체 텍스트를 제공한 경우
+                                </p>
+                                <div class="webAbb-error__cont">
+                                    <p class="webAbb-error__tit">오류내용</p>
+                                    <span class="webAbb-error__img">
+                                        <img src="./image/img-01__0101.JPG" alt="">
+                                        <img src="./image/img-01__0102.JPG" alt="">
+                                        <img src="./image/img-01__0103.JPG" alt="">
+                                        <img src="./image/img-01__0104.JPG" alt="">
+                                        <img src="./image/img-01__0105.JPG" alt="">
+                                        <img src="./image/img-01__0106.JPG" alt="">
+                                    </span>
+                                    <span class="webAbb-error__txt">
+                                        a태그 텍스트가 있는 상황에서 title에 같은 속성값이 들어가있음<br/>
+                                        a태그 대체텍스트가 있는 상황에서 title에 같은 속성값이 들어가있음<br/>
+                                        img태그 대체텍스트가 부적절하게 들어가있음
+                                    </span>
+                                </div>
+                                <div class="webAbb-solve__cont">
+                                    <div class="webAbb-solve__tit">해결방안</div>
+                                    <div class="webAbb-solve__txt">
+                                        title값은 비워두고 title="" 로 사용<br/>
+                                        a태그 title의 속성값은 대체텍스트 정보가 아니라 <span class="color--red">새창열림, 홈이동</span>과 같은 기능으로 사용하고 a태그에 텍스트 있을시 쓰지 않거나 비워둠<br/>
+                                        img태그 대체텍스트의 경우 텍스트가 있을경우 모두 넣어주고, 없을경우 관련된 내용으로 넣어야함(ex-생산 바로가기 아이콘 -> 더보기)<br/>
+                                        a태그에 사업공고 더보기 / img태그에 더보기로 교체
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="webAbb-item" id="navItem03">
+                            <div class="webAbb-item__inner">
+                                <h3 class="webAbb-item__tit">
+                                    <span>검사항목 5.</span>
+                                    (텍스트 콘텐츠의 명도 대비) 텍스트 콘텐츠와 배경 간의 며옫 대비는 4.5대 1 이상이어야 한다.
+                                </h3>
+                                <p class="txt webAbb-item__txt">
+                                    <img src="./image/cate05.JPG" alt="">
+                                </p>
+                                <div class="webAbb-error__cont">
+                                    <p class="webAbb-error__tit">오류내용</p>
+                                    <span class="webAbb-error__img">
+                                        <img src="./image/img-05__0101.JPG" alt="">
+                                        <img src="./image/img-05__0103.JPG" alt="">
+                                        <img src="./image/img-05__0104.JPG" alt="">
+                                        <img src="./image/img-05__0105.JPG" alt="">
+                                    </span>
+                                    <span class="webAbb-error__txt"></span>
+                                </div>
+                                <div class="webAbb-solve__cont">
+                                    <div class="webAbb-solve__tit">해결방안</div>
+                                    <div class="webAbb-solve__txt">
+                                        <img src="./image/img-05__0102.JPG" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="webAbb-item" id="navItem04">
+                        </div>
+                        <div class="webAbb-item" id="navItem05">
+                        </div>
+                        <div class="webAbb-item" id="navItem06">
+                        </div>
+                        <div class="webAbb-item" id="navItem07">
+                        </div>
+                        <div class="webAbb-item" id="navItem08">
+                        </div>
+                        <div class="webAbb-item" id="navItem09">
+                        </div>
+                        <div class="webAbb-item" id="navItem10">
+                        </div>
+                        <div class="webAbb-item" id="navItem11">
+                        </div>
+                        <div class="webAbb-item" id="navItem12">
+                        </div>
+                        <div class="webAbb-item" id="navItem13">
+                        </div>
+                        <div class="webAbb-item" id="navItem14">
+                        </div>
+                        <div class="webAbb-item" id="navItem15">
+                        </div>
+                        <div class="webAbb-item" id="navItem16">
+                        </div>
+                        <div class="webAbb-item" id="navItem17">
+                        </div>
+                        <div class="webAbb-item" id="navItem18">
+                        </div>
+                        <div class="webAbb-item" id="navItem19">
+                        </div>
+                        <div class="webAbb-item" id="navItem20">
+                        </div>
+                        <div class="webAbb-item" id="navItem21">
+                        </div>
+                        <div class="webAbb-item" id="navItem22">
+                        </div>
+                        <div class="webAbb-item" id="navItem23">
+                        </div>
+                        <div class="webAbb-item" id="navItem24">
+                        </div>
+                        <div class="webAbb-item" id="navItem25">
+                        </div>
+                        <div class="webAbb-item" id="navItem26">
+                        </div>
+                        <div class="webAbb-item" id="navItem27">
+                        </div>
+                    </article>
+                </div>
+                <div class="webAbb-nav">
+                    <nav id="navbar" class="navbar flex-column align-items-stretch ps-2 border-end">
+                        <h3 class="navbar__tit">페이지 링크</h3>
+                        <nav class="nav flex-column ui-scroller">
+                            <a class="nav-link" href="#navItem01">사용자심사</a>
+                            <a class="nav-link" href="#navItem02">메인페이지1</a>
+                            <a class="nav-link" href="#navItem03">메인페이지2</a>
+                            <a class="nav-link" href="#navItem04">이용약관,저작권정책</a>
+                            <a class="nav-link" href="#navItem05">수소의이해-개념</a>
+                            <a class="nav-link" href="#navItem06">수소의이해-활용처</a>
+                            <a class="nav-link" href="#navItem07">수소경제 소개</a>
+                            <a class="nav-link" href="#navItem08">수소경제 정책현황</a>
+                            <a class="nav-link" href="#navItem09">통계-생산-생산방식별 국내수소 생산량</a>
+                            <a class="nav-link" href="#navItem10">통계-생산-권역별 국내수소 생산량</a>
+                            <a class="nav-link" href="#navItem11">통계-생산-업종별 국내수소 생산량</a>
+                            <a class="nav-link" href="#navItem12">통계-생산-업종별 국내수소 생산량</a>
+                            <a class="nav-link" href="#navItem13">국내수소 생산기지</a>
+                            <a class="nav-link" href="#navItem14">정보공간-법령정보</a>
+                            <a class="nav-link" href="#navItem15">정보공간-정책/산업/기술정보</a>
+                            <a class="nav-link" href="#navItem16">정보공간-규제개선-소개및접수</a>
+                            <a class="nav-link" href="#navItem17">정보공간-규제개선-주요성과</a>
+                            <a class="nav-link" href="#navItem18">정보공간-인력양성-수소전문인력 정부사업</a>
+                            <a class="nav-link" href="#navItem19">정보공간-인력양성-H2KOREA 인력양성사업단</a>
+                            <a class="nav-link" href="#navItem20">알림공간-공지사항</a>
+                            <a class="nav-link" href="#navItem21">알림공간-보도자료</a>
+                            <a class="nav-link" href="#navItem22">알림공간-사업공고</a>
+                            <a class="nav-link" href="#navItem23">알림공간-행사정보</a>
+                            <a class="nav-link" href="#navItem24">알림공간-채용정보</a>
+                            <a class="nav-link" href="#navItem25">알림공간-홍보자료</a>
+                            <a class="nav-link" href="#navItem26">알림공간-카드뉴스</a>
+                            <a class="nav-link" href="#navItem27">알림공간-정기간행물</a>
+                            
+                        </nav>
+                    </nav>
+                </div>
+            </div>
+            <!-- Back to top button -->
+            <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top" >
+                <i class="fas fa-arrow-up"></i>
+            </button>
+        </section>
+    </div>
+    <script>
+        (function($) {
+            $('.label-item:eq(0) button').next().slideDown();
+        
+            $('.label-item button').hover(function(j) {
+                var dropDown = $(this).children('.label-item__bottom');
+                $(this).closest('.label-item').find('.label-item__bottom').not(dropDown).slideUp();
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                } else {
+                    $(this).closest('.label-item').find('button.active').removeClass('active');
+                    $(this).addClass('active');
+                }
+                dropDown.stop(false, true).slideToggle(100);
+                j.preventDefault();
+            });
+        })(jQuery);
+
+        // 스크롤 이동 이벤트
+        $('.webAbb-labeling button').on('click',function(){
+            var anchorId = $(this).attr('data-anchor');
+            scroll_to_anchor_tab(anchorId, 500);
+        });
+        function scroll_to_anchor_tab(anchor_id,speed) {
+            if( !speed ) var speed = 'slow';
+            var a_tag = $("#"+anchor_id);
+            if(a_tag.length > 0){
+                $('html, body').animate({
+                    scrollTop: a_tag.offset().top - $('.webAbb-info').height()*.5 // 상단에 특정 위치를 제외하고 스크롤할때 해당 이름 작성
+                }, speed);
+                return false;
+            }
+        }
+
+        // 사이드 navbar 이벤트
+        const scrollSpy = new bootstrap.ScrollSpy(document.body, {
+            target: '#navbar'
+        });
+
+        //Get the button :: go to top 버튼 이벤트
+        let mybutton = document.getElementById("btn-back-to-top");
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+        scrollFunction();
+        };
+        function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+        }
+        // When the user clicks on the button, scroll to the top of the document
+        mybutton.addEventListener("click", backToTop);
+        function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        }
+
+        //simplebar
+        var SimpleBarItem = new SimpleBar(document.querySelector('.ui-scroller'));    
+        var SimpleBarItem = $('.ui-scroller').each( function(index,element){
+            console.log("okokokok");
+            new SimpleBar(element);
+        });
+
+    </script>
+</body>
+</html>
