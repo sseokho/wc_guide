@@ -62,6 +62,7 @@
         .webAbb-labeling button{position:relative;display:flex;flex-flow:column wrap;width:100%;background-color:rgb(115, 95, 228);border:1px solid #000;}
         .webAbb-labeling button > span{display:block;width:100%;}
         .webAbb-labeling .label-item__bottom{position:absolute;top:117px;left:-1px;display:none;width:calc(100% + 2px);height:0;height:317px;padding:1rem;border:1px solid #000;background-color:#fff;z-index:1;}
+        .webAbb-labeling .label-item__bottom.is-open{display:block}
         .label-item .active .label-item__tit{background-color:#000;color:#fff;}
         .label-item__tit{display:block;padding:.5rem 0;padding-left:.5rem;font-size:.9rem;background-color:#ccc;text-align:left;}
         .label-item__url{display:block;height:5rem;padding:.5rem 0;padding-left:.5rem;font-size:.9rem;background-color:#fff;text-align:left;}
@@ -787,14 +788,14 @@
         
             $('.label-item button').hover(function(j) {
                 var dropDown = $(this).children('.label-item__bottom');
-                $(this).closest('.label-item').find('.label-item__bottom').not(dropDown).slideUp();
+                $(this).closest('.label-item').find('.label-item__bottom').not(dropDown).removeClass('is-open');
                 if ($(this).hasClass('active')) {
                     $(this).removeClass('active');
                 } else {
                     $(this).closest('.label-item').find('button.active').removeClass('active');
                     $(this).addClass('active');
                 }
-                dropDown.stop(false, true).slideToggle(100);
+                dropDown.stop(false, true).toggleClass('is-open');
                 j.preventDefault();
             });
         })(jQuery);
