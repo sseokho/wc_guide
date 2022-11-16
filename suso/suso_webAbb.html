@@ -73,8 +73,8 @@
         .webAbb-error__cont{display:grid;grid-template-columns:5rem calc(100% - 5rem);grid-auto-flow:dense;padding:1rem;}
         .webAbb-error__cont > span{display:block;}
         .webAbb-error__tit{display:flex;align-items:center;justify-content:center;grid-column:1/2;grid-row:1/3;width:5rem;height:100%;margin-bottom:0;background-color:#eee;font-weight:500;font-size:.8rem;}
-        .webAbb-error__img{grid-column:2/3;grid-row:1/2;width:calc(100% - 5rem);padding:1rem;}
-        .webAbb-error__img img{display:inline-block;}
+        .webAbb-error__img{grid-column:2/3;grid-row:1/2;width:calc(100% - 5rem);padding:1rem;margin-top:-1rem;}
+        .webAbb-error__img img{display:inline-block;margin-top:1rem;}
         .webAbb-error__txt{grid-column:2/3;grid-row:2/3;width:calc(100% - 5rem);padding:1rem;}
         .webAbb-solve__cont{padding:1rem;padding-top:0;}
         .webAbb-solve__tit{padding:1rem;background-color:#eee}
@@ -610,17 +610,22 @@
                                         <img src="./image/img-01__0102.JPG" alt="">
                                         <img src="./image/img-01__0103.JPG" alt="">
                                         <img src="./image/img-01__0104.JPG" alt="">
+                                        <img src="./image/img-01__0105.JPG" alt="">
+                                        <img src="./image/img-01__0106.JPG" alt="">
                                     </span>
                                     <span class="webAbb-error__txt">
                                         a태그 텍스트가 있는 상황에서 title에 같은 속성값이 들어가있음<br/>
-                                        a태그 대체텍스트가 있는 상황에서 title에 같은 속성값이 들어가있음
+                                        a태그 대체텍스트가 있는 상황에서 title에 같은 속성값이 들어가있음<br/>
+                                        img태그 대체텍스트가 부적절하게 들어가있음
                                     </span>
                                 </div>
                                 <div class="webAbb-solve__cont">
                                     <div class="webAbb-solve__tit">해결방안</div>
                                     <div class="webAbb-solve__txt">
                                         title값은 비워두고 title="" 로 사용<br/>
-                                        a태그 title의 속성값은 대체텍스트 정보가 아니라 링크 이동시 어디로 이동하는지 <span class="color--red">새창열림, 홈이동</span>과 같은 기능으로 사용
+                                        a태그 title의 속성값은 대체텍스트 정보가 아니라 <span class="color--red">새창열림, 홈이동</span>과 같은 기능으로 사용하고 a태그에 텍스트 있을시 쓰지 않거나 비워둠<br/>
+                                        img태그 대체텍스트의 경우 텍스트가 있을경우 모두 넣어주고, 없을경우 관련된 내용으로 넣어야함(ex-생산 바로가기 아이콘 -> 더보기)<br/>
+                                        a태그에 사업공고 더보기 / img태그에 더보기로 교체
                                     </div>
                                 </div>
                             </div>
