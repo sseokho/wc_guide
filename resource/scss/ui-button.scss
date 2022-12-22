@@ -1,0 +1,128 @@
+@charset 'UTF-8';
+@import 'mixin';
+@import 'svg';
+
+footer{
+    &.sub{
+        .btn{
+            &--report{
+                color:#000;
+                border:1px solid #d4dbdd;
+            }
+        }
+    }
+}
+.btn{
+    height:40px;
+    font-size:16px;
+    border-radius:5px;
+    vertical-align:middle;
+    + .btn{
+        margin-left:5px;
+    }
+    &-row{
+        display:flex;
+    }
+    &--sch{
+        width:40px;
+        height:40px;
+        margin-left:3px;
+        border-radius:4px;
+        background:#0053b3 url('../image/common/icon/icon-sch.png') no-repeat center center/auto;
+        &:hover{
+            color:#fff;
+            background-color:#2e7bd4;
+        }
+    }
+    &--schDetail{
+        padding:0 27px;
+        color:#fff;
+        background-color:#003471;
+        &:hover{
+            color:#fff;
+            background-color:#2e7bd4;
+        }
+    }
+    &-wrap{
+        button{
+            height:50px;
+        }
+    }
+    &-width{
+        &--s{
+            width:100px
+        }
+        &--m{
+            width:150px
+        }
+        &--l{
+            width:190px
+        }
+    }
+    &-height{
+        &--s{
+            height:30px;
+            line-height:normal;
+        }
+        &--m{
+            height:40px
+        }
+        &--l{
+            height:50px
+        }
+    }
+    &-color{
+        &--white{
+            background-color:#fff;
+            color:#747478;
+            border:1px solid #dce3e5;
+            &:hover{
+                background-color:#eee;
+                font-weight:bold;
+            }
+        }
+        &--navy{
+            background-color:#003471;
+            color:#fff;
+            &:hover{
+                background-color:#2e7bd4;
+                color:#fff;
+            }
+        }
+        &--gray{
+            background-color:#ccc;
+            color:#000;
+            &:hover{
+                background-color:#fff;
+                color:#000;
+                border:1px solid #ccc;
+            }
+        }
+        &--caution{
+            background-color:rgb(219, 68, 68);
+            color:rgb(255, 255, 255);
+            &:hover{
+                background-color:rgb(182, 55, 55);
+                color:#fff;
+            }
+        }
+    }
+    &--report{
+        height:36px;
+        padding:0 17px;
+        padding-left:38px;
+        font-size:13px;
+        color:#fff;
+        border:1px solid #fff;
+        border-radius:5px;
+        line-height:36px;
+        background:url('../image/common/icon/icon-exclam--yellow.png') no-repeat 10% 55%/auto;
+    }
+    &--download{
+        height:auto;
+        margin:0;
+        padding:0;
+        border:none;
+        border-radius:0;
+    }
+}

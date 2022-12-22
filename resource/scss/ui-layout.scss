@@ -1,0 +1,50 @@
+@charset 'UTF-8';
+@import 'mixin';
+@import 'svg';
+
+.layout{
+    &-container{
+        &__inner{
+            max-width:1400px;
+            margin:0 auto;
+            padding-top:50px;
+        }
+        &--row{
+            display:flex;
+        }
+    }
+    &-content{
+        width:calc(100% - 280px);
+        &__inner{
+        }
+        &__tit{
+            font-size:30px;
+            font-weight:600;
+            color:#000;
+        }
+        &__subtit{
+            font-size:22px;
+            font-weight:500;
+            color:#000;
+        }
+        &__top{
+            display:flex;
+            align-items:flex-end;
+            margin-bottom:20px;
+        }
+        &__view{
+            margin-top:30px;
+        }
+    }
+}
+.table{
+    &-wrap{
+        + .layout{
+            &-content{
+                &__subtit{
+                    margin-top:30px;
+                }
+            }
+        }
+    }
+}

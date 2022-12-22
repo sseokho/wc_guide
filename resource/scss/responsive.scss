@@ -1,0 +1,294 @@
+@charset 'UTF-8';
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: 32.5%;
+  }
+}
+@media screen and (min-width: 360px) {
+  html {
+    font-size: 42.5%;
+  }
+}
+@media screen and (min-width: 480px) {
+  html {
+    font-size: 52.5%;
+  }
+}
+@media screen and (min-width: 600px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .gnb-depth--02{
+    background-size:contain;
+  }
+}
+
+// hover
+@media screen and (min-width: 1024px) {
+  header{
+    &.is-open{
+      .gnb{
+        > a{
+          &:hover{
+            font-weight:600;
+            color:#0053b3;
+          }
+        }
+        &-depth{
+          &--03{
+            &__item{
+              &:hover{
+                .gnb-depth--03__tit{
+                  background-color:#0053b3;
+                  color:#fff;
+                }
+                ul{
+                  background-color:#e9eff6;
+                }
+              }
+              ul{
+                li{
+                  a{
+                    &:hover{
+                      font-weight:400;
+                      border-bottom:1px solid #0053b3;
+                      color:#0053b3;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .fullpage{
+    &-block{
+      &--main{
+        .fullpage{
+          &-box{
+            &__quickLink{
+              &:hover{
+                background-color:#fff;
+                transition:all .3s ease-in-out;
+                span{
+                  &.fullpage{
+                    &-box{
+                      &__txt{
+                        color:#000;
+                        em{
+                          &.fullpage{
+                            &-box{
+                              &__cap{
+                                color:#1180ed;
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      &--menu{
+        .fullpage{
+          &-box{
+            &__quickLink{
+              a{
+                &:hover{
+                  width:264px;
+                  height:264px;
+                  margin-top:-10px;
+                  margin-left:-10px;
+                  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), 
+                  linear-gradient(to bottom, #009aff 0%,  #f0b500 100%);
+                  background-origin: border-box;
+                  background-clip: content-box, border-box;
+                  box-shadow:3px 4px 7px 1px rgb(0 0 0 / 49%);
+                  transition:all .1s ease;
+                  // border:2px solid #009aff;
+                  z-index:2;
+                  > q{              
+                    width:261px;
+                    height:261px;
+                    background-color:#fff;
+                  }
+                  span{
+                    em{
+                      font-weight:500;
+                      color:#1180ed;
+                    }
+                  }
+                }
+              }
+            }
+            &--v2x{
+              a{
+                &:hover{
+                > em{
+                    background:no-repeat 50%/auto url('../image/main/img-menu-quickLink--01-on.png');
+                  }
+                }
+              }
+            }
+            &--drivingImg{
+              a{
+                &:hover{
+                > em{
+                    background:no-repeat 50%/auto url('../image/main/img-menu-quickLink--02-on.png');
+                  }
+                }
+              }
+            }
+            &--sensorData{
+              a{
+                &:hover{
+                > em{
+                    background:no-repeat 50%/auto url('../image/main/img-menu-quickLink--03-on.png');
+                  }
+                }
+              }
+            }
+            &--learning{
+              a{
+                &:hover{
+                > em{
+                    background:no-repeat 50%/auto url('../image/main/img-menu-quickLink--04-on.png');
+                  }
+                }
+              }
+            }
+            &--accident{
+              a{
+                &:hover{
+                > em{
+                    background:no-repeat 49%/auto url('../image/main/img-menu-quickLink--05-on.png');
+                  }
+                }
+              }
+            }
+            &--report{
+              a{
+                &:hover{
+                > em{
+                    background:no-repeat 49%/auto url('../image/main/img-menu-quickLink--06-on.png');
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &-box{
+      &--notice, &--trend{
+        .lists{
+          li{
+            &:hover{
+              &::before{
+                background-color:#fff;
+              }
+              a{
+                color:#fff;
+              }
+              span{
+                color:#fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .nav{
+    a{
+      &:hover{
+        font-weight:500;
+        color:#fff;
+    }
+    }
+  }
+  .link{
+    &-more{
+      &:hover{
+        transform:rotate(360deg);
+        transition:all .3s ease-in-out;
+        &::before{
+            width:26px;
+            height:26px;
+            transition:all .3s ease-in-out;
+        }
+      }
+      &:hover{
+        span{
+            background-color:#1180ed;
+            transform:rotate(270deg);
+            &::before{
+                background-color:#ff8100;
+                transition:all .3s ease-in-out;
+            }
+        }
+      }
+    }
+  }
+  .lnb{
+    &-depth{
+        &--02{
+            li{
+              &:hover, &.is-active{
+                background:url('../image/common/icon/icon-clamp__right--on.png') no-repeat 95% center/auto;
+                &::before{
+                  background-color:#000;
+                }
+              }
+              &.is-active{
+                > a{
+                  font-weight:500;
+                  color:#000;
+                }
+              }
+            a{
+              &:hover{
+                font-weight:500;
+                color:#000;
+              }
+            }
+          }
+        }
+    }
+  }
+  .table{
+    &-basic{
+      &--col{
+        tr{
+          &:hover{
+            td{
+              background-color:#fff9f2;
+            }
+          }
+        }
+      }
+    }
+  }
+  .editor{
+    &-view{
+        padding:20px 0;
+        &__link{
+            margin:0;
+            padding:0;
+            &:hover{
+              text-decoration:underline;
+            }
+        }
+    }
+  }
+}

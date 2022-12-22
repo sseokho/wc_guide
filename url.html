@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>TS 한국교통안전공단</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- favicon -->
+    <link rel="icon" href="./dist/assets/images/common/favicon.ico" type="image/x-icon" />
+    <!-- //favicon -->
+
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="resource/css/common.css" />
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .is-emphasis {
+        font-weight: 700;
+        color: #ff706e;
+      }
+
+      .index-wrap {
+        box-sizing: border-box;
+        min-width: 1600px;
+        padding: 20px;
+      }
+
+      .index-title {
+        font-size: 30px;
+        line-height: 40px;
+        margin: 0 0 20px;
+      }
+
+      .index-links:before {
+        content: '';
+        display: table;
+      }
+
+      .index-links__inner {
+        margin: -10px 0 0 -10px;
+      }
+
+      .index-links__inner:after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+
+      .index-links a {
+        display: block;
+        margin: 10px 0 0 10px;
+        float: left;
+        padding: 5px 15px;
+        font-size: 14px;
+        line-height: 20px;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        background: #666;
+      }
+
+      .index-gnb {
+        margin: 20px 0;
+      }
+
+      .index-links{
+        overflow:hidden;
+      }
+      .index-links a{box-sizing:border-box;}
+      .index-links a:hover{
+        background-color:#333;
+        color:#fff;
+      }
+
+      .index-bottom {
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        min-width: 1900px;
+        box-sizing: border-box;
+        padding: 10px 20px;
+        background: rgba(0, 0, 0, 0.4);
+      }
+
+      .index-bottom a {
+        background-color: #066cb3;
+      }
+
+      .index-section {
+        border-radius: 5px;
+        background-color: #fff;
+      }
+
+      .index-section + .index-section {
+        margin-top: 20px;
+      }
+
+      .index-section--clicked {
+        -webkit-animation: index-section-clicked 0.8s linear;
+        animation: index-section-clicked 0.8s linear;
+      }
+
+      @-webkit-keyframes index-section-clicked {
+        0% {
+          background-color: rgba(255, 255, 255, 1);
+        }
+
+        30% {
+          background-color: rgba(255, 202, 222, 1);
+        }
+
+        70% {
+          background-color: rgba(255, 202, 222, 1);
+        }
+
+        100% {
+          background-color: rgba(255, 255, 255, 1);
+        }
+      }
+
+      @keyframes index-section-clicked {
+        0% {
+          background-color: rgba(255, 255, 255, 1);
+        }
+
+        30% {
+          background-color: rgba(255, 202, 222, 1);
+        }
+
+        70% {
+          background-color: rgba(255, 202, 222, 1);
+        }
+
+        100% {
+          background-color: rgba(255, 255, 255, 1);
+        }
+      }
+
+      .index-section__title {
+        margin: 0;
+        padding: 5px 15px;
+        font-size: 14px;
+        line-height: 20px;
+        color: #fff;
+        border-radius: 5px 5px 0 0;
+        background: #333;
+      }
+
+      .index-table > table {
+        width: 100%;
+        table-layout: fixed;
+        margin: 0;
+        padding: 0;
+        border-spacing: 0;
+        box-sizing: border-box;
+      }
+
+      .index-table > table > thead > tr > th,
+      .index-table > table > tbody > tr > th,
+      .index-table > table > tbody > tr > td {
+        box-sizing: border-box;
+        font-size: 12px;
+        line-height: 18px;
+        text-align: left;
+        padding: 5px 15px;
+        border: 0 solid #cdcdcd;
+        border-width: 0 1px 1px 0;
+        background: none;
+        word-break: keep-all;
+        word-wrap: break-word;
+      }
+
+      .index-table > table > tbody > tr:hover > th,
+      .index-table > table > tbody > tr:hover > td {
+        background-color: #f6f6f6;
+      }
+
+      .index-table > table > thead > tr > th:first-child,
+      .index-table > table > tbody > tr > th:first-child,
+      .index-table > table > tbody > tr > td:first-child {
+        border-left-width: 1px;
+        text-align:center;
+      }
+
+      .index-table > table > thead > tr > th {
+        border-top-width: 1px;
+      }
+
+      .index-table > table > thead > tr > th:nth-child(2),
+      .index-table > table > thead > tr > td:nth-child(2){
+        text-align:center;
+      }
+
+      .index-table > table > thead > tr > th,
+      .index-table > table > tbody > tr > th {
+        background-color: #e8e8e8;
+      }
+
+      .index-table > table > tbody > tr:last-child > td:first-child {
+        border-radius: 0 0 0 5px;
+      }
+
+      .index-table > table > tbody > tr:last-child > td:last-child {
+        border-radius: 0 0 5px 0;
+      }
+
+      .index-status {
+        display: inline-block;
+        vertical-align: top;
+        padding: 3px 8px;
+        margin: -3px 0;
+        background: #999;
+        color: #fff;
+        border-radius: 5px;
+      }
+
+      .index-status--ing {
+        background-color: #ffb01a;
+      }
+
+      .index-status--end {
+        background-color: #00a6a0;
+      }
+
+      .index-status--end2 {
+        font-size: 11px;
+        background-color: #008bce;
+      }
+
+      .index-status--moding {
+        background-color: #ff4594;
+      }
+      .index-share {
+        display: inline-block;
+        vertical-align: top;
+        padding: 3px 8px;
+        margin: -3px 0;
+        background: #999;
+        color: #fff;
+        border-radius: 5px;
+      }
+
+      .index-share--comp {
+        background-color: #ff6c6c;
+      }
+
+      .index-log {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .index-log__item {
+        position: relative;
+        height:18px;
+        padding-left: 80px;
+      }
+
+      .index-log__item__date {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .index-text {
+        margin-bottom: 20px;
+      }
+
+      .index-type {
+        color: #2b5cd9;
+      }
+    </style>
+    <!-- //style -->
+  </head>
+
+  <body>
+    <div class="index-wrap">
+      <h1 class="index-title"></h1>
+      <div class="index-gnb">
+        <div class="index-links">
+          <a href="guide/guide.html" target="_blank">코딩 가이드</a>
+        </div>
+      </div>
+      <div class="index-bottom">
+        <div class="index-links">
+          <div class="index-links__inner" id="nav"></div>
+        </div>
+      </div>
+
+      <!--
+      <div class="index-text">기타 문구</div>
+      -->
+
+      <div class="index-datas" id="indexTable"></div>
+    </div>
+
+    <div class="index-fake-botttom"></div>
+
+    <!-- script -->
+    <script type="text/javascript" src="resource/js/lib/jquery/jquery-3.6.1.min.js"></script>
+    <script>
+      var title = 'TS 한국교통안전공단';
+      var tableData = [
+        /*
+      {
+        depth1: '',
+        data: [
+          {
+            id: '',
+            depth2: '',
+            depth3: '',
+            depth5: '',
+            depth6: '',
+            path: '',
+            status: 'ing, end, end2, except',
+            create: '20xx.xx.xx',
+            update: '',
+            log: [
+              //{ date: '', text: '', },
+            ],
+          },
+        ],
+      },
+      */
+      {
+        depth1: '인덱스',
+        data: [
+          {
+            id:'US_MA_01, US_MA_02',
+            depth1: '인덱스',
+            depth2: '',
+            depth3: '',
+            path: 'US_MA_01.html',
+            status: 'end',
+            share: 'comp',
+            create: '2022.11.22',
+            log: [{ date: '2022.11.28', text: '작업 완료' }],
+          },
+        ]
+        },
+      {
+        depth1: '마이페이지',
+        data: [
+          {
+            id:'US_DA_01_list',
+            depth1: '내가 올린 자료',
+            depth2: 'list',
+            depth3: '',
+            path: './sub/US_DA_01_list.html',
+            status: 'end',
+            share: 'comp',
+            create: '2022.11.28',
+            log: [{ date: '2022.11.29', text: '작업 완료' }],
+          },
+          {
+            id:'US_DA_02_list',
+            depth1: '내가 받은 자료',
+            depth2: 'list',
+            depth3: '',
+            path: './sub/US_DA_02_list.html',
+            status: 'end',
+            share: 'comp',
+            create: '2022.11.28',
+            log: [{ date: '2022.11.29', text: '작업 완료' }],
+          },
+          {
+            id:'US_DA_03_write',
+            depth1: '차량등록',
+            depth2: 'write',
+            depth3: '',
+            path: './sub/US_DA_03_write.html',
+            status: 'end',
+            share: 'comp',
+            create: '2022.11.28',
+            log: [{ date: '2022.11.29', text: '작업 완료' }],
+          },
+          {
+            id:'US_DA_04_edit',
+            depth1: '차량관리',
+            depth2: 'edit',
+            depth3: '',
+            path: './sub/US_DA_04_edit.html',
+            status: 'end',
+            share: 'comp',
+            create: '',
+            log: [
+              //{ date: '2022.11.22', text: '' }
+            ],
+          },
+          {
+            id:'US_DA_05',
+            depth1: '권한위임',
+            depth2: '',
+            depth3: '',
+            path: './sub/US_DA_05.html',
+            status: 'end',
+            share: 'comp',
+            create: '',
+            log: [
+              //{ date: '2022.11.22', text: '' }
+            ],
+          },
+        ]
+        },
+        {
+          depth1: 'openApi',
+          data: [
+            {
+              id:'US_OA_01_view',
+              depth1: 'openApi',
+              depth2: '',
+              depth3: '',
+              path: './sub/US_OA_01_view.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.11.28',
+              log: [{ date: '2022.11.29', text: '작업 완료' }],
+            },
+          ]
+        },
+        {
+          depth1: '공공데이터',
+          data: [
+            {
+              id:'US_OD_01_list',
+              depth1: '일반시나리오테이터셋',
+              depth2: 'list',
+              depth3: '',
+              path: './sub/US_OD_01_list.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.11.30',
+              log: [{ date: '2022.12.01', text: '작업완료' }],
+            },
+            {
+              id:'US_OD_01_write',
+              depth1: '일반시나리오테이터셋',
+              depth2: 'write',
+              depth3: '',
+              path: './sub/US_OD_01_write.html',
+              status: 'end',
+              share: 'comp',
+              create: '',
+              log: [{ date: '2022.12.01', text: '작업완료' }],
+            },
+            {
+              id:'US_OD_02_list',
+              depth1: '엣지케이스 시나리오테이터셋',
+              depth2: 'list',
+              depth3: '',
+              path: './sub/US_OD_02_list.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.11.30',
+              log: [{ date: '2022.12.01', text: '작업완료' }],
+            },
+            {
+              id:'US_OD_02_write',
+              depth1: '엣지케이스 시나리오테이터셋',
+              depth2: 'write',
+              depth3: '',
+              path: './sub/US_OD_02_write.html',
+              status: 'end',
+              share: 'comp',
+              create: '',
+              log: [{ date: '2022.12.01', text: '작업완료' }],
+            },
+            {
+              id:'US_OD_03_list',
+              depth1: 'V2X 데이터셋',
+              depth2: '',
+              depth3: '',
+              path: './sub/US_OD_03_list.html',
+              status: 'end',
+              share: 'comp',
+              create: '',
+              log: [{ date: '2022.12.01', text: '작업완료' }],
+            },
+            {
+              id:'US_OD_03_write',
+              depth1: 'V2X 데이터셋',
+              depth2: '',
+              depth3: '',
+              path: './sub/US_OD_03_write.html',
+              status: 'end',
+              share: 'comp',
+              create: '',
+              log: [{ date: '2022.12.01', text: '작업완료' }],
+            },
+          ],
+        },
+        {
+          depth1: '협의체 데이터',
+          data: [
+            {
+              id:'US_AG_01_list',
+              depth1: '일반시나리오테이터셋',
+              depth2: 'list',
+              depth3: '',
+              path: './sub/US_AG_01_list.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.01',
+              log: [
+                { date: '2022.12.01', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_AG_02_list',
+              depth1: '엣지케이스 시나리오데이터셋',
+              depth2: 'list',
+              depth3: '',
+              path: './sub/US_AG_02_list.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.01',
+              log: [
+                { date: '2022.12.01', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_AG_03_list',
+              depth1: 'V2X 데이터셋',
+              depth2: 'list',
+              depth3: '',
+              path: './sub/US_AG_03_list.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.01',
+              log: [
+                { date: '2022.12.01', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_AG_04',
+              depth1: '공간정보 안내 및 신청',
+              depth2: '',
+              depth3: '',
+              path: './sub/US_AG_04.html',
+              status: 'stay',
+              share: '',
+              create: '',
+              log: [
+              ],
+            },
+            {
+              id:'US_AG_05_01_list<br/>US_AG_05_01_detail',
+              depth1: '데이터셋',
+              depth2: '차량거동정보',
+              depth3: 'list, detail',
+              path: './sub/US_AG_05_01_list.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.01',
+              log: [
+                { date: '2022.12.01', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_AG_05_02_list<br/>US_AG_05_02_detail',
+              depth1: '데이터셋',
+              depth2: '센서정보',
+              depth3: 'list,, detail',
+              path: './sub/US_AG_05_02_list.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.01',
+              log: [
+              { date: '2022.12.01', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_AG_05_03_list<br/>US_AG_05_03_detail',
+              depth1: '데이터셋',
+              depth2: '자율주행학습정보',
+              depth3: 'list, detail',
+              path: './sub/US_AG_05_03_list.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.01',
+              log: [
+              { date: '2022.12.01', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_AG_05_04_list<br/>US_AG_05_04_detail',
+              depth1: '데이터셋',
+              depth2: '융합정보',
+              depth3: 'list,, detail',
+              path: './sub/US_AG_05_04_list.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.01',
+              log: [
+              { date: '2022.12.01', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_AG_05_05_list<br/>US_AG_05_05_detail',
+              depth1: '데이터셋',
+              depth2: 'V2X 정보',
+              depth3: 'list, detail',
+              path: './sub/US_AG_05_05_list.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.01',
+              log: [
+              { date: '2022.12.01', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_AG_05_06_list<br/>US_AG_05_06_detail',
+              depth1: '데이터셋',
+              depth2: '기타자율주행정보',
+              depth3: 'list,, detail',
+              path: './sub/US_AG_05_06_list.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.01',
+              log: [
+              { date: '2022.12.01', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_AG_05_07_list',
+              depth1: '데이터셋',
+              depth2: '데이터셋',
+              depth3: 'list',
+              path: './sub/US_AG_05_07_list.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.01',
+              log: [
+              { date: '2022.12.01', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_AG_05_07_view',
+              depth1: '데이터셋',
+              depth2: '데이터셋',
+              depth3: 'view',
+              path: './sub/US_AG_05_07_view.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.02',
+              log: [
+              { date: '2022.12.02', text: '작업완료' }
+              ],
+            },
+          ],
+        },
+        {
+          depth1: '운행정보보고',
+          data: [
+            {
+              id:'US_DU_01_list',
+              depth1: '교통사고',
+              depth2: 'list',
+              depth3: '',
+              path: './sub/US_DU_01_list.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.02',
+              log: [
+              { date: '2022.12.02', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_DU_01_write',
+              depth1: '교통사고',
+              depth2: 'write',
+              depth3: '',
+              path: './sub/US_DU_01_write.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.12',
+              log: [
+              { date: '2022.12.12', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_DU_02_list',
+              depth1: '운행정보보고서',
+              depth2: 'list',
+              depth3: '',
+              path: './sub/US_DU_02_list.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.12',
+              log: [
+              { date: '2022.12.12', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_DU_02_view',
+              depth1: '운행정보보고서',
+              depth2: 'view',
+              depth3: '',
+              path: './sub/US_DU_02_view.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.12',
+              log: [
+              { date: '2022.12.12', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_DU_02_write',
+              depth1: '운행정보보고서',
+              depth2: 'write',
+              depth3: '',
+              path: './sub/US_DU_02_write.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.12',
+              log: [
+              { date: '2022.12.12', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_DU_03__list',
+              depth1: '장치 및 기능변경',
+              depth2: 'list',
+              depth3: '',
+              path: './sub/US_DU_03__list.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.12',
+              log: [
+              { date: '2022.12.12', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_DU_03__view',
+              depth1: '장치 및 기능변경',
+              depth2: 'view',
+              depth3: '',
+              path: './sub/US_DU_03__view.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.12',
+              log: [
+              { date: '2022.12.12', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_DU_03__write',
+              depth1: '장치 및 기능변경',
+              depth2: 'write',
+              depth3: '',
+              path: './sub/US_DU_03__write.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.12',
+              log: [
+              { date: '2022.12.12', text: '작업완료' }
+              ],
+            },
+          ]
+        },
+        {
+          depth1: '자율주행최신동향',
+          data: [
+            {
+              id:'US_TN_01_list',
+              depth1: '자율주행최신동향',
+              depth2: 'list',
+              depth3: '',
+              path: './sub/US_TN_01_list.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.13',
+              log: [
+              { date: '2022.12.13', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_TN_01_view',
+              depth1: '자율주행최신동향',
+              depth2: 'view',
+              depth3: '',
+              path: './sub/US_TN_01_view.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.13',
+              log: [
+              { date: '2022.12.13', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_TN_02_list',
+              depth1: '공지사항',
+              depth2: 'list',
+              depth3: '',
+              path: './sub/US_TN_02_list.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.13',
+              log: [
+              { date: '2022.12.13', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_TN_02_view',
+              depth1: '공지사항',
+              depth2: 'view',
+              depth3: '',
+              path: './sub/US_TN_02_view.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.13',
+              log: [
+              { date: '2022.12.13', text: '작업완료' }
+              ],
+            },
+          ]
+        },
+        {
+          depth1: '데이터 공유센터 시설이용',
+          data: [
+            {
+              id:'US_FA_01',
+              depth1: '차량 플랫폼 공유',
+              depth2: '안내',
+              depth3: '',
+              path: './sub/US_FA_01.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.14',
+              log: [
+              { date: '2022.12.14', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_FA_02_write',
+              depth1: '차량 플랫폼 공유',
+              depth2: '예약신청',
+              depth3: 'write',
+              path: './sub/US_FA_02_write.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.14',
+              log: [
+              { date: '2022.12.14', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_FA_02_view',
+              depth1: '차량 플랫폼 공유',
+              depth2: '예약신청',
+              depth3: 'view',
+              path: './sub/US_FA_02_view.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.14',
+              log: [
+              { date: '2022.12.14', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_FA_02_pop',
+              depth1: '차량 플랫폼 공유',
+              depth2: '예약신청',
+              depth3: 'pop',
+              path: './sub/US_FA_02_pop.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.14',
+              log: [
+              { date: '2022.12.14', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_FA_03_list',
+              depth1: '차량 플랫폼 공유',
+              depth2: '예약현황 및 취소',
+              depth3: '',
+              path: './sub/US_FA_03_list.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.14',
+              log: [
+              { date: '2022.12.14', text: '작업완료' }
+              ],
+            },
+            {
+              id:'US_FA_04',
+              depth1: '공유센터 이용안내',
+              depth2: '회의실 안내',
+              depth3: '',
+              path: './sub/US_FA_04.html',
+              status: 'end',
+              share: 'comp',
+              create: '2022.12.14',
+              log: [
+              { date: '2022.12.14', text: '작업완료' }
+              ],
+            },
+          ]
+        },
+        {
+          depth1: '이용안내',
+          data: [
+            {
+              id:'US_CE_01',
+              depth1: '데이터공유센터 소개',
+              depth2: '',
+              depth3: '',
+              path: './sub/US_CE_01.html',
+              status: 'ing',
+              share: '',
+              create: '',
+              log: [
+              ],
+            },
+            {
+              id:'US_CE_02',
+              depth1: '공공데이터',
+              depth2: '',
+              depth3: '',
+              path: './sub/US_CE_02.html',
+              status: 'ing',
+              share: '',
+              create: '',
+              log: [
+              ],
+            },
+            {
+              id:'US_CE_03',
+              depth1: '데이터공유 협의체',
+              depth2: '',
+              depth3: '',
+              path: './sub/US_CE_03.html',
+              status: 'ing',
+              share: '',
+              create: '',
+              log: [
+              ],
+            },
+            {
+              id:'US_CE_04',
+              depth1: '법령 및 지침',
+              depth2: '',
+              depth3: '',
+              path: './sub/US_CE_04.html',
+              status: 'ing',
+              share: '',
+              create: '',
+              log: [
+              ],
+            },
+            {
+              id:'US_CE_05',
+              depth1: '자율주행차 임시운행허가',
+              depth2: '',
+              depth3: '',
+              path: './sub/US_CE_05.html',
+              status: 'ing',
+              share: '',
+              create: '',
+              log: [
+              ],
+            },
+          ]
+        },
+      ];
+
+      var html = '';
+      var navHTML = '';
+      var totalIndex = 0;
+      var dates = (function () {
+        var array = [];
+
+        function add(date) {
+          if (typeof date === 'string' && date.length && array.indexOf(date) === -1) {
+            array.push(date);
+          }
+        }
+
+        $.each(tableData, function (i) {
+          var sectionData = tableData[i].data;
+          $.each(sectionData, function (j) {
+            add(this.create);
+            $.each(sectionData[j].log, function (l) {
+              add(this.date);
+            });
+          });
+        });
+
+        array.sort();
+
+        return array;
+      })();
+      var latestDate = dates[dates.length - 1];
+
+      $.each(tableData, function (i) {
+        var sectionIndex = i;
+        var sectionData = tableData[i].data;
+        var tableHTML = '';
+
+        $.each(sectionData, function (j) {
+          var returnVal = function (key, secondTestKey) {
+            var val = sectionData[j][key];
+            var secondTestVal = sectionData[j][secondTestKey];
+            var prevIndex = j - 1;
+            var isPrint = true;
+            if (prevIndex >= 0) {
+              if (sectionData[prevIndex][key] === val) {
+                isPrint = false;
+              }
+              if (typeof secondTestKey === 'string' && secondTestKey.length && !sectionData[j].depthOnly) {
+                if (sectionData[prevIndex][key] === val && sectionData[prevIndex][secondTestKey] === secondTestVal) {
+                  isPrint = false;
+                } else {
+                  isPrint = true;
+                }
+              }
+            }
+            return isPrint ? val.replace(/\n/g, '<br>') : '';
+          };
+          //var type = returnVal('type', 'depth2');
+          var id = returnVal('id');
+          var depth1 = returnVal('depth1');
+          var depth2 = returnVal('depth2');
+          var depth3 = returnVal('depth3');
+          var path = (function () {
+            var val = sectionData[j].path;
+            var href = '';
+            if (val.match(/^\.\//g)) {
+              href = val;
+            } else {
+              href =  val;
+            }
+            return val.length ? '<a href="' + href + '" target="_blank">' + val + '</a>' : '';
+          })();
+          var status = (function () {
+            var val = sectionData[j].status;
+            var text = '';
+            if (val === 'ing') {
+              text = '작업중';
+            } else if (val === 'end') {
+              text = '작업완료';
+            } else if (val === 'except') {
+              // 워드앤코드 제거
+              text = '제거';
+            } else if (val === 'moding') {
+              text = '수정중';
+            } else if (val === 'stay') {
+              text = '대기중';
+            }
+            return val.length ? '<span class="index-status index-status--' + val + '">' + text + '</span>' : '';
+          })();
+          var share = (function () {
+            var val = sectionData[j].share;
+            var textS = '';
+            if (val === 'comp') {
+              textS = '공유';
+            } else if (val === '') {
+            }
+            return val.length ? '<span class="index-share index-share--' + val + '">' + textS + '</span>' : '';
+          })();
+          var create = this.create;
+          var update = '';
+          var log = (function () {
+            var val = sectionData[j].log;
+            var length = val.length;
+            var html = '<ul class="index-log">';
+            $.each(val, function (l) {
+              var date = this.date;
+              html += '<li class="index-log__item' + (date === latestDate ? ' is-emphasis' : '') + '"><div class="index-log__item__date">[' + date + ']</div>' + this.text.replace(/\n/g, '<br>') + '</li>';
+              if (length - 1 === l) {
+                update = date;
+              }
+            });
+            html += '</ul>';
+
+            return html;
+          })();
+
+          tableHTML +=
+            '<tr>' +
+            '<td>' +
+            (j + 1) +
+            '</td>' +
+            //'<td class="index-type">' +
+            //type +
+            //'</td>' +
+            '<td>' +
+            id +
+            '</td>' +
+            '<td>' +
+            depth1 +
+            '</td>' +
+            '<td>' +
+            depth2 +
+            '</td>' +
+            '<td>' +
+            depth3 +
+            '</td>' +
+            '<td>' +
+            path +
+            '</td>' +
+            '<td>' +
+            status +
+            '</td>' +
+            '<td>' +
+            share +
+            '</td>' +
+            '<td class="' +
+            (create === latestDate ? ' is-emphasis' : '') +
+            '">' +
+            create +
+            '</td>' +
+            '<td class="' +
+            (update === latestDate ? ' is-emphasis' : '') +
+            '">' +
+            update +
+            '</td>' +
+            '<td>' +
+            log +
+            '</td>' +
+            '</tr>';
+
+          totalIndex++;
+        });
+
+        navHTML += '<a href="#section' + i + '">' + tableData[i].depth1 + '</a>';
+
+        html +=
+          '<div class="index-section" id="section' +
+          i +
+          '">' +
+          '<h2 class="index-section__title">' +
+          tableData[i].depth1 +
+          status +
+          '</h2>' +
+          '<div class="index-table">' +
+          '<table>' +
+          '<colgroup>' +
+          '<col width="50px" />' +
+          '<col width="140px" />' +
+          '<col width="170px" />' +
+          '<col width="170px" />' +
+          '<col width="170px" />' +
+          '<col width="" />' +
+          '<col width="100px" />' +
+          '<col width="70px" />' +
+          '<col width="110px" />' +
+          '<col width="110px" />' +
+          '<col width="300px" />' +
+          '</colgroup>' +
+          '<thead>' +
+          '<tr>' +
+          '<th>No</th>' +
+          //'<th>type</th>' +
+          '<th>id</th>' +
+          '<th>depth1</th>' +
+          '<th>depth2</th>' +
+          '<th>depth3</th>' +
+          '<th>path</th>' +
+          '<th>status</th>' +
+          '<th>share</th>' +
+          '<th>create</th>' +
+          '<th>update</th>' +
+          '<th>log</th>' +
+          '</tr>' +
+          '</thead>' +
+          '<tbody>' +
+          tableHTML +
+          '</tbody>' +
+          '</table>' +
+          '</div>' +
+          '</div>';
+      });
+
+      $('title, .index-title').text(title);
+      $('#nav').append(navHTML);
+      $('#indexTable').append(html);
+
+      var $nav = $('.index-bottom');
+      var $doc = $(document);
+      var $win = $(window);
+
+      function paddingBottom() {
+        $('.index-fake-botttom').css('height', $nav.outerHeight());
+      }
+
+      var clickedTimer = null;
+
+      $doc.on('click', '#nav a', function () {
+        var $this = $(this);
+        var href = $this.attr('href');
+        var $target = $(href);
+        var $sections = $('.index-section');
+
+        $sections.removeClass('index-section--clicked');
+
+        clearTimeout(clickedTimer);
+
+        clickedTimer = setTimeout(function () {
+          $target.addClass('index-section--clicked');
+        }, 100);
+      });
+
+      $win
+        .on('scroll', function () {
+          var scrollLeft = $win.scrollLeft();
+          $nav.css('margin-left', -scrollLeft);
+        })
+        .on('resize', function () {
+          paddingBottom();
+        })
+        .on('load', function () {
+          paddingBottom();
+        });
+    </script>
+    <!-- //script -->
+  </body>
+</html>
