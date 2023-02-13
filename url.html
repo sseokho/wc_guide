@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <title>TS 한국교통안전공단</title>
+    <title>워드앤코드 - 웹접근성 가이드</title>
 
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -191,10 +191,10 @@
         border-top-width: 1px;
       }
 
-      .index-table > table > thead > tr > th:nth-child(2),
+      /*.index-table > table > thead > tr > th:nth-child(2),
       .index-table > table > thead > tr > td:nth-child(2){
         text-align:center;
-      }
+      }*/
 
       .index-table > table > thead > tr > th,
       .index-table > table > tbody > tr > th {
@@ -304,670 +304,69 @@
     <!-- script -->
     <script type="text/javascript" src="resource/js/lib/jquery/jquery-3.6.1.min.js"></script>
     <script>
-      var title = 'TS 한국교통안전공단';
+      var title = '워드앤코드 - 웹접근성 가이드';
       var tableData = [
         /*
-      {
-        depth1: '',
-        data: [
-          {
-            id: '',
-            depth2: '',
-            depth3: '',
-            depth5: '',
-            depth6: '',
-            path: '',
-            status: 'ing, end, end2, except',
-            create: '20xx.xx.xx',
-            update: '',
-            log: [
-              //{ date: '', text: '', },
-            ],
-          },
-        ],
-      },
-      */
-      {
-        depth1: '인덱스',
-        data: [
-          {
-            id:'US_MA_01, US_MA_02',
-            depth1: '인덱스',
-            depth2: '',
-            depth3: '',
-            path: 'US_MA_01.html',
-            status: 'end',
-            share: 'comp',
-            create: '2022.11.22',
-            log: [{ date: '2022.11.28', text: '작업 완료' }],
-          },
-        ]
-        },
-      {
-        depth1: '마이페이지',
-        data: [
-          {
-            id:'US_DA_01_list',
-            depth1: '내가 올린 자료',
-            depth2: 'list',
-            depth3: '',
-            path: './sub/US_DA_01_list.html',
-            status: 'end',
-            share: 'comp',
-            create: '2022.11.28',
-            log: [{ date: '2022.11.29', text: '작업 완료' }],
-          },
-          {
-            id:'US_DA_02_list',
-            depth1: '내가 받은 자료',
-            depth2: 'list',
-            depth3: '',
-            path: './sub/US_DA_02_list.html',
-            status: 'end',
-            share: 'comp',
-            create: '2022.11.28',
-            log: [{ date: '2022.11.29', text: '작업 완료' }],
-          },
-          {
-            id:'US_DA_03_write',
-            depth1: '차량등록',
-            depth2: 'write',
-            depth3: '',
-            path: './sub/US_DA_03_write.html',
-            status: 'end',
-            share: 'comp',
-            create: '2022.11.28',
-            log: [{ date: '2022.11.29', text: '작업 완료' }],
-          },
-          {
-            id:'US_DA_04_edit',
-            depth1: '차량관리',
-            depth2: 'edit',
-            depth3: '',
-            path: './sub/US_DA_04_edit.html',
-            status: 'end',
-            share: 'comp',
-            create: '',
-            log: [
-              //{ date: '2022.11.22', text: '' }
-            ],
-          },
-          {
-            id:'US_DA_05',
-            depth1: '권한위임',
-            depth2: '',
-            depth3: '',
-            path: './sub/US_DA_05.html',
-            status: 'end',
-            share: 'comp',
-            create: '',
-            log: [
-              //{ date: '2022.11.22', text: '' }
-            ],
-          },
-        ]
-        },
         {
-          depth1: 'openApi',
+          depth1: '',
           data: [
             {
-              id:'US_OA_01_view',
-              depth1: 'openApi',
+              id: '',
               depth2: '',
               depth3: '',
-              path: './sub/US_OA_01_view.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.11.28',
-              log: [{ date: '2022.11.29', text: '작업 완료' }],
-            },
-          ]
-        },
-        {
-          depth1: '공공데이터',
-          data: [
-            {
-              id:'US_OD_01_list',
-              depth1: '일반시나리오테이터셋',
-              depth2: 'list',
-              depth3: '',
-              path: './sub/US_OD_01_list.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.11.30',
-              log: [{ date: '2022.12.01', text: '작업완료' }],
-            },
-            {
-              id:'US_OD_01_write',
-              depth1: '일반시나리오테이터셋',
-              depth2: 'write',
-              depth3: '',
-              path: './sub/US_OD_01_write.html',
-              status: 'end',
-              share: 'comp',
-              create: '',
-              log: [{ date: '2022.12.01', text: '작업완료' }],
-            },
-            {
-              id:'US_OD_02_list',
-              depth1: '엣지케이스 시나리오테이터셋',
-              depth2: 'list',
-              depth3: '',
-              path: './sub/US_OD_02_list.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.11.30',
-              log: [{ date: '2022.12.01', text: '작업완료' }],
-            },
-            {
-              id:'US_OD_02_write',
-              depth1: '엣지케이스 시나리오테이터셋',
-              depth2: 'write',
-              depth3: '',
-              path: './sub/US_OD_02_write.html',
-              status: 'end',
-              share: 'comp',
-              create: '',
-              log: [{ date: '2022.12.01', text: '작업완료' }],
-            },
-            {
-              id:'US_OD_03_list',
-              depth1: 'V2X 데이터셋',
-              depth2: '',
-              depth3: '',
-              path: './sub/US_OD_03_list.html',
-              status: 'end',
-              share: 'comp',
-              create: '',
-              log: [{ date: '2022.12.01', text: '작업완료' }],
-            },
-            {
-              id:'US_OD_03_write',
-              depth1: 'V2X 데이터셋',
-              depth2: '',
-              depth3: '',
-              path: './sub/US_OD_03_write.html',
-              status: 'end',
-              share: 'comp',
-              create: '',
-              log: [{ date: '2022.12.01', text: '작업완료' }],
-            },
-          ],
-        },
-        {
-          depth1: '협의체 데이터',
-          data: [
-            {
-              id:'US_AG_01_list',
-              depth1: '일반시나리오테이터셋',
-              depth2: 'list',
-              depth3: '',
-              path: './sub/US_AG_01_list.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.01',
+              depth5: '',
+              depth6: '',
+              path: '',
+              status: 'ing, end, end2, except',
+              create: '20xx.xx.xx',
+              update: '',
               log: [
-                { date: '2022.12.01', text: '작업완료' }
-              ],
-            },
-            {
-              id:'US_AG_02_list',
-              depth1: '엣지케이스 시나리오데이터셋',
-              depth2: 'list',
-              depth3: '',
-              path: './sub/US_AG_02_list.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.01',
-              log: [
-                { date: '2022.12.01', text: '작업완료' }
-              ],
-            },
-            {
-              id:'US_AG_03_list',
-              depth1: 'V2X 데이터셋',
-              depth2: 'list',
-              depth3: '',
-              path: './sub/US_AG_03_list.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.01',
-              log: [
-                { date: '2022.12.01', text: '작업완료' }
-              ],
-            },
-            {
-              id:'US_AG_04',
-              depth1: '공간정보 안내 및 신청',
-              depth2: '',
-              depth3: '',
-              path: './sub/US_AG_04.html',
-              status: 'stay',
-              share: '',
-              create: '',
-              log: [
-              ],
-            },
-            {
-              id:'US_AG_05_01_list<br/>US_AG_05_01_detail',
-              depth1: '데이터셋',
-              depth2: '차량거동정보',
-              depth3: 'list, detail',
-              path: './sub/US_AG_05_01_list.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.01',
-              log: [
-                { date: '2022.12.01', text: '작업완료' }
-              ],
-            },
-            {
-              id:'US_AG_05_02_list<br/>US_AG_05_02_detail',
-              depth1: '데이터셋',
-              depth2: '센서정보',
-              depth3: 'list,, detail',
-              path: './sub/US_AG_05_02_list.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.01',
-              log: [
-              { date: '2022.12.01', text: '작업완료' }
-              ],
-            },
-            {
-              id:'US_AG_05_03_list<br/>US_AG_05_03_detail',
-              depth1: '데이터셋',
-              depth2: '자율주행학습정보',
-              depth3: 'list, detail',
-              path: './sub/US_AG_05_03_list.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.01',
-              log: [
-              { date: '2022.12.01', text: '작업완료' }
-              ],
-            },
-            {
-              id:'US_AG_05_04_list<br/>US_AG_05_04_detail',
-              depth1: '데이터셋',
-              depth2: '융합정보',
-              depth3: 'list,, detail',
-              path: './sub/US_AG_05_04_list.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.01',
-              log: [
-              { date: '2022.12.01', text: '작업완료' }
-              ],
-            },
-            {
-              id:'US_AG_05_05_list<br/>US_AG_05_05_detail',
-              depth1: '데이터셋',
-              depth2: 'V2X 정보',
-              depth3: 'list, detail',
-              path: './sub/US_AG_05_05_list.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.01',
-              log: [
-              { date: '2022.12.01', text: '작업완료' }
-              ],
-            },
-            {
-              id:'US_AG_05_06_list<br/>US_AG_05_06_detail',
-              depth1: '데이터셋',
-              depth2: '기타자율주행정보',
-              depth3: 'list,, detail',
-              path: './sub/US_AG_05_06_list.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.01',
-              log: [
-              { date: '2022.12.01', text: '작업완료' }
-              ],
-            },
-            {
-              id:'US_AG_05_07_list',
-              depth1: '데이터셋',
-              depth2: '데이터셋',
-              depth3: 'list',
-              path: './sub/US_AG_05_07_list.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.01',
-              log: [
-              { date: '2022.12.01', text: '작업완료' }
-              ],
-            },
-            {
-              id:'US_AG_05_07_view',
-              depth1: '데이터셋',
-              depth2: '데이터셋',
-              depth3: 'view',
-              path: './sub/US_AG_05_07_view.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.02',
-              log: [
-              { date: '2022.12.02', text: '작업완료' }
+                //{ date: '', text: '', },
               ],
             },
           ],
         },
+        */
         {
-          depth1: '운행정보보고',
+          depth1: '이음온라인',
           data: [
             {
-              id:'US_DU_01_list',
-              depth1: '교통사고',
-              depth2: 'list',
-              depth3: '',
-              path: './sub/US_DU_01_list.html',
+              company:'이음온라인',
+              year: '2021.05',
+              down1: 'data/download/ieum/2021/05/ieum_report_2105_01.pdf',
+              down2: 'data/download/ieum/2021/05/ieum_report_2105_02.pdf',
+              path: 'ieum/2021/ieum_webAbb.html',
+              date: '2021.04.06 ~ 05.03',
               status: 'end',
-              share: 'comp',
-              create: '2022.12.02',
-              log: [
-              { date: '2022.12.02', text: '작업완료' }
-              ],
+              create: '2022.12.22',
+              etc:'평가원 요청파일:<br/><a href="data/download/ieum/2021/05/ieum_report_ask_2105.pdf" target="_blank">ieum_report_ask_2105.pdf</a>',
             },
             {
-              id:'US_DU_01_write',
-              depth1: '교통사고',
-              depth2: 'write',
-              depth3: '',
-              path: './sub/US_DU_01_write.html',
+              company:'이음온라인',
+              year: '2021.12',
+              down1: 'data/download/ieum/2021/12/ieum_report_2112_01.pdf',
+              down2: '',
+              path: 'ieum/2021/ieum_webAbb.html',
+              date: '2021.04.06 ~ 05.03',
               status: 'end',
-              share: 'comp',
-              create: '2022.12.12',
-              log: [
-              { date: '2022.12.12', text: '작업완료' }
-              ],
+              create: '2022.12.22',
+              etc:'평가원 요청파일:<br/><a href="data/download/ieum/2021/12/ieum_report_ask_2112.pdf" target="_blank">ieum_report_ask_2112.pdf</a>',
             },
             {
-              id:'US_DU_02_list',
-              depth1: '운행정보보고서',
-              depth2: 'list',
-              depth3: '',
-              path: './sub/US_DU_02_list.html',
+              company:'이음온라인',
+              year: '2022',
+              down1: 'data/download/ieum/',
+              down2: 'data/download/ieum/',
+              path: 'ieum/2022/ieum_webAbb.html',
+              date: '2021.04.06 ~ 05.03',
               status: 'end',
-              share: 'comp',
-              create: '2022.12.12',
-              log: [
-              { date: '2022.12.12', text: '작업완료' }
-              ],
-            },
-            {
-              id:'US_DU_02_view',
-              depth1: '운행정보보고서',
-              depth2: 'view',
-              depth3: '',
-              path: './sub/US_DU_02_view.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.12',
-              log: [
-              { date: '2022.12.12', text: '작업완료' }
-              ],
-            },
-            {
-              id:'US_DU_02_write',
-              depth1: '운행정보보고서',
-              depth2: 'write',
-              depth3: '',
-              path: './sub/US_DU_02_write.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.12',
-              log: [
-              { date: '2022.12.12', text: '작업완료' }
-              ],
-            },
-            {
-              id:'US_DU_03__list',
-              depth1: '장치 및 기능변경',
-              depth2: 'list',
-              depth3: '',
-              path: './sub/US_DU_03__list.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.12',
-              log: [
-              { date: '2022.12.12', text: '작업완료' }
-              ],
-            },
-            {
-              id:'US_DU_03__view',
-              depth1: '장치 및 기능변경',
-              depth2: 'view',
-              depth3: '',
-              path: './sub/US_DU_03__view.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.12',
-              log: [
-              { date: '2022.12.12', text: '작업완료' }
-              ],
-            },
-            {
-              id:'US_DU_03__write',
-              depth1: '장치 및 기능변경',
-              depth2: 'write',
-              depth3: '',
-              path: './sub/US_DU_03__write.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.12',
-              log: [
-              { date: '2022.12.12', text: '작업완료' }
-              ],
+              status: 'ing',
+              create: '2022.12.22',
+              etc:'',
             },
           ]
         },
-        {
-          depth1: '자율주행최신동향',
-          data: [
-            {
-              id:'US_TN_01_list',
-              depth1: '자율주행최신동향',
-              depth2: 'list',
-              depth3: '',
-              path: './sub/US_TN_01_list.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.13',
-              log: [
-              { date: '2022.12.13', text: '작업완료' }
-              ],
-            },
-            {
-              id:'US_TN_01_view',
-              depth1: '자율주행최신동향',
-              depth2: 'view',
-              depth3: '',
-              path: './sub/US_TN_01_view.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.13',
-              log: [
-              { date: '2022.12.13', text: '작업완료' }
-              ],
-            },
-            {
-              id:'US_TN_02_list',
-              depth1: '공지사항',
-              depth2: 'list',
-              depth3: '',
-              path: './sub/US_TN_02_list.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.13',
-              log: [
-              { date: '2022.12.13', text: '작업완료' }
-              ],
-            },
-            {
-              id:'US_TN_02_view',
-              depth1: '공지사항',
-              depth2: 'view',
-              depth3: '',
-              path: './sub/US_TN_02_view.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.13',
-              log: [
-              { date: '2022.12.13', text: '작업완료' }
-              ],
-            },
-          ]
-        },
-        {
-          depth1: '데이터 공유센터 시설이용',
-          data: [
-            {
-              id:'US_FA_01',
-              depth1: '차량 플랫폼 공유',
-              depth2: '안내',
-              depth3: '',
-              path: './sub/US_FA_01.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.14',
-              log: [
-              { date: '2022.12.14', text: '작업완료' }
-              ],
-            },
-            {
-              id:'US_FA_02_write',
-              depth1: '차량 플랫폼 공유',
-              depth2: '예약신청',
-              depth3: 'write',
-              path: './sub/US_FA_02_write.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.14',
-              log: [
-              { date: '2022.12.14', text: '작업완료' }
-              ],
-            },
-            {
-              id:'US_FA_02_view',
-              depth1: '차량 플랫폼 공유',
-              depth2: '예약신청',
-              depth3: 'view',
-              path: './sub/US_FA_02_view.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.14',
-              log: [
-              { date: '2022.12.14', text: '작업완료' }
-              ],
-            },
-            {
-              id:'US_FA_02_pop',
-              depth1: '차량 플랫폼 공유',
-              depth2: '예약신청',
-              depth3: 'pop',
-              path: './sub/US_FA_02_pop.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.14',
-              log: [
-              { date: '2022.12.14', text: '작업완료' }
-              ],
-            },
-            {
-              id:'US_FA_03_list',
-              depth1: '차량 플랫폼 공유',
-              depth2: '예약현황 및 취소',
-              depth3: '',
-              path: './sub/US_FA_03_list.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.14',
-              log: [
-              { date: '2022.12.14', text: '작업완료' }
-              ],
-            },
-            {
-              id:'US_FA_04',
-              depth1: '공유센터 이용안내',
-              depth2: '회의실 안내',
-              depth3: '',
-              path: './sub/US_FA_04.html',
-              status: 'end',
-              share: 'comp',
-              create: '2022.12.14',
-              log: [
-              { date: '2022.12.14', text: '작업완료' }
-              ],
-            },
-          ]
-        },
-        {
-          depth1: '이용안내',
-          data: [
-            {
-              id:'US_CE_01',
-              depth1: '데이터공유센터 소개',
-              depth2: '',
-              depth3: '',
-              path: './sub/US_CE_01.html',
-              status: 'ing',
-              share: '',
-              create: '',
-              log: [
-              ],
-            },
-            {
-              id:'US_CE_02',
-              depth1: '공공데이터',
-              depth2: '',
-              depth3: '',
-              path: './sub/US_CE_02.html',
-              status: 'ing',
-              share: '',
-              create: '',
-              log: [
-              ],
-            },
-            {
-              id:'US_CE_03',
-              depth1: '데이터공유 협의체',
-              depth2: '',
-              depth3: '',
-              path: './sub/US_CE_03.html',
-              status: 'ing',
-              share: '',
-              create: '',
-              log: [
-              ],
-            },
-            {
-              id:'US_CE_04',
-              depth1: '법령 및 지침',
-              depth2: '',
-              depth3: '',
-              path: './sub/US_CE_04.html',
-              status: 'ing',
-              share: '',
-              create: '',
-              log: [
-              ],
-            },
-            {
-              id:'US_CE_05',
-              depth1: '자율주행차 임시운행허가',
-              depth2: '',
-              depth3: '',
-              path: './sub/US_CE_05.html',
-              status: 'ing',
-              share: '',
-              create: '',
-              log: [
-              ],
-            },
-          ]
-        },
+        
       ];
 
       var html = '';
@@ -1024,12 +423,33 @@
             return isPrint ? val.replace(/\n/g, '<br>') : '';
           };
           //var type = returnVal('type', 'depth2');
-          var id = returnVal('id');
-          var depth1 = returnVal('depth1');
-          var depth2 = returnVal('depth2');
-          var depth3 = returnVal('depth3');
+          var company = returnVal('company');
+          var year = returnVal('year');
+          var down1 = returnVal('down1');
+          var down2 = returnVal('down2');
+          var date = returnVal('date');
           var path = (function () {
             var val = sectionData[j].path;
+            var href = '';
+            if (val.match(/^\.\//g)) {
+              href = val;
+            } else {
+              href =  val;
+            }
+            return val.length ? '<a href="' + href + '" target="_blank">' + val + '</a>' : '';
+          })();
+          var down1 = (function () {
+            var val = sectionData[j].down1;
+            var href = '';
+            if (val.match(/^\.\//g)) {
+              href = val;
+            } else {
+              href =  val;
+            }
+            return val.length ? '<a href="' + href + '" target="_blank">' + val + '</a>' : '';
+          })();
+          var down2 = (function () {
+            var val = sectionData[j].down2;
             var href = '';
             if (val.match(/^\.\//g)) {
               href = val;
@@ -1042,87 +462,54 @@
             var val = sectionData[j].status;
             var text = '';
             if (val === 'ing') {
-              text = '작업중';
+              text = '심사중';
             } else if (val === 'end') {
-              text = '작업완료';
+              text = '종료';
             } else if (val === 'except') {
-              // 워드앤코드 제거
               text = '제거';
             } else if (val === 'moding') {
-              text = '수정중';
+              text = '심사중';
             } else if (val === 'stay') {
-              text = '대기중';
+              text = '심사대기중';
             }
             return val.length ? '<span class="index-status index-status--' + val + '">' + text + '</span>' : '';
           })();
-          var share = (function () {
-            var val = sectionData[j].share;
-            var textS = '';
-            if (val === 'comp') {
-              textS = '공유';
-            } else if (val === '') {
-            }
-            return val.length ? '<span class="index-share index-share--' + val + '">' + textS + '</span>' : '';
-          })();
           var create = this.create;
-          var update = '';
-          var log = (function () {
-            var val = sectionData[j].log;
-            var length = val.length;
-            var html = '<ul class="index-log">';
-            $.each(val, function (l) {
-              var date = this.date;
-              html += '<li class="index-log__item' + (date === latestDate ? ' is-emphasis' : '') + '"><div class="index-log__item__date">[' + date + ']</div>' + this.text.replace(/\n/g, '<br>') + '</li>';
-              if (length - 1 === l) {
-                update = date;
-              }
-            });
-            html += '</ul>';
-
-            return html;
-          })();
-
+          var etc = this.etc;
+          
           tableHTML +=
             '<tr>' +
             '<td>' +
             (j + 1) +
             '</td>' +
-            //'<td class="index-type">' +
-            //type +
-            //'</td>' +
             '<td>' +
-            id +
+            company +
             '</td>' +
             '<td>' +
-            depth1 +
+            year +
             '</td>' +
             '<td>' +
-            depth2 +
+            down1 +
             '</td>' +
             '<td>' +
-            depth3 +
+            down2 +
             '</td>' +
             '<td>' +
             path +
             '</td>' +
             '<td>' +
-            status +
+              date +
             '</td>' +
             '<td>' +
-            share +
+            status +
             '</td>' +
             '<td class="' +
             (create === latestDate ? ' is-emphasis' : '') +
             '">' +
             create +
             '</td>' +
-            '<td class="' +
-            (update === latestDate ? ' is-emphasis' : '') +
-            '">' +
-            update +
-            '</td>' +
             '<td>' +
-            log +
+            etc +
             '</td>' +
             '</tr>';
 
@@ -1144,30 +531,27 @@
           '<colgroup>' +
           '<col width="50px" />' +
           '<col width="140px" />' +
-          '<col width="170px" />' +
-          '<col width="170px" />' +
-          '<col width="170px" />' +
+          '<col width="80px" />' +
+          '<col width="350px" />' +
+          '<col width="350px" />' +
           '<col width="" />' +
+          '<col width="140px" />' +
+          '<col width="80px" />' +
           '<col width="100px" />' +
-          '<col width="70px" />' +
-          '<col width="110px" />' +
-          '<col width="110px" />' +
-          '<col width="300px" />' +
           '</colgroup>' +
           '<thead>' +
           '<tr>' +
           '<th>No</th>' +
           //'<th>type</th>' +
-          '<th>id</th>' +
-          '<th>depth1</th>' +
-          '<th>depth2</th>' +
-          '<th>depth3</th>' +
-          '<th>path</th>' +
+          '<th>기관명</th>' +
+          '<th>연도</th>' +
+          '<th>검사결과서1</th>' +
+          '<th>검사결과서2</th>' +
+          '<th>진행과정</th>' +
+          '<th>기간</th>' +
           '<th>status</th>' +
-          '<th>share</th>' +
           '<th>create</th>' +
-          '<th>update</th>' +
-          '<th>log</th>' +
+          '<th>비고</th>' +
           '</tr>' +
           '</thead>' +
           '<tbody>' +
