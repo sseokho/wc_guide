@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>워드앤코드 - 웹접근성</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- favicon -->
+    <link rel="icon" href="./dist/asset/resource/images/favicon.co" type="image/x-icon" />
+    <!-- //favicon -->
+
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="./dist/asset/resource/css/ux-common.css" />
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .is-emphasis {
+        font-weight: 700;
+        color: #ff706e;
+      }
+
+      .index-wrap {
+        box-sizing: border-box;
+        min-width: 1600px;
+        padding: 20px;
+      }
+
+      .index-title {
+        font-size: 30px;
+        font-weight:500;
+        line-height: 40px;
+        margin: 0 0 20px;
+      }
+      .index-links{
+        margin-left:-10px;
+      }
+      .index-links:before {
+        content: '';
+        display: table;
+      }
+
+      .index-links__inner {
+        margin: -10px 0 0 -10px;
+      }
+
+      .index-links__inner:after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+
+      .index-links a {
+        display: block;
+        margin: 10px 0 0 10px;
+        float: left;
+        padding: 5px 15px;
+        font-size: 14px;
+        line-height: 20px;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        background: #666;
+      }
+
+      .index-gnb {
+        margin: 20px 0;
+      }
+
+      .index-links{
+        overflow:hidden;
+      }
+      .index-links a{box-sizing:border-box;}
+
+      .index-bottom {
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        min-width: 1900px;
+        box-sizing: border-box;
+        padding: 10px 20px;
+        background: rgba(0, 0, 0, 0.4);
+      }
+
+      .index-bottom a {
+        background-color: #066cb3;
+      }
+
+      .index-section {
+        border-radius: 5px;
+        background-color: #fff;
+      }
+
+      .index-section + .index-section {
+        margin-top: 20px;
+      }
+
+      .index-section--clicked {
+        -webkit-animation: index-section-clicked 0.8s linear;
+        animation: index-section-clicked 0.8s linear;
+      }
+
+      @-webkit-keyframes index-section-clicked {
+        0% {
+          background-color: rgba(255, 255, 255, 1);
+        }
+
+        30% {
+          background-color: rgba(255, 202, 222, 1);
+        }
+
+        70% {
+          background-color: rgba(255, 202, 222, 1);
+        }
+
+        100% {
+          background-color: rgba(255, 255, 255, 1);
+        }
+      }
+
+      @keyframes index-section-clicked {
+        0% {
+          background-color: rgba(255, 255, 255, 1);
+        }
+
+        30% {
+          background-color: rgba(255, 202, 222, 1);
+        }
+
+        70% {
+          background-color: rgba(255, 202, 222, 1);
+        }
+
+        100% {
+          background-color: rgba(255, 255, 255, 1);
+        }
+      }
+
+      .index-section__title {
+        margin: 0;
+        padding: 5px 15px;
+        font-size: 14px;
+        line-height: 20px;
+        color: #fff;
+        border-radius: 5px 5px 0 0;
+        background: #333;
+      }
+
+      .index-table > table {
+        width: 100%;
+        table-layout: fixed;
+        margin: 0;
+        padding: 0;
+        border-spacing: 0;
+        box-sizing: border-box;
+      }
+
+      .index-table > table > thead > tr > th,
+      .index-table > table > tbody > tr > th,
+      .index-table > table > tbody > tr > td {
+        box-sizing: border-box;
+        font-size: 12px;
+        line-height: 18px;
+        text-align: left;
+        padding: 5px 15px;
+        border: 0 solid #cdcdcd;
+        border-width: 0 1px 1px 0;
+        background: none;
+        word-break: keep-all;
+        word-wrap: break-word;
+      }
+      .index-table > table > tbody > tr > td{
+        height:90px;
+      }
+
+      .index-table > table > thead > tr > th:first-child,
+      .index-table > table > tbody > tr > th:first-child,
+      .index-table > table > tbody > tr > td:first-child {
+        border-left-width: 1px;
+        text-align:center;
+      }
+
+      .index-table > table > thead > tr > th {
+        border-top-width: 1px;
+      }
+
+      /*.index-table > table > thead > tr > th:nth-child(2),
+      .index-table > table > thead > tr > td:nth-child(2){
+        text-align:center;
+      }*/
+
+      .index-table > table > thead > tr > th,
+      .index-table > table > tbody > tr > th {
+        background-color: #e8e8e8;
+      }
+
+      .index-table > table > tbody > tr:last-child > td:first-child {
+        border-radius: 0 0 0 5px;
+      }
+
+      .index-table > table > tbody > tr:last-child > td:last-child {
+        border-radius: 0 0 5px 0;
+      }
+
+      .index-status {
+        display: inline-block;
+        vertical-align: top;
+        padding: 3px 8px;
+        margin: -3px 0;
+        background: #999;
+        color: #fff;
+        border-radius: 5px;
+      }
+
+      .index-status--ing {
+        background-color: #ffb01a;
+      }
+
+      .index-status--end {
+        background-color: #00a6a0;
+      }
+
+      .index-status--end2 {
+        font-size: 11px;
+        background-color: #008bce;
+      }
+
+      .index-status--moding {
+        background-color: #ff4594;
+      }
+      .index-share {
+        display: inline-block;
+        vertical-align: top;
+        padding: 3px 8px;
+        margin: -3px 0;
+        background: #999;
+        color: #fff;
+        border-radius: 5px;
+      }
+
+      .index-share--comp {
+        background-color: #ff6c6c;
+      }
+
+      .index-log {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .index-log__item {
+        position: relative;
+        height:18px;
+        padding-left: 80px;
+      }
+
+      .index-log__item__date {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .index-text {
+        margin-bottom: 20px;
+      }
+
+      .index-type {
+        color: #2b5cd9;
+      }
+      .index-table td strong{
+        font-weight:700;
+      }
+      .btn-wrap{
+        display:flex;
+      }
+      .btn-select{margin-left:-.5rem;}
+      .btn-select .btn{display:flex;align-items:center;justify-content:center;width:auto;height:3rem;margin-left:.5rem;padding:0 1rem;font-size:1.4rem;background-color:#eee;border-radius:.2rem;border:1px solid #ddd;color:#000;}
+      .btn-select .btn.is-active{background-color:#555;color:#fff;border:1px solid #333;}
+      .tab-cont{display:none;}
+      .tab-cont.is-active{display:block;}
+      .tab-view{display:none;}
+      .tab-view.is-active{display:block;}
+      .tab-view a{display:inline-block;padding-right:2rem;font-size:1.3rem;font-weight:400;background:url('./dist/asset/resource/images/common/icon/ico_introduce_table_link.jpg') no-repeat 100% center/auto;text-decoration:underline;}
+      .lists li{position:relative;}
+      .lists li::before{content:""}
+      .lists-num{counter-reset: num;}
+      .lists-num > li::before{counter-increment:num;content:counter(num) '. ';}
+      @media (min-width:1024px){
+        .index-table td:nth-child(4) a:hover{
+          color:#ff6c6c;
+          font-weight:500;
+          font-size:1.165rem;
+          text-decoration:underline
+        }
+        .index-table td:nth-child(8) a:hover{
+          color:#ff6c6c;
+          font-weight:500;
+          font-size:1.19rem;
+        }
+        .index-table td a.file-pdf:hover{font-size:1.19rem;color:red}
+        .index-table > table > tbody > tr:hover > th,
+        .index-table > table > tbody > tr:hover > td {
+          background-color: #f6f6f6;
+        }
+        .tab-view a:hover{font-weight:500;font-size:1.25rem;letter-spacing: 0.03rem;}
+        .btn-select .btn:hover{background-color:#555;color:#fff;border:1px solid #333;}
+        .index-links a:hover{
+          background-color:#333;
+          color:#fff;
+        }
+      }
+    </style>
+    <!-- //style -->
+  </head>
+
+  <body>
+    <div class="index-wrap">
+      <h1 class="index-title"></h1>
+      <div class="index-gnb">
+        <div class="index-links">
+          <a href="./dist/guide/guide.html" target="_blank">웹접근성 가이드</a>
+          <a href="https://www.wah.or.kr:444/" target="_blank">웹접근성 연구소</a>
+          <a href="https://nuli.navercorp.com/" target="_blank">웹접근성 NULI</a>
+          <a href="https://www.webpagetest.org/" target="_blank">웹페이지 테스트(영)</a>
+        </div>
+      </div>
+      <div class="index-bottom">
+        <div class="index-links">
+          <div class="index-links__inner" id="nav"></div>
+        </div>
+      </div>
+
+      <!--
+      <div class="index-text">기타 문구</div>
+      -->
+
+      <div class="index-datas" id="indexTable"></div>
+    </div>
+
+    <div class="index-fake-botttom"></div>
+
+    <!-- script -->
+    <script type="text/javascript" src="./dist/asset/resource/js/lib/jquery/jquery-3.6.1.min.js"></script>
+    <script>
+      var title = '워드앤코드 - 웹접근성 목록';
+      var tableData = [
+        /*
+        {
+          depth1: '',
+          data: [
+            {
+              company: '',
+              yearTab: '',
+              yearCont: '',
+              yearData: '',
+            },
+          ],
+        },
+        */
+        {
+          depth1: '이음온라인',
+          data: [
+            {
+              company:'이음온라인',
+
+              yearTab: '<div class="btn-wrap btn-select"><button type="button" class="btn is-active" id="ieum-2021--01">2021 1/2</button><button type="button" class="btn" id="ieum-2021--02">2021 2/2</button><button type="button" class="btn" id="ieum-2022">2022</button><button type="button" class="btn" id="ieum-2023">2023</button></div>',
+
+              yearCont:'<div class="tab-view is-active" data-id="ieum-2021--01"><a href="./dist/sub/ieum/2021/ieum-webAbb__2021--05.html" target="_blank">2021 상반기 상세정보</a></div><div class="tab-view" data-id="ieum-2021--02"><a href="./dist/sub/ieum/2021/ieum-webAbb__2021--12.html" target="_blank">2021 하반기 상세정보</a></div><div class="tab-view" data-id="ieum-2022"><a href="./dist/sub/ieum/2022/ieum_webAbb__2022.html" target="_blank">2022 상세정보</a></div><div class="tab-view" data-id="ieum-2023"><a href="./dist/sub/ieum/2023/ieum_webAbb__2023.html" target="_blank">2023 상세정보</a></div>',
+
+              yearData:'<!-- [[[[[[[ 2021 상반기 ]]]]]]] --><div class="tab-cont is-active" data-id="ieum-2021--01"><p><strong>평가원 요청파일:</strong></p><ul class="lists lists-num lists-num--dot"><li><a href="./dist/asset/data/download/ieum/2021/05/ieum_report_2105_01.pdf" target="_blank" class="file-pdf">2021 상반기 웹접근성 품질인증 심사 결과서(1차)</a></li><li><a href="./dist/asset/data/download/ieum/2021/05/ieum_report_2105_02.pdf" target="_blank" class="file-pdf">2021 상반기 웹접근성 품질인증 심사 결과서(2차)</a></li><li><a href="./dist/asset/data/download/ieum/2021/05/ieum_report_ask_2105.pdf" target="_blank" class="file-pdf">2021 상반기 웹접근성 품질인증 전문가 상세 보고서(2차)</a></li></ul></div><!-- [[[[[[[ 2021 하반기 ]]]]]] --><div class="tab-cont" data-id="ieum-2021--02"><p><strong>평가원 요청파일:</strong></p><ul class="lists lists-num lists-num--dot"><li><a href="./dist/asset/data/download/ieum/2021/12/ieum_report_ask_2112.pdf" target="_blank" class="file-pdf">2021 하반기 웹접근성 품질인증 심사 결과서(1차)</a></li><li><a href="./dist/asset/data/download/ieum/2021/12/ieum_report_2112_01.pdf" target="_blank" class="file-pdf">2021 하반기 웹접근성 품질인증 전문가 상세 보고서(2차)</a></li></ul></div><!-- [[[[[[[ 2022 ]]]]]] --><div class="tab-cont" data-id="ieum-2022"><p><strong>평가원 요청파일:</strong></p><ul class="lists lists-num lists-num--dot"><li><a href="./dist/asset/data/download/ieum/2022/ieum_report_2212_01.pdf" target="_blank" class="file-pdf">2022 웹접근성 품질인증 심사 결과서(1차)</a></li></ul></div><!-- [[[[[[[ 2023 ]]]]]] --><div class="tab-cont" data-id="ieum-2023"><p><strong>평가원 요청파일:</strong></p><ul class="lists lists-num lists-num--dot"><li><a href="./dist/asset/data/download/ieum/2023/ieum_report_2312_01.pdf" target="_blank" class="file-pdf">2023 웹접근성 품질인증 심사 결과서(1차)</a></li><li><a href="./dist/asset/data/download/ieum/2023/ieum_report_ask_2312.pdf" target="_blank" class="file-pdf">2023 웹접근성 품질인증 전문가 상세 보고서(2차)</a></li></ul></div>',
+            },
+          ]
+        },
+        
+      ];
+
+      var html = '';
+      var navHTML = '';
+      var totalIndex = 0;
+      var dates = (function () {
+        var array = [];
+
+        function add(date) {
+          if (typeof date === 'string' && date.length && array.indexOf(date) === -1) {
+            array.push(date);
+          }
+        }
+
+        $.each(tableData, function (i) {
+          var sectionData = tableData[i].data;
+          $.each(sectionData, function (j) {
+            add(this.create);
+            $.each(sectionData[j].log, function (l) {
+              add(this.date);
+            });
+          });
+        });
+
+        array.sort();
+
+        return array;
+      })();
+      var latestDate = dates[dates.length - 1];
+
+      $.each(tableData, function (i) {
+        var sectionIndex = i;
+        var sectionData = tableData[i].data;
+        var tableHTML = '';
+
+        $.each(sectionData, function (j) {
+          var returnVal = function (key, secondTestKey) {
+            var val = sectionData[j][key];
+            var secondTestVal = sectionData[j][secondTestKey];
+            var prevIndex = j - 1;
+            var isPrint = true;
+            if (prevIndex >= 0) {
+              if (sectionData[prevIndex][key] === val) {
+                isPrint = false;
+              }
+              if (typeof secondTestKey === 'string' && secondTestKey.length && !sectionData[j].depthOnly) {
+                if (sectionData[prevIndex][key] === val && sectionData[prevIndex][secondTestKey] === secondTestVal) {
+                  isPrint = false;
+                } else {
+                  isPrint = true;
+                }
+              }
+            }
+            return isPrint ? val.replace(/\n/g, '<br>') : '';
+          };
+          var yearTab = this.yearTab;
+          var create = this.create;
+          var yearData = this.yearData;
+          var yearCont = this.yearCont;
+          
+          tableHTML +=
+            '<tr>' +
+            '<td>' +
+            (j + 1) +
+            '</td>' +
+            '<td>' +
+            yearTab +
+            '</td>' +
+            '<td>' +
+            yearCont +
+            '</td>' +
+            '<td>' +
+            yearData +
+            '</td>' +
+            '</tr>';
+          totalIndex++;
+        });
+
+        navHTML += '<a href="#section' + i + '">' + tableData[i].depth1 + '</a>';
+
+        html +=
+          '<div class="index-section" id="section' +
+          i +
+          '">' +
+          '<h2 class="index-section__title">' +
+          tableData[i].depth1 +
+          status +
+          '</h2>' +
+          '<div class="index-table">' +
+          '<table>' +
+          '<colgroup>' +
+          '<col width="50px" />' +
+          '<col width="500px" />' +
+          '<col width="500px" />' +
+          '<col width="" />' +
+          '</colgroup>' +
+          '<thead>' +
+          '<tr>' +
+          '<th>No</th>' +
+          '<th>연도별 탭</th>' +
+          '<th>연도별 컨텐츠</th>' +
+          '<th>연도별 자료</th>' +
+          '</tr>' +
+          '</thead>' +
+          '<tbody>' +
+          tableHTML +
+          '</tbody>' +
+          '</table>' +
+          '</div>' +
+          '</div>';
+      });
+
+      $('title, .index-title').text(title);
+      $('#nav').append(navHTML);
+      $('#indexTable').append(html);
+
+      var $nav = $('.index-bottom');
+      var $doc = $(document);
+      var $win = $(window);
+
+      function paddingBottom() {
+        $('.index-fake-botttom').css('height', $nav.outerHeight());
+      }
+
+      var clickedTimer = null;
+
+      $doc.on('click', '#nav a', function () {
+        var $this = $(this);
+        var href = $this.attr('href');
+        var $target = $(href);
+        var $sections = $('.index-section');
+
+        $sections.removeClass('index-section--clicked');
+
+        clearTimeout(clickedTimer);
+
+        clickedTimer = setTimeout(function () {
+          $target.addClass('index-section--clicked');
+        }, 100);
+      });
+      $doc.on('click', '.btn-select .btn', function(){
+        var $this = $(this),
+        tabId = $this.attr('id'),
+        tabCont = $(`.tab-cont[data-id="${tabId}"], .tab-view[data-id="${tabId}"]`);
+
+        $('.btn-select .btn').removeClass('is-active');
+        $('.tab-cont').removeClass('is-active');
+        $('.tab-view').removeClass('is-active');
+        $this.addClass('is-active');
+        tabCont.addClass('is-active');
+      })
+
+      $win
+        .on('scroll', function () {
+          var scrollLeft = $win.scrollLeft();
+          $nav.css('margin-left', -scrollLeft);
+        })
+        .on('resize', function () {
+          paddingBottom();
+        })
+        .on('load', function () {
+          paddingBottom();
+        });
+    </script>
+    <!-- //script -->
+  </body>
+</html>

@@ -1,29 +1,18 @@
-@media screen and (min-width: 320px) {
-  html {
-    font-size: 32.5%;
-  }
+html, body {
+  font-size: 62.5%;
 }
-@media screen and (min-width: 360px) {
-  html {
-    font-size: 42.5%;
-  }
-}
-@media screen and (min-width: 480px) {
-  html {
+
+@media (max-width: 1024px) {
+  html, body {
     font-size: 52.5%;
   }
 }
-@media screen and (min-width: 600px) {
-  html {
-    font-size: 62.5%;
+@media (max-width: 360px) {
+  html, body {
+    font-size: 42.5%;
   }
 }
-@media screen and (min-width: 1400px) {
-  .gnb-depth--02 {
-    background-size: contain;
-  }
-}
-@media screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   header.is-open .gnb > a:hover {
     font-weight: 600;
     color: #0053b3;
