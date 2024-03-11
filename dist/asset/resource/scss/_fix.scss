@@ -55,39 +55,42 @@
             margin-left:auto;
         }
         &-5{
-            margin-left:5px !important;
+            margin-left:.5rem !important;
         }
         &-10{
-            margin-left:10px;
+            margin-left:1rem;
+        }
+        &-15{
+            margin-left:1.5rem;
         }
         &-20{
-            margin-left:20px;
+            margin-left:2rem;
         }
         &-30{
-            margin-left:30px;
+            margin-left:3rem;
         }
         &-40{
-            margin-left:40px;
+            margin-left:4rem;
         }
         &-50{
-            margin-left:50px;
+            margin-left:5rem;
         }
     }
     &t{
         &-10{
-            margin-top:10px;
+            margin-top:1rem;
         }
         &-20{
-            margin-top:20px;
+            margin-top:2rem;
         }
         &-30{
-            margin-top:30px;
+            margin-top:3rem;
         }
         &-40{
-            margin-top:40px;
+            margin-top:4rem;
         }
         &-50{
-            margin-top:50px;
+            margin-top:5rem;
         }
     }
     &b{
@@ -100,47 +103,50 @@
             margin-right:5px !important;
         }
         &-10{
-            margin-right:10px;
+            margin-right:1rem;
         }
     }
     &x{
         &-10{
-            margin-left:10px;
-            margin-right:10px;
+            margin-left:1rem;
+            margin-right:1rem;
         }
     }
 }
 .lists{
     li{
         position:relative;
-        padding-left:10px;
+        padding-left:1rem;
         &::before{
             @include pos(absolute, $t:0, $l:0);
             content:""
         }
     }
     &-bar{
-        li{
+        > li{
             &::before{
                 content:"-"
             }
         }
     }
     &-dot{
-        li{
+        > li{
             &::before{
                 content:"·"
             }
         }
     }
     &-cir{
-        li{
+        > li{
             &::before{
+                width:.4rem;
+                height:.4rem;
+                border:1px solid #000;
                 border-radius:100%;
             }
         }
         &--s{
-            li{
+            > li{
                 &::before{
                     width:2px;
                     height:2px;
@@ -175,13 +181,13 @@
         font-size:24px;
     }
     &-20{
-        font-size:20px;
+        font-size:2rem;
     }
     &-16{
         font-size:16px;
     }
     &-10{
-        font-size:10px;
+        font-size:1rem;
     }
     &W{
         &-b{font-weight:bold}
@@ -205,7 +211,7 @@
             font-size:24px
         }
         &04{
-            font-size:20px
+            font-size:2rem
         }
         &05{
             font-size:16px
@@ -227,7 +233,7 @@
             font-size:24px
         }
         &04{
-            font-size:20px
+            font-size:2rem
         }
         &05{
             font-size:16px
@@ -240,5 +246,11 @@
 .ta{
     &-c{
         text-align:center;
+    }
+    &-l{
+        text-align:left;
+    }
+    &-r{
+        text-align:right;
     }
 }

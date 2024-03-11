@@ -1,6 +1,6 @@
 @charset 'UTF-8';
 
-@import  'reset.css', 'font.css', 'fix.css', 'common.css', 'responsive.css' ;
+@import  'reset.css', 'font.css', 'fix', 'common', 'responsive.css' ;
 
 /** element */
-@import 'ui-button.css', 'ui-table.css', 'ui-form.css', 'ui-plugin.css', 'ui-layout.css', 'mixin';
+@import 'ui-button', 'ui-table', 'ui-form', 'ui-plugin', 'ui-layout', 'mixin', 'svg';

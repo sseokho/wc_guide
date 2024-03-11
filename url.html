@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <title>워드앤코드 - 가이드</title>
+    <title>워드앤코드 - 가이드 리스트</title>
 
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -164,6 +164,7 @@
       .index-table > table > tbody > tr > td {
         box-sizing: border-box;
         font-size: 12px;
+        font-weight:700;
         line-height: 18px;
         text-align: left;
         padding: 5px 15px;
@@ -173,9 +174,9 @@
         word-break: keep-all;
         word-wrap: break-word;
       }
-      .index-table > table > tbody > tr > td{
+      /*.index-table > table > tbody > tr > td{
         height:90px;
-      }
+      }*/
 
       .index-table > table > thead > tr > th:first-child,
       .index-table > table > tbody > tr > th:first-child,
@@ -250,18 +251,25 @@
         list-style: none;
         margin: 0;
         padding: 0;
+        margin-top:-1rem;
       }
 
       .index-log__item {
+        display:flex;
+        flex-wrap:wrap;
         position: relative;
+        width:100%;
         height:18px;
-        padding-left: 80px;
+        line-height: 1.5;
+        font-weight:400;
+        /*padding-left: 80px;*/
       }
-
+      .index-log__item + .index-log__item{margin-top:.5rem;}
+      
       .index-log__item__date {
-        position: absolute;
-        top: 0;
-        left: 0;
+        margin-right:1rem;
+        font-weight:500;
+        line-height: 1.5;
       }
 
       .index-text {
@@ -320,20 +328,20 @@
   <body>
     <div class="index-wrap">
       <h1 class="index-title"></h1>
-      <div class="index-gnb">
+      <!-- <div class="index-gnb">
         <div class="index-links">
           <a href="./webabb.html" target="_blank">웹접근성</a>
         </div>
-      </div>
+      </div> -->
       <div class="index-bottom">
         <div class="index-links">
           <div class="index-links__inner" id="nav"></div>
         </div>
       </div>
 
-      <!--
-      <div class="index-text">기타 문구</div>
-      -->
+      
+      <!-- <div class="index-text">기타 문구</div> -->
+     
 
       <div class="index-datas" id="indexTable"></div>
     </div>
@@ -343,36 +351,83 @@
     <!-- script -->
     <script type="text/javascript" src="./dist/asset/resource/js/lib/jquery/jquery-3.6.1.min.js"></script>
     <script>
-      var title = '워드앤코드 - 가이드';
+      var title = '워드앤코드 - 가이드 리스트';
       var tableData = [
         /*
         {
           depth1: '',
           data: [
             {
-              company: '',
-              yearTab: '',
-              yearCont: '',
-              yearData: '',
+              id: '',
+              depth2: '',
+              depth3: '',
+              depth5: '',
+              depth6: '',
+              path: '',
+              status: 'ing, end, end2, except',
+              create: '20xx.xx.xx',
+              update: '',
+              log: [
+                //{ date: '', text: '', },
+              ],
             },
           ],
         },
         */
         {
-          depth1: '이음온라인',
+          depth1: '웹접근성',
           data: [
             {
-              company:'이음온라인',
-
-              yearTab: '<div class="btn-wrap btn-select"><button type="button" class="btn is-active" id="ieum-2021--01">2021 1/2</button><button type="button" class="btn" id="ieum-2021--02">2021 2/2</button><button type="button" class="btn" id="ieum-2022">2022</button><button type="button" class="btn" id="ieum-2023">2023</button></div>',
-
-              yearCont:'<div class="tab-view is-active" data-id="ieum-2021--01"><a href="./dist/sub/ieum/2021/ieum-webAbb__2021--05.html" target="_blank">2021 상반기 상세정보</a></div><div class="tab-view" data-id="ieum-2021--02"><a href="./dist/sub/ieum/2021/ieum-webAbb__2021--12.html" target="_blank">2021 하반기 상세정보</a></div><div class="tab-view" data-id="ieum-2022"><a href="./dist/sub/ieum/2022/ieum_webAbb__2022.html" target="_blank">2022 상세정보</a></div><div class="tab-view" data-id="ieum-2023"><a href="./dist/sub/ieum/2023/ieum_webAbb__2023.html" target="_blank">2023 상세정보</a></div>',
-
-              yearData:'<!-- [[[[[[[ 2021 상반기 ]]]]]]] --><div class="tab-cont is-active" data-id="ieum-2021--01"><p><strong>평가원 요청파일:</strong></p><ul class="lists lists-num lists-num--dot"><li><a href="./dist/asset/data/download/ieum/2021/05/ieum_report_2105_01.pdf" target="_blank" class="file-pdf">2021 상반기 웹접근성 품질인증 심사 결과서(1차)</a></li><li><a href="./dist/asset/data/download/ieum/2021/05/ieum_report_2105_02.pdf" target="_blank" class="file-pdf">2021 상반기 웹접근성 품질인증 심사 결과서(2차)</a></li><li><a href="./dist/asset/data/download/ieum/2021/05/ieum_report_ask_2105.pdf" target="_blank" class="file-pdf">2021 상반기 웹접근성 품질인증 전문가 상세 보고서(2차)</a></li></ul></div><!-- [[[[[[[ 2021 하반기 ]]]]]] --><div class="tab-cont" data-id="ieum-2021--02"><p><strong>평가원 요청파일:</strong></p><ul class="lists lists-num lists-num--dot"><li><a href="./dist/asset/data/download/ieum/2021/12/ieum_report_ask_2112.pdf" target="_blank" class="file-pdf">2021 하반기 웹접근성 품질인증 심사 결과서(1차)</a></li><li><a href="./dist/asset/data/download/ieum/2021/12/ieum_report_2112_01.pdf" target="_blank" class="file-pdf">2021 하반기 웹접근성 품질인증 전문가 상세 보고서(2차)</a></li></ul></div><!-- [[[[[[[ 2022 ]]]]]] --><div class="tab-cont" data-id="ieum-2022"><p><strong>평가원 요청파일:</strong></p><ul class="lists lists-num lists-num--dot"><li><a href="./dist/asset/data/download/ieum/2022/ieum_report_2212_01.pdf" target="_blank" class="file-pdf">2022 웹접근성 품질인증 심사 결과서(1차)</a></li></ul></div><!-- [[[[[[[ 2023 ]]]]]] --><div class="tab-cont" data-id="ieum-2023"><p><strong>평가원 요청파일:</strong></p><ul class="lists lists-num lists-num--dot"><li><a href="./dist/asset/data/download/ieum/2023/ieum_report_2312_01.pdf" target="_blank" class="file-pdf">2023 웹접근성 품질인증 심사 결과서(1차)</a></li><li><a href="./dist/asset/data/download/ieum/2023/ieum_report_ask_2312.pdf" target="_blank" class="file-pdf">2023 웹접근성 품질인증 전문가 상세 보고서(2차)</a></li></ul></div>',
+              path: './dist/sub/webabb/index.html',
+              create: '2024.03.07',
+              update: '',
+              log: [
+                { date: 'v.24.02', text: '이음 온라인 웹접근성 업로드', },
+                { date: 'v.24.03', text: '수소 웹접근성 업데이트', },
+              ],
             },
           ]
         },
-        
+        {
+          depth1: '대시보드',
+          data: [
+            {
+              path: './dist/sub/dashboard/index.html',
+              create: '2024.03.07',
+              update: '',
+              log: [
+                { date: 'v.24.02', text: '대쉬보드 초기화 세팅', },
+                { date: 'v.24.03', text: '대쉬보드 인덱스 업데이트', },
+              ],
+            },
+          ]
+        },
+        {
+          depth1: '스타일',
+          data: [
+            {
+              path: './dist/sub/style/index.html',
+              create: '2024.03.07',
+              update: '',
+              log: [
+                { date: 'v.24.03', text: '스타일 업로드', },
+              ],
+            },
+          ]
+        },
+        {
+          depth1: '관리업체 링크',
+          data: [
+            {
+              path: './dist/sub/cooper/index.html',
+              create: '2024.03.07',
+              update: '',
+              log: [
+                { date: 'v.24.03', text: '워드앤코드 관리 업체 업로드', },
+              ],
+            },
+          ]
+        },
       ];
 
       var html = '';
@@ -428,26 +483,57 @@
             }
             return isPrint ? val.replace(/\n/g, '<br>') : '';
           };
-          var yearTab = this.yearTab;
+          var path = (function () {
+            var val = sectionData[j].path;
+            var href = '';
+            if (val.match(/^\.\//g)) {
+              href = val;
+            } else {
+              href =  val;
+            }
+            return val.length ? '<a href="' + href + '" target="_blank">' + val + '</a>' : '';
+          })();
           var create = this.create;
-          var yearData = this.yearData;
-          var yearCont = this.yearCont;
-          
+          var update = '';
+          var log = (function () {
+            var val = sectionData[j].log;
+            var length = val.length;
+            var html = '<ul class="index-log">';
+            $.each(val, function (l) {
+              var date = this.date;
+              html += '<li class="index-log__item' + (date === latestDate ? ' is-emphasis' : '') + '"><div class="index-log__item__date">[' + date + ']</div>' + this.text.replace(/\n/g, '<br>') + '</li>';
+              if (length - 1 === l) {
+                update = date;
+              }
+            });
+            html += '</ul>';
+
+            return html;
+          })();
+
           tableHTML +=
             '<tr>' +
             '<td>' +
             (j + 1) +
             '</td>' +
             '<td>' +
-            yearTab +
+            path +
+            '</td>' +
+            '<td class="' +
+            (create === latestDate ? ' is-emphasis' : '') +
+            '">' +
+            create +
+            '</td>' +
+            '<td class="' +
+            (update === latestDate ? ' is-emphasis' : '') +
+            '">' +
+            update +
             '</td>' +
             '<td>' +
-            yearCont +
-            '</td>' +
-            '<td>' +
-            yearData +
+            log +
             '</td>' +
             '</tr>';
+
           totalIndex++;
         });
 
@@ -465,16 +551,18 @@
           '<table>' +
           '<colgroup>' +
           '<col width="50px" />' +
-          '<col width="500px" />' +
-          '<col width="500px" />' +
-          '<col width="" />' +
+          '<col width="300px" />' +
+          '<col width="120px" />' +
+          '<col width="120px" />' +
+          '<col width="auto" />' +
           '</colgroup>' +
           '<thead>' +
           '<tr>' +
           '<th>No</th>' +
-          '<th>연도별 탭</th>' +
-          '<th>연도별 컨텐츠</th>' +
-          '<th>연도별 자료</th>' +
+          '<th>path</th>' +
+          '<th>create</th>' +
+          '<th>update</th>' +
+          '<th>log</th>' +
           '</tr>' +
           '</thead>' +
           '<tbody>' +
@@ -513,17 +601,6 @@
           $target.addClass('index-section--clicked');
         }, 100);
       });
-      $doc.on('click', '.btn-select .btn', function(){
-        var $this = $(this),
-        tabId = $this.attr('id'),
-        tabCont = $(`.tab-cont[data-id="${tabId}"], .tab-view[data-id="${tabId}"]`);
-
-        $('.btn-select .btn').removeClass('is-active');
-        $('.tab-cont').removeClass('is-active');
-        $('.tab-view').removeClass('is-active');
-        $this.addClass('is-active');
-        tabCont.addClass('is-active');
-      })
 
       $win
         .on('scroll', function () {

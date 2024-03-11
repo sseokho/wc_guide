@@ -216,3 +216,8 @@ $n-breakpoint: map-get($n-breakpoints, n-sm);
         color: #{$num};
     }
 }
+@mixin font($s, $w, $c){
+    font-size:$s + #{'rem'};
+    font-weight:$w;
+    color:$c;
+}

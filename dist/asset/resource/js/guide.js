@@ -3,7 +3,9 @@
 $(function () {
     $('html').fnInit();
     buttonFn();
+    sideNav();
     folderTreeFn('.directory-tree-wrap');
+
 });
 
 $.fn.tabFn = function () {
@@ -73,7 +75,48 @@ function folderTreeFn(obj){
     })
 }
 
+function sideNav(){ //side link navigation
+    const scrollToSection = {
+        init: function() {
+            this.navLinks = document.querySelectorAll('.side-nav a');
+            this.boxSections = document.querySelectorAll('.box-section');
+            const observer = new IntersectionObserver(this.handleIntersection, {
+                rootMargin: '-50% 0px -50% 0px',
+                threshold: 0
+            });
+            this.navLinks.forEach((link, index) => {
+                link.addEventListener('click', (event) => this.handleClick(event, index));
+            });
+            this.boxSections.forEach((section, index) => {
+                observer.observe(section);
+            });
+        },
+        handleClick: function(event, index) {
+            event.preventDefault(); // Prevent default link behavior
+            const targetBox = document.getElementById(`box-section--0${index + 1}`);
+            if (targetBox) {
+                this.navLinks.forEach(link => link.classList.remove('is-active'));
+                event.target.classList.add('is-active');
+                targetBox.scrollIntoView({ behavior: 'smooth' });
+            }
+        },
+        handleIntersection: function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const index = Array.from(scrollToSection.boxSections).indexOf(entry.target);
+                    scrollToSection.navLinks.forEach(link => {
+                        link.classList.remove('is-active');
+                    });
+                    scrollToSection.navLinks[index].classList.add('is-active');
+                }
+            });
+        }
+    };
+    scrollToSection.init();
+}
+
 $.fn.fnInit = function () {
     $('.custom-sel').setFormFn();
     $('.el-tab-wrap').tabFn();
 };
+
