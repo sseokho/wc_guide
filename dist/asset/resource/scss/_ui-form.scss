@@ -3,19 +3,19 @@
 @import 'svg';
 
 input, select{
-    height:40px;
-    padding:0 15px;
-    padding-right:40px;
-    font-size:15px;
+    height:4rem;
+    padding:0 1.5rem;
+    padding-right:4rem;
+    font-size:1.5rem;
     font-weight:400;
     color:#000;
     border:1px solid #e0e4e6;
     border-radius:4px;
-    line-height:40px;
+    line-height:4rem;
     text-indent:0;
     background-color:#fff;
     &::placeholder{
-        font-size:15px;
+        font-size:1.5rem;
         font-weight:500;
         color:#000;
     }
@@ -27,7 +27,7 @@ input, select{
 }
 input{
     &[class*='js-datepicker']{
-        background:#fff url('../image/common/icon/icon-calendar.png') no-repeat 90% center/17px 17px;
+        background:#fff url('../image/common/icon/icon-calendar.png') no-repeat 90% center/1.7rem 1.7rem;
     }
     &:disabled{
         background-color:#ddd;
@@ -40,25 +40,25 @@ select{
         background-color:#ddd;
     }
     &.ui-form-width--xs{
-        padding-left:10px;
-        padding-right:15px;
+        padding-left:1rem;
+        padding-right:1.5rem;
     }
 }
 textarea{
-    padding:10px;
+    padding:1rem;
     outline:none;
     resize:none;
     border-radius:3px;
     border:1px solid #e0e4e6;
-    font-size:14px;
+    font-size:1.4rem;
 }
 
 .sch{
     &-area{
         &--box{
-            padding:20px 0;
+            padding:2rem 0;
             input{
-                max-width:285px;
+                max-width:28.5rem;
                 &::placeholder{
                     color:#747478;
                 }
@@ -69,10 +69,10 @@ textarea{
                 }
             }
             label{
-                margin-left:3px;
+                margin-left:.3rem;
                 &:first-child{
                     select{
-                        padding-right:70px;
+                        padding-right:7rem;
                         background-position:95% center;
                     }
                 }
@@ -99,7 +99,7 @@ textarea{
         }
         &__detail{
             display:none;
-            padding:15px 20px;
+            padding:1.5rem 2rem;
             background-color:#f0f0f0;
             text-align: center;
             &.is-open{
@@ -115,25 +115,25 @@ textarea{
         }
         &-width{
             &--140{
-                width:140px;
+                width:14rem;
             }
             &--100{
-                width:100px;
+                width:10rem;
             }
             &--l{
-                width:450px
+                width:45rem
             }
             &--m{
-                width:346px
+                width:34.6rem
             }
             &--r{
-                width:250px
+                width:25rem
             }
             &--s{
-                width:158px
+                width:15.8rem
             }
             &--xs{
-                width:50px;
+                width:5rem;
             }
             &--full{
                 width:100%;
@@ -144,7 +144,7 @@ textarea{
         }
         &-height{
             &--100{
-                height:100px;
+                height:10rem;
             }
         }
         &-block{
@@ -165,8 +165,8 @@ textarea{
             &__span{
                 position:relative;
                 display:inline-block;
-                width:20px;
-                height:20px;
+                width:2rem;
+                height:2rem;
                 border-radius:100%;
                 border:1px solid #000;
                 vertical-align: middle;
@@ -185,8 +185,8 @@ textarea{
                     border:1px solid #0061cd;
                     &::before{
                         @include pos(absolute, $t:50%, $l:50%);
-                        width:13px;
-                        height:13px;
+                        width:1.3rem;
+                        height:1.3rem;
                         border-radius:100%;
                         background-color:#0061cd;
                         transform:translate(-50%, -50%);
@@ -195,7 +195,7 @@ textarea{
                 }
             }
             &__txt{
-                font-size:18px;
+                font-size:1.8rem;
             }
         }
     }
@@ -203,20 +203,20 @@ textarea{
 
 .file{
 	position: relative;
-	font-size: 17px;
+	font-size: 1.7rem;
 	font-weight: 600;
     &__upload{
         &--name{
             display:inline-block;
-            width:580px;
-            height:40px;
-            padding:0 10px;
-            margin-right:5px;
+            width:58rem;
+            height:4rem;
+            padding:0 1rem;
+            margin-right:.5rem;
             vertical-align: middle;
             border:1px solid #ddd;
             color:#999;
             &::placeholder{
-                font-size:15px;
+                font-size:1.5rem;
                 font-weight:400;
                 color:#747478;
             }
@@ -224,7 +224,7 @@ textarea{
     }
 	&__input{
         display:flex;
-        width:700px;
+        width:70rem;
 		background-color: rgba(255, 255, 255, .1);
 		border-radius: 3px;
 		color: rgba(255, 255, 255, .3);
@@ -250,14 +250,14 @@ textarea{
 			align-items: center;
 			margin-bottom: 0;
 			cursor: pointer;
-            width:120px;
-            height:40px;
-            padding-left:22px;
+            width:12rem;
+            height:4rem;
+            padding-left:2.2rem;
             border-radius: 3px;
             box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.18);
-            font-size:15px;
+            font-size:1.5rem;
             color: #fff;
-            background:#003471 url('../image/common/icon/icon-uploadFile.png') no-repeat 15% center/21px 18px;
+            background:#003471 url('../image/common/icon/icon-uploadFile.png') no-repeat 15% center/2.1rem 1.8rem;
             cursor: pointer;
             &Find{
                 padding-left:0;
@@ -270,10 +270,10 @@ textarea{
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-        margin-top:10px;
+        margin-top:1rem;
 		color: rgba(255, 255, 255, .6);
         + .file__value{
-            margin-top:5px;
+            margin-top:.5rem;
         }
 		&:hover{
 			&:after{
@@ -285,9 +285,9 @@ textarea{
             align-items:center;
             width:auto;
             border:1px solid #ddd;
-            height:40px;
-            padding:0 20px;
-            font-size:15px;
+            height:4rem;
+            padding:0 2rem;
+            font-size:1.5rem;
             border-radius:3px;
             color:#000;
             cursor:pointer;
@@ -302,16 +302,16 @@ textarea{
         &--remove{
             position:relative;
             display: block;
-            width: 20px;
-            height: 20px;
-            margin-left:30px;
+            width: 2rem;
+            height: 2rem;
+            margin-left:3rem;
             &::before, &::after{
                 position:absolute;
                 top:50%;
                 left:50%;
                 background-color:#a0a8ab;
                 width:2px;
-                height:10px;
+                height:1rem;
                 content:"";
             }
             &::before{

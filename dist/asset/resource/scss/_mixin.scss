@@ -197,7 +197,7 @@ $n-breakpoint: map-get($n-breakpoints, n-sm);
 }
 @mixin font($s, $w){
     font: {
-        size:$s + px;
+        size:$s + rem;
         weight:$w;
     }
 }

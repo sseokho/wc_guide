@@ -13,21 +13,21 @@ footer{
     }
 }
 .btn{
-    height:40px;
-    font-size:16px;
-    border-radius:5px;
+    height:4rem;
+    font-size:1.6rem;
+    border-radius:.5rem;
     vertical-align:middle;
     + .btn{
-        margin-left:5px;
+        margin-left:.5rem;
     }
     &-row{
         display:flex;
     }
     &--sch{
-        width:40px;
-        height:40px;
-        margin-left:3px;
-        border-radius:4px;
+        width:4rem;
+        height:4rem;
+        margin-left:.3rem;
+        border-radius:.4rem;
         background:#0053b3 url('../image/common/icon/icon-sch.png') no-repeat center center/auto;
         &:hover{
             color:#fff;
@@ -35,7 +35,7 @@ footer{
         }
     }
     &--schDetail{
-        padding:0 27px;
+        padding:0 2.7rem;
         color:#fff;
         background-color:#003471;
         &:hover{
@@ -45,30 +45,30 @@ footer{
     }
     &-wrap{
         button{
-            height:50px;
+            height:5rem;
         }
     }
     &-width{
         &--s{
-            width:100px
+            width:10rem
         }
         &--m{
-            width:150px
+            width:15rem
         }
         &--l{
-            width:190px
+            width:19rem
         }
     }
     &-height{
         &--s{
-            height:30px;
+            height:3rem;
             line-height:normal;
         }
         &--m{
-            height:40px
+            height:4rem
         }
         &--l{
-            height:50px
+            height:5rem
         }
     }
     &-color{
@@ -108,14 +108,14 @@ footer{
         }
     }
     &--report{
-        height:36px;
-        padding:0 17px;
-        padding-left:38px;
-        font-size:13px;
+        height:3.6rem;
+        padding:0 1.7rem;
+        padding-left:3.8rem;
+        font-size:1.3rem;
         color:#fff;
         border:1px solid #fff;
-        border-radius:5px;
-        line-height:36px;
+        border-radius:.5rem;
+        line-height:3.6rem;
         background:url('../image/common/icon/icon-exclam--yellow.png') no-repeat 10% 55%/auto;
     }
     &--download{

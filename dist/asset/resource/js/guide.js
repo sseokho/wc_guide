@@ -5,6 +5,8 @@ $(function () {
     buttonFn();
     sideNav();
     folderTreeFn('.directory-tree-wrap');
+    subsenarioFn();
+    toggleBtnFn();
 
 });
 
@@ -115,8 +117,87 @@ function sideNav(){ //side link navigation
     scrollToSection.init();
 }
 
+function subsenarioFn(){
+    /** 시나리오 swiper **/
+    function scenarioSwiper1(swiperClassName, totalSlides, paginationClass) {
+        // Create a swiper instance
+        const ScenarioSwiper = new Swiper(`.${swiperClassName}`, {
+            loop:false,
+            slidesPerView:'auto',
+            breakpoints:{
+                320:{
+                    allowTouchMove:true,
+                },
+                1024:{
+                    allowTouchMove:false,
+                }
+            },
+            // pagination:{
+            //     el: `.${paginationClass} .swiper-pagination`,
+            //     type:'fraction',
+            //     formatFractionCurrent: function (number) {
+            //         return ('0' + number).slice(-2);
+            //     },
+            //     formatFractionTotal: function (number) {
+            //         return ('0' + number).slice(-2);
+            //     },
+            //     renderFraction: function (currentClass, totalSlides) {
+            //         return '<span class="' + currentClass + '"></span>' +
+            //                 '<em></em>' +
+            //                 '<span class="' + totalSlides + '"></span>';
+            //     },
+            // },
+            // navigation: {
+            //     nextEl: `.${paginationClass} .swiper-button-next`,
+            //     prevEl: `.${paginationClass} .swiper-button-prev`,
+            // },
+        });
+        return ScenarioSwiper;
+    }
+
+    // Swiper 인스턴스 생성 및 이벤트 핸들러 등록
+    const swipers = [
+        { className: 'side-nav .swiper', totalSlides: 6, paginationClass: 'swiper-control' },
+    ];
+    swipers.forEach(({ className, totalSlides, paginationClass }) => {
+        const swiperInstance = scenarioSwiper1(className, totalSlides, paginationClass);
+        // swiperInstance.on('slideChange', () => handleSlideChange(swiperInstance));
+    });
+}
+
+function toggleBtnFn(){
+    let BODY = document.body;
+    let SIDENAV = document.querySelector('.side-nav');
+    let MODESWITCH = SIDENAV.querySelector('.btn-modeSwitch');
+    let DARKMODE = localStorage.getItem('dark-mode');
+
+    /** 
+     * dark | light switch mode 
+     **/
+    const enableDarkMode = () => {
+        MODESWITCH.classList.replace('fa-sun', 'fa-moon');
+        BODY.classList.add('switch-dark');
+        localStorage.setItem('dark-mode', 'enabled');
+    };
+    const disableDarkMode = () => {
+        MODESWITCH.classList.replace('fa-moon', 'fa-sun');
+        BODY.classList.remove('switch-dark');
+        localStorage.setItem('dark-mode', 'disabled');
+    };
+    if (DARKMODE === 'enabled') {
+        enableDarkMode();
+    }
+    MODESWITCH.onclick = (e) => {
+        DARKMODE = localStorage.getItem('dark-mode');
+        if (DARKMODE === 'disabled') {
+        enableDarkMode();
+        } else {
+        disableDarkMode();
+        }
+    };
+}
+
 $.fn.fnInit = function () {
     $('.custom-sel').setFormFn();
     $('.el-tab-wrap').tabFn();
 };
-

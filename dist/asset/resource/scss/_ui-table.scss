@@ -10,9 +10,9 @@
     }
     &-cap{
         display:flex;
-        margin-bottom:8px;
+        margin-bottom:.8rem;
         > p{
-            font-size:15px;
+            font-size:1.5rem;
             color:#000;
             span{
                 color:#f18200;
@@ -20,11 +20,11 @@
             + p{
                 &::before{
                     display:inline-block;
-                    margin:0 16px;
-                    margin-right:12px;
+                    margin:0 1.6rem;
+                    margin-right:1.2rem;
                     margin-bottom:2px;
                     width:1px;
-                    height:13px;
+                    height:1.3rem;
                     background-color:#d0d5d7;
                     vertical-align: middle;
                     content:""
@@ -38,13 +38,13 @@
         tr{
             &.has-form{
                 td{
-                    padding:5px 10px;
+                    padding:.5rem 1rem;
                 }
             }
         }
         th, td{
-            padding:15px 20px;
-            font-size:16px;
+            padding:1.5rem 2rem;
+            font-size:1.6rem;
             font-weight:400;
             color:#000;
             vertical-align: middle;

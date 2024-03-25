@@ -5,35 +5,35 @@
 .layout{
     &-container{
         &__inner{
-            max-width:1400px;
+            max-width:140rem;
             margin:0 auto;
-            padding-top:50px;
+            padding-top:5rem;
         }
         &--row{
             display:flex;
         }
     }
     &-content{
-        width:calc(100% - 280px);
+        width:calc(100% - 28rem);
         &__inner{
         }
         &__tit{
-            font-size:30px;
+            font-size:3rem;
             font-weight:600;
             color:#000;
         }
         &__subtit{
-            font-size:22px;
+            font-size:2.2rem;
             font-weight:500;
             color:#000;
         }
         &__top{
             display:flex;
             align-items:flex-end;
-            margin-bottom:20px;
+            margin-bottom:2rem;
         }
         &__view{
-            margin-top:30px;
+            margin-top:3rem;
         }
     }
 }
@@ -42,7 +42,7 @@
         + .layout{
             &-content{
                 &__subtit{
-                    margin-top:30px;
+                    margin-top:3rem;
                 }
             }
         }

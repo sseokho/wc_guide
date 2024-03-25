@@ -48,12 +48,12 @@
 }
 
 .lnb {
-  width: 240px;
-  margin-right: 40px;
+  width: 24rem;
+  margin-right: 4rem;
 }
 .lnb__tit {
-  margin-bottom: 20px;
-  font-size: 26px;
+  margin-bottom: 2rem;
+  font-size: 2.6rem;
   font-weight: 500;
 }
 .lnb-item {
@@ -62,8 +62,8 @@
 .lnb-item > a {
   position: relative;
   display: block;
-  padding: 20px;
-  font-size: 16px;
+  padding: 2rem;
+  font-size: 1.6rem;
   font-weight: 500;
   border-left: 1px solid #e0e4e6;
   border-right: 1px solid #e0e4e6;
@@ -74,13 +74,13 @@
   border-top: none;
 }
 .lnb-item:first-child > a {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
   border-top: 1px solid #e0e4e6;
 }
 .lnb-item:last-child > a {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   border-bottom: 1px solid #e0e4e6;
 }
 .lnb-item:last-child.is-open > a {
@@ -88,8 +88,8 @@
   border-bottom: none;
 }
 .lnb-item:last-child.is-open .lnb-depth--02 {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   border-bottom: 1px solid #e0e4e6;
 }
 .lnb-item.is-active > a {
@@ -100,10 +100,10 @@
 .lnb-item.is-active > a span {
   position: absolute;
   top: 50%;
-  right: 15px;
-  width: 8px;
-  height: 11px;
-  background: url("../image/common/icon/icon-clamp__right--white.png") no-repeat 90% center/8px 11px;
+  right: 1.5rem;
+  width: 0.8rem;
+  height: 1.1rem;
+  background: url("../image/common/icon/icon-clamp__right--white.png") no-repeat 90% center/0.8rem 1.1rem;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   content: "";
@@ -117,8 +117,8 @@
 .lnb-item.hasChild > a::before, .lnb-item.hasChild > a::after {
   position: absolute;
   top: 50%;
-  right: 20px;
-  width: 11px;
+  right: 2rem;
+  width: 1.1rem;
   height: 2px;
   background-color: #a0a8ab;
   -webkit-transform: translateY(-50%);
@@ -142,7 +142,7 @@
 }
 .lnb-depth--02 {
   display: none;
-  padding: 25px 10px 25px 30px;
+  padding: 2.5rem 1rem 2.5rem 3rem;
   border-top: 1px solid #e0e4e6;
   border-left: 1px solid #e0e4e6;
   border-right: 1px solid #e0e4e6;
@@ -152,7 +152,7 @@
   background: url("../image/common/icon/icon-clamp__right.png") no-repeat 95% center/auto;
 }
 .lnb-depth--02 li > a {
-  font-size: 15px;
+  font-size: 1.5rem;
   font-weight: 500;
   color: #747478;
 }
@@ -161,7 +161,7 @@
   background-color: #747478;
 }
 .lnb-depth--02 li + li {
-  margin-top: 20px;
+  margin-top: 2rem;
 }
 
 .location {
@@ -174,7 +174,7 @@
 }
 .location li {
   position: relative;
-  font-size: 15px;
+  font-size: 1.5rem;
   font-weight: 400;
   color: #747478;
 }
@@ -184,10 +184,10 @@
 }
 .location li + li::before {
   display: inline-block;
-  margin: 0 10px;
+  margin: 0 1rem;
   width: 7px;
-  height: 10px;
-  background: url("../image/sub/icon/icon-clamp--location.png") no-repeat 0 0/7px 10px;
+  height: 1rem;
+  background: url("../image/sub/icon/icon-clamp--location.png") no-repeat 0 0/7px 1rem;
   content: "";
 }
 
@@ -230,7 +230,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 3rem;
   margin-bottom: 80px;
 }
 .paging a {
@@ -245,7 +245,7 @@
           justify-content: center;
   width: 36px;
   height: 36px;
-  font-size: 15px;
+  font-size: 1.5rem;
   font-weight: 500;
   border: 1px solid #dde3e6;
   border-radius: 100%;
@@ -260,7 +260,7 @@
 }
 
 .el-hyphen {
-  width: 10px;
+  width: 1rem;
   height: 2px;
   background-color: #a0a8ab;
 }
@@ -271,7 +271,7 @@
   color: red;
 }
 .el-box {
-  padding: 25px 15px;
+  padding: 2.5rem 1.5rem;
   background-color: #f7f7f7;
 }
 .el-box--border {
@@ -279,7 +279,7 @@
 }
 
 .editor-view {
-  padding: 20px 0;
+  padding: 2rem 0;
 }
 .editor-view__link {
   margin: 0;
@@ -288,17 +288,17 @@
 
 .noticeView-wrap .crack__links a {
   display: block;
-  padding-left: 30px;
-  font-size: 16px;
+  padding-left: 3rem;
+  font-size: 1.6rem;
   background: url("../image/common/icon/icon-download--blue.png") no-repeat 0 0/17px 17px;
   line-height: 1.3;
 }
 .noticeView-wrap .crack__links a + a {
-  margin-top: 15px;
+  margin-top: 1.5rem;
 }
 .noticeView-wrap .crack__tit {
   margin-right: 45px;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 500;
   color: #000;
 }
@@ -319,13 +319,13 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 20px;
+  margin-top: 2rem;
 }
 .noticeView__capt * {
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 .noticeView__capt dt {
-  margin-right: 10px;
+  margin-right: 1rem;
   font-weight: 400;
   color: #000;
 }
@@ -335,8 +335,8 @@
 }
 .noticeView__capt dd + dt {
   position: relative;
-  margin-left: 20px;
-  padding-left: 20px;
+  margin-left: 2rem;
+  padding-left: 2rem;
 }
 .noticeView__capt dd + dt::before {
   position: absolute;
@@ -354,7 +354,7 @@
   border-bottom: 1px solid #eceff0;
 }
 .noticeView__cont p {
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 1.7;
 }
 .noticeView__link > div[class^=link-] {
@@ -364,19 +364,19 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 15px 0;
+  padding: 1.5rem 0;
   border-bottom: 1px solid #eceff0;
 }
 .noticeView__link > div[class^=link-] a {
   display: block;
-  margin-left: 20px;
+  margin-left: 2rem;
   font-size: 14px;
 }
 .noticeView__link div[class$=__capt] {
   width: 100px;
   height: 35px;
   border-bottom: 1px solid #eceff0;
-  padding: 10px 0;
+  padding: 1rem 0;
   background-color: #325073;
   font-size: 14px;
   font-weight: 500;
@@ -388,7 +388,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 25px 40px;
+  padding: 2.5rem 40px;
   background-color: #f5f8fb;
   border-bottom: 1px solid #e6e6e6;
 }
@@ -430,7 +430,7 @@
           transform: translateY(0);
 }
 .popup-header {
-  padding: 15px 0;
+  padding: 1.5rem 0;
   border-bottom: 2px solid #305363;
 }
 .popup-header .popup-close {
@@ -449,7 +449,7 @@
 }
 .popup__inner {
   width: 100%;
-  padding: 15px 30px 30px;
+  padding: 1.5rem 3rem 3rem;
   height: auto;
 }
 .popup-cont {
@@ -473,7 +473,7 @@
   font-weight: 500;
 }
 .popup-box__date {
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 500;
   color: #0053b3;
 }

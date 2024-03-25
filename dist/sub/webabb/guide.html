@@ -4,21 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../asset/resource/css/lib/prism.css">
-    <link rel="stylesheet" href="../asset/resource/css/ux-common.css">
-    <link rel="stylesheet" href="../asset/resource/css/guide.css">
-    <script type="text/javascript" src="../asset/resource/js/lib/jquery/jquery-3.6.1.min.js"></script>
-    <script type="text/javascript" src="../asset/resource/js/lib/prism.js"></script>
-    <script type="text/javascript" src="../asset/resource/js/guide.js"></script>
-    <title>워드앤코드 웹접근성 가이드</title>
+    <link rel="stylesheet" href="../../asset/resource/css/lib/prism.css">
+    <link rel="stylesheet" href="../../asset/resource/css/ux-common.css">
+    <link rel="stylesheet" href="../../asset/resource/css/lib/swiper.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../../asset/resource/css/guide.css">
+    <script type="text/javascript" src="../../asset/resource/js/lib/jquery/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="../../asset/resource/js/lib/prism.js"></script>
+    <script type="text/javascript" src="../../asset/resource/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="../../asset/resource/js/guide.js"></script>
+    <title>웹접근성 가이드</title>
 </head>
 <body>
     <div class="wrap">
         <header class="header">
-            <div class="header__inner">
-                <h1 class="header__logo">
-                    워드앤코드 - 웹접근성 가이드
-                </h1>
+            <div class="header__inner d-flex align-center">
+                <div class="header--left col-11">
+                    <h1 class="header__tit">
+                        웹접근성 가이드
+                    </h1>
+                    <p class="p-txt">
+                        웹접근성 가이드는 웹접근성 검사결과서에 기초를 둔다.
+                    </p>
+                    <p class="p-txt">
+                        더 자세한 설명을 확인하려면 웹접근성 검사 기준 PDF(<a href="../../asset/data/WA_품질인증심사_세부지표(KWCAG2.1).pdf" style="text-decoration:underline" target="_blank"> WA_품질인증심사_세부지표(KWCAG2.1).pdf</a> )를 확인.</p>
+                    </p>
+                </div>
+                <div class="header--right col-1">
+                    <span class="img-wrap">
+                        <img src="../../asset/resource/images/sub/webab/mark_wa.png" alt="과학기술정보통신부 WEB 접근성">
+                    </span>
+                </div>
             </div>
         </header>
         <section class="container">
@@ -26,7 +42,366 @@
                 <div class="content">
                     <div class="content__inner p-20">
                         
-                        
+                        <section class="d-flex md-flex-wrap">
+                            <article class="box-wrap box-wrap--left col-10">
+                                <div class="box-section" id="box-section--01">
+                                    <h1 class="box-section__mainTit fas fa-cube">
+                                        웹접근성의 정의 및 소개
+                                    </h1>
+                                    <h2 class="box-section__tit">정보통신접근성 ( WEB 접근성 )이란?</h2>
+                                    <h3 class="box-section__txt">
+                                        정보통신접근성 (Web 접근성)은 「지능정보화기본법」에 따라 장애인이나 고령자분들이 웹 사이
+                                        트에서 제공하는 정보를 비장애인과 동등하게 접근하고 이용 할 수 있도록 보장하는 것으로 웹 
+                                        접근성 준수는 법적의무사항 입니다
+                                    </h3>
+                                    <h2 class="box-section__tit">인증마크 소개</h2>
+                                    <h3 class="box-section__txt">
+                                        「지능정보화기본법」제47조와 제48조에 따라 장애인 및 고령자가 웹 사이트 이용에 불편이 없
+                                        도록 웹 접근성 지침을 준수한 우수 사이트에 대해 적합여부를 심사하여 품질인증 마크를 부여
+                                        하고 있습니다
+                                    </h3>
+                                    <h2 class="box-section__tit">인증기관 소개</h2>
+                                    <ul class="lists lists-bar">
+                                        <li><span class="color--royalblue">기관명</span> : (사)한국장애인단체총연합회 한국웹접근성인증평가원</li>
+                                        <li><span class="color--royalblue">대표</span> : 장 윤 식</li>
+                                        <li><span class="color--royalblue">인증기관 지정번호</span> : 제2014-01호</li>
+                                        <li><span class="color--royalblue">사업자등록번호</span> : 107-82-16788</li>
+                                        <li><span class="color--royalblue">E-mail</span> : wa@wa.or.kr</li>
+                                        <li><span class="color--royalblue">Tel</span> : 02-858-7220</li>
+                                        <li><span class="color--royalblue">Fax</span> : 02-851-7220</li>
+                                        <li><span class="color--royalblue">주소</span> : 서울특별시 영등포구 양평로 149 A동 1004~5호 (선유도 우림라이온스밸리)</li>
+                                    </ul>
+                                    <h2 class="box-section__tit">심사적용지침</h2>
+                                    <h3 class="box-section__txt">
+                                        한국형 웹 콘텐츠 접근성 지침 2.1 (KWCAG 2.1)<br/>
+                                        과학기술정보통신부 웹 접근성 품질인증 표준 운영지침 과 심사지침
+                                    </h3>
+                                    <h2 class="box-section__tit">전문가 심사환경</h2>
+                                    <ul class="lists lists-bar">
+                                        <li>PC 웹: 크롬(Chrome) 최신 버전</li>
+                                        <li>모바일 웹: 모바일 환경으로 User Agent 변경 가능한 브라우저 최신버전</li>
+                                    </ul>
+                                    <h2 class="box-section__tit">사용자 장애유형 및 특성</h2>
+                                    <div class="table-wrap">
+                                        <table class="table-basic table-basic--kind">
+                                            <caption>사용자 장애유형 및 특성 테이블 - 전맹 시각장애, 저시력 시각장애, 지체(상지) 또는 뇌병변 장애가 있는 분들을 장애유형, 등급/조건, 구분, 환경 및 특성, 비고를 기준으로 하여 구분함</caption>
+                                            <colgroup>
+                                                <col class="table-col--01">
+                                                <col class="table-col--02">
+                                                <col class="table-col--03">
+                                                <col class="table-col--04">
+                                                <col class="table-col--05">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">장애유형</th>
+                                                    <th scope="col">등급/조건</th>
+                                                    <th scope="col">구분</th>
+                                                    <th scope="col">환경 및 특성</th>
+                                                    <th scope="col">비고</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th rowspan="2">전맹<br/>시각장애</th>
+                                                    <td rowspan="6">중증<br>장애인에<br>준함</td>
+                                                    <td>PC 웹</td>
+                                                    <td>PC화면 낭독프로그램 사용, 키보드만 사용</td>
+                                                    <td>본 가이드에서 정한 2가지 화면낭독기 중 하나 이상 성공해야 인정</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>모바일 웹</td>
+                                                    <td class="ta-l">모바일 스크린리더 사용, 모든 손가락 사용</td>
+                                                    <td class="ta-l">Voiceover, Talkback 등으로 임의터치방식 진행</td>
+                                                </tr>
+                                                <tr>
+                                                    <th rowspan="2">저시력<br/>시각장애</th>
+                                                    <td>PC 웹</td>
+                                                    <td class="ta-l">확대 및 고대비 기능 사용, 마우스, 키보드 사용</td>
+                                                    <td rowspan="2" class="ta-l">화면 확대, 반전, 고대비 등 사용</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>모바일 웹</td>
+                                                    <td class="ta-l">확대 및 고대비 기능 사용, 모든 손가락 사용</td>
+                                                </tr>
+                                                <tr>
+                                                    <th rowspan="2">지체(상지) 또는 뇌병변 장애</th>
+                                                    <td>PC 웹</td>
+                                                    <td class="ta-l">키보드만 사용</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>모바일 웹</td>
+                                                    <td class="ta-l">하나의 터치수단 사용(예: 한 손가락만 사용)</td>
+                                                    <td class="ta-l">터치방식으로 진행 또는 화면낭독기 환경에서 대체 수단 인정</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <h2 class="box-section__tit">테스트 계정 제공</h2>
+                                    <h3 class="box-section__txt">
+                                        심사대상의 중요한 콘텐츠에 접속하기 위한 테스트 계정이 필요한 경우 신청인에게 요구 할 수 있고, 테스트 계정을 제출하지 않는 경우 인증심사를 거절할 수 있다.
+                                    </h3>
+                                    <h2 class="box-section__tit">합격기준</h2>
+                                    <ul class="lists lists-cir">
+                                        <li>
+                                            전문가심사 합격기준
+                                            <ul class="lists lists-bar">
+                                                <li>각 항목별 공통오류 와 과락없이 <span class="color--red">95% 이상시 합격</span></li>
+                                                <li>신규심사 (심사팀장 1명을 포함한 전문가심사원 3명)</li>
+                                                <li>갱신심사 (심사팀장 1명을 포함한 전문가심사원 1명)
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="mt-10">
+                                            사용자심사 합격기준
+                                            <ul class="lists lists-bar">
+                                                <li>과업별 15분이내 <span class="color--red">100% 과업 달성시 합격</span></li>
+                                                <li>신규심사 (심사팀장 1명을 포함한 사용자심사원 3명 (전맹, 저시력, 상지 또는 뇌병변))</li>
+                                                <li>갱신심사 (심사팀장 1명을 포함한 사용자심사원 1명 (전맹, 상지 또는 뇌병변))</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <h2 class="box-section__tit">기술심사의 원칙</h2>
+                                    <h3 class="box-section__txt">
+                                        기술심사는 1차 심사만 실시하는 것을 원칙으로 한다.
+                                    </h3>
+                                    <h2 class="box-section__tit">2차심사 적용대상</h2>
+                                    <ul class="lists lists-bar">
+                                        <li>전문가심사 결과 18개 이상의 검사항목이 95%이상 준수한 경우</li>
+                                        <li>전문가심사 결과 전체 검사항목 평균 준수율이 85%이상인 경우</li>
+                                        <li>사용자심사 결과 과업 성공률 85%이상인 경우</li>
+                                    </ul>
+                                    <h2 class="box-section__tit">2차심사 보완기간</h2>
+                                    <h3 class="box-section__txt">
+                                        1차 심사에서 불합격후 최대 7일 이내. 단, 시스템 운영 특성으로 인해 반영이 늦어지는 경우 최대 30일까지 연장 할 수있다.
+                                    </h3>
+                                    <h2 class="box-section__tit">2차심사시 페이지 변경심사</h2>
+                                    <h3 class="box-section__txt">
+                                        1차 심사에서 정한 샘플링의 최소 20% 이상의 페이지 또는 콘텐츠를 신규로 선정하여 심사한다.
+                                    </h3>
+                                </div>
+                                <div class="box-section" id="box-section--02">
+                                    <h1 class="box-section__mainTit fas fa-cube">
+                                        웹접근성 평가 리스트
+                                    </h1>
+                                    <div class="table-wrap">
+                                        <table class="table-basic table-basic--evalList">
+                                            <caption>웹접근성 평가 리스트 테이블</caption>
+                                            <colgroup>
+                                                <col class="table-col--01">
+                                                <col class="table-col--02">
+                                            </colgroup>
+                                            <tr>
+                                                <th scope="row">적절한 대체 텍스트 제공</th>
+                                                <td>
+                                                    <p>
+                                                        텍스트 아닌 콘텐츠는 그 의미나 용도를 이해할 수 있도록 대체 텍스트를 제공해야 한다.
+                                                    </p>
+                                                    <ul class="lists lists-bar">
+                                                        <li>
+                                                            의미 있는 텍스트가 아닌 콘텐츠에 그 의미나 용도를 동등하게 인식할 수 있는 적절
+                                                            한 대체 텍스트를 제공한 경우에 준수한 것으로 인정
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">자막 제공</th>
+                                                <td>
+                                                    멀티미디어 콘텐츠에는 자막, 원고 또는 수화를 제공해야 한다.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">색에 무관한 콘텐츠 인식</th>
+                                                <td>
+                                                    콘텐츠는 색에 관계없이 인식될 수 있어야 한다
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">명확한 지시사항 제공</th>
+                                                <td>
+                                                    지시사항은 모양, 크기, 위치, 방향, 색, 소리 등에 
+                                                    관계없이 인식될 수 있어야 한다.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">텍스트 콘텐츠의 명도 대비</th>
+                                                <td>
+                                                    텍스트 콘텐츠와 배경 간의 명도 대비는 
+                                                    4.5대 1 이상이어야 한다.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">자동재생 금지</th>
+                                                <td>
+                                                    자동으로 소리가 재생되지 않아야 한다.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">콘텐츠 간의 구분</th>
+                                                <td>
+                                                    이웃한 콘텐츠는 구분될 수 있어야 한다.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">키보드 사용 보장</th>
+                                                <td>
+                                                    모든 기능은 키보드만으로도 사용 할 수 있어야 
+                                                    한다.(PC웹)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">누르기 동작 지원</th>
+                                                <td>
+                                                    터치(touch) 기반 모바일 기기의 모든 컨트롤은 
+                                                    누르기 동작으로 제어할 수 있어야 한다.(모바일 웹)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">초점 이동</th>
+                                                <td>
+                                                    키보드에 의한 초점은 논리적으로 이동해야 하며 시각적
+                                                    으로 구별할 수 있어야 한다.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">조작 가능</th>
+                                                <td>
+                                                    사용자 입력 및 컨트롤은 조작 가능하도록 제공되어야 한다.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">응답시간 조절</th>
+                                                <td>
+                                                    시간제한이 있는 콘텐츠는 응답시간을 조절할 수 있어야 한다.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">정지 기능 제공</th>
+                                                <td>
+                                                    자동으로 변경되는 콘텐츠는 움직임을 제어할 수 있어야 한다
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">깜빡임과 번쩍임 사용 제한</th>
+                                                <td>
+                                                    초당 3~50회 주기로 깜빡이거나 번쩍이는 콘텐츠를 제공하지 않아야 한다.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">반복 영역 건너뛰기</th>
+                                                <td>
+                                                    콘텐츠의 반복되는 영역은 건너뛸 수 있어야 한다.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">제목 제공</th>
+                                                <td>
+                                                    페이지, 프레임, 콘텐츠 블록에는 적절한 제목을 제공해야 한다.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">적절한 링크 텍스트</th>
+                                                <td>
+                                                    링크 텍스트는 용도나 목적을 이해할 수 있도록 제공해야 한다.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">기본 언어 표시</th>
+                                                <td>
+                                                    주로 사용하는 언어를 명시해야 한다.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">사용자 요구에 따른 실행</th>
+                                                <td>
+                                                    사용자가 의도하지 않은 기능(새 창, 초점 변화 등)은 실행되지 않아야 한다.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">콘텐츠의 선형화</th>
+                                                <td>
+                                                    콘텐츠는 논리적인 순서로 제공해야 한다.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">표의 구성</th>
+                                                <td>
+                                                    표는 이해하기 쉽게 구성해야 한다.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">레이블 제공</th>
+                                                <td>
+                                                    입력 서식에는 대응하는 레이블을 제공해야 한다.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">오류 정정</th>
+                                                <td>
+                                                    입력 오류를 정정할 수 있는 방법을 제공해야 한다.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">마크업 오류 방지</th>
+                                                <td>
+                                                    마크업 언어의 요소는 열고 닫음, 중첩 관계 및 
+                                                    속성 선언에 오류가 없어야 한다.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">웹 애플리케이션 접근성 준수</th>
+                                                <td>
+                                                    콘텐츠에 포함된 웹 애플리케이션은 
+                                                    접근성이 있어야 한다.
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                    <h2 class="box-section__tit"></h2>
+                                    <h3 class="box-section__txt">
+                                    </h3>
+                                    <h2 class="box-section__tit"></h2>
+                                    <h3 class="box-section__txt">
+                                    </h3>
+                                    <h2 class="box-section__tit"></h2>
+                                    <h3 class="box-section__txt">
+                                    </h3>
+                                </div>
+                                <div class="box-section" id="box-section--03">3</div>
+                                <div class="box-section" id="box-section--04">4</div>
+                                <div class="box-section" id="box-section--05">5</div>
+                            </article>
+                            <article class="box-wrap box-wrap--right col-2 ml-15">
+                                <div class="side-nav">
+                                    <p class="side-nav--tit">
+                                        INDEX
+                                        <button type="button" data-id="toggle-lightSet" class="btn-modeSwitch fas fa-sun" title="다크모드 변환"></button>
+                                    </p>
+                                    <div class="swiper">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href="" class="is-active">웹접근성의 정의 및 소개</a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="">웹접근성 평가 리스트</a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="">3</a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="">4</a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="">5</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </section>
 
                     </div>
                 </div>
