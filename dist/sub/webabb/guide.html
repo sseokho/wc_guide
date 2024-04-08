@@ -5,18 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../asset/resource/css/lib/prism.css">
-    <link rel="stylesheet" href="../../asset/resource/css/ux-common.css">
+    <link rel="stylesheet" href="../../asset/resource/css/lib/jquery-ui.css">
     <link rel="stylesheet" href="../../asset/resource/css/lib/swiper.min.css">
+    <link rel="stylesheet" href="../../asset/resource/css/ux-common.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../../asset/resource/css/guide.css">
-    <script type="text/javascript" src="../../asset/resource/js/lib/jquery/jquery-3.6.1.min.js"></script>
-    <script type="text/javascript" src="../../asset/resource/js/lib/prism.js"></script>
-    <script type="text/javascript" src="../../asset/resource/js/lib/swiper.min.js"></script>
-    <script type="text/javascript" src="../../asset/resource/js/guide.js"></script>
     <title>웹접근성 가이드</title>
 </head>
 <body>
     <div class="wrap">
+        <div class="skip-nav">
+            <a href="#side-nav" class="skip-nav__link">주메뉴 이동</a>
+            <a href="#box-section--1" class="skip-nav__link">컨텐츠 이동</a>
+        </div>
         <header class="header">
             <div class="header__inner d-flex align-center">
                 <div class="header--left col-11">
@@ -44,7 +45,7 @@
                         
                         <section class="d-flex md-flex-wrap">
                             <article class="box-wrap box-wrap--left col-10">
-                                <div class="box-section" id="box-section--01">
+                                <div class="box-section" id="box-section--1">
                                     <h1 class="box-section__mainTit fas fa-cube">
                                         웹접근성의 정의 및 소개
                                     </h1>
@@ -125,7 +126,7 @@
                                                     <td class="ta-l">확대 및 고대비 기능 사용, 모든 손가락 사용</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="2">지체(상지) 또는 뇌병변 장애</th>
+                                                    <th rowspan="2">지체(상지) 또는<br/>뇌병변 장애</th>
                                                     <td>PC 웹</td>
                                                     <td class="ta-l">키보드만 사용</td>
                                                     <td></td>
@@ -181,20 +182,28 @@
                                         1차 심사에서 정한 샘플링의 최소 20% 이상의 페이지 또는 콘텐츠를 신규로 선정하여 심사한다.
                                     </h3>
                                 </div>
-                                <div class="box-section" id="box-section--02">
+                                <div class="box-section" id="box-section--2">
                                     <h1 class="box-section__mainTit fas fa-cube">
                                         웹접근성 평가 리스트
                                     </h1>
                                     <div class="table-wrap">
-                                        <table class="table-basic table-basic--evalList">
+                                        <table class="table-basic table-basic--evalList draggable-x">
                                             <caption>웹접근성 평가 리스트 테이블</caption>
                                             <colgroup>
                                                 <col class="table-col--01">
                                                 <col class="table-col--02">
+                                                <col class="table-col--03">
                                             </colgroup>
                                             <tr>
-                                                <th scope="row">적절한 대체 텍스트 제공</th>
-                                                <td>
+                                                <th scope="row" colspan="3" class="rule-tit">원칙1) <br/>인식의 용이성</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" rowspan="11">
+                                                    <a href="" class="evalList-tit">
+                                                        적절한 대체 텍스트 제공
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
                                                     <p>
                                                         텍스트 아닌 콘텐츠는 그 의미나 용도를 이해할 수 있도록 대체 텍스트를 제공해야 한다.
                                                     </p>
@@ -207,195 +216,1116 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">자막 제공</th>
+                                                <th scope="row">1-1</th>
                                                 <td>
-                                                    멀티미디어 콘텐츠에는 자막, 원고 또는 수화를 제공해야 한다.
+                                                    &lt;img&gt;,&lt;input type="image"&gt; 등 이미지 요소에 대해 alt 속성을 제공하지 않거나
+                                                    alt속성은 선언되었으나 그 내용이 img의 내용을 대체할 수 없는 경우 그리고 오타로
+                                                    표기되어 의미가 변경된 경우
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">색에 무관한 콘텐츠 인식</th>
+                                                <th scope="row">1-2</th>
                                                 <td>
-                                                    콘텐츠는 색에 관계없이 인식될 수 있어야 한다
+                                                    불릿이나 배경이미지 등 의미 없는 이미지에 alt 속성을 제공하지 않거나 공백이 아닌
+                                                    불필요한 대체 텍스트를 제공한 경우
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">명확한 지시사항 제공</th>
+                                                <th scope="row">1-3</th>
                                                 <td>
-                                                    지시사항은 모양, 크기, 위치, 방향, 색, 소리 등에 
-                                                    관계없이 인식될 수 있어야 한다.
+                                                    &lt;longdesc&gt; 속성을 이용했으나 파일이 연결되지 않은 경우 또는 longdesc로 연결
+                                                    된 파일의 내용이 longdesc속성을 부여한 img가 가진 내용의 의미나 기능을 파악
+                                                    하기 어려운 경우
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">텍스트 콘텐츠의 명도 대비</th>
+                                                <th scope="row">1-4</th>
                                                 <td>
-                                                    텍스트 콘텐츠와 배경 간의 명도 대비는 
-                                                    4.5대 1 이상이어야 한다.
+                                                    &lt;area&gt; 요소나 &lt;longdesc&gt; 속성을 사용하였으나 area나 longdesc의 서술 대상인 
+                                                    <img> 요소 자체에 alt 속성을 적절하게 제공하지 않은 경우
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">자동재생 금지</th>
+                                                <th scope="row">1-5</th>
                                                 <td>
-                                                    자동으로 소리가 재생되지 않아야 한다.
+                                                    이미지맵을 사용하여 조직의 관계나 프로세스 등 복잡한 이미지의 내용을 대체텍
+                                                    스트로 설명하였으나, 순서가 맞지 않거나 설명이 부족하여 원래의 이미지의 내용을
+                                                    대신할 수 없다고, 판단되는 경우
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">콘텐츠 간의 구분</th>
+                                                <th scope="row">1-6</th>
                                                 <td>
-                                                    이웃한 콘텐츠는 구분될 수 있어야 한다.
+                                                    img 요소의 대체텍스트를 title만으로 제공하는 경우
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">키보드 사용 보장</th>
+                                                <th scope="row">1-7</th>
                                                 <td>
-                                                    모든 기능은 키보드만으로도 사용 할 수 있어야 
-                                                    한다.(PC웹)
+                                                    QR코드 등과 같이 시각적인 정보만으로 확인이 가능한 콘텐츠(기능)의 이동 주소 정보 
+                                                    등을 대체텍스트 또는 설명, 링크 등으로 제공하지 않은 경우
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">누르기 동작 지원</th>
+                                                <th scope="row">1-8</th>
                                                 <td>
-                                                    터치(touch) 기반 모바일 기기의 모든 컨트롤은 
-                                                    누르기 동작으로 제어할 수 있어야 한다.(모바일 웹)
+                                                    배경 이미지가 의미 있는 정보를 제공하고 있으나 이를 텍스트 형태의 정보로 제공
+                                                    하지 않은 경우
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">초점 이동</th>
+                                                <th scope="row">1-9</th>
                                                 <td>
-                                                    키보드에 의한 초점은 논리적으로 이동해야 하며 시각적
-                                                    으로 구별할 수 있어야 한다.
+                                                    배경 이미지로 의미 있는 정보를 제공하고 이를 텍스트 형태의 정보로 제공하고 
+                                                    있으나, 그 텍스트 정보를 보조기기에서 확인할 수 없는 경우
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">조작 가능</th>
+                                                <th scope="row">1-10</th>
                                                 <td>
-                                                    사용자 입력 및 컨트롤은 조작 가능하도록 제공되어야 한다.
+                                                    사용자가 직접 대체 텍스트가 필요한 콘텐츠를 등록할 때(예: 게시판에 콘텐츠 등록), 해당 콘텐츠에 대한 대체 콘텐츠를 입력 하는 기능을 제공하지 않은 경우
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">응답시간 조절</th>
-                                                <td>
-                                                    시간제한이 있는 콘텐츠는 응답시간을 조절할 수 있어야 한다.
+                                                <th scope="row" rowspan="4">
+                                                    <a href="" class="evalList-tit">
+                                                        자막 제공
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
+                                                    <p>멀티미디어 콘텐츠에는 자막, 원고 또는 수화를 제공해야 한다.</p>
+                                                    <ul class="lists lists-bar">
+                                                        <li>c
+                                                            영상, 음성 등 멀티미디어 콘텐츠를 동등하게 인식할 수 있는 자막, 원고 또는 수화를
+                                                            제공한 경우 준수한 것으로 인정
+                                                        </li>
+                                                    </ul>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">정지 기능 제공</th>
-                                                <td>
-                                                    자동으로 변경되는 콘텐츠는 움직임을 제어할 수 있어야 한다
+                                                <th scope="row">2-1</th>
+                                                <td>멀티미디어 콘텐츠에 대체수단(자막, 원고, 수화 중 하나 이상)을 전혀 제공하지 않은 경우</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2-2</th>
+                                                <td>멀티미디어 콘텐츠에 대한 대체 수단의 내용을 불충분 또는 적절하지 않게 제공한 경우</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2-3</th>
+                                                <td>사용자가 등록한 멀티미디어 콘텐츠에 대해 관리자가 대체 수단 입력 기능을 제공
+                                                    하지 않은 경우</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" rowspan="2">
+                                                    <a href="" class="evalList-tit">
+                                                        색에 무관한 콘텐츠 인식
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
+                                                    <p>콘텐츠는 색에 관계없이 인식될 수 있어야 한다.</p>
+                                                    <ul class="lists lists-bar">
+                                                        <li>
+                                                            색을 배제하여도 인식할 수 있는 콘텐츠를 제공한 경우 준수한 것으로 인정
+                                                        </li>
+                                                    </ul>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">깜빡임과 번쩍임 사용 제한</th>
+                                                <th scope="row">3-1</th>
                                                 <td>
-                                                    초당 3~50회 주기로 깜빡이거나 번쩍이는 콘텐츠를 제공하지 않아야 한다.
+                                                    색상만으로 내용을 구분하거나 인식하도록 제공된 콘텐츠(그래프, 차트, 지도, 필수 입력항목 등)를 제공한 경우
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">반복 영역 건너뛰기</th>
-                                                <td>
-                                                    콘텐츠의 반복되는 영역은 건너뛸 수 있어야 한다.
+                                                <th scope="row" rowspan="3">
+                                                    <a href="" class="evalList-tit">
+                                                        명확한 지시사항 제공
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
+                                                    <p>지시사항은 모양, 크기, 위치, 방향, 색, 소리 등에 
+                                                    관계없이 인식될 수 있어야 한다.</p>
+                                                    <ul class="lists lists-bar">
+                                                        <li>
+                                                            지시사항 정보를 특정 감각에 의존하지 않고 다양한 감각을 통해 용도나 목적을 이해할 수 있도록 제공한 경우 준수한 것으로 인정
+                                                        </li>
+                                                    </ul>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">제목 제공</th>
+                                                <th scope="row">4-1</th>
                                                 <td>
-                                                    페이지, 프레임, 콘텐츠 블록에는 적절한 제목을 제공해야 한다.
+                                                    색, 크기, 모양, 방향 등 지시사항을 시각정보로만 제공한 경우
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">적절한 링크 텍스트</th>
+                                                <th scope="row">4-2</th>
                                                 <td>
-                                                    링크 텍스트는 용도나 목적을 이해할 수 있도록 제공해야 한다.
+                                                    소리 등 지시사항을 청각정보로만 제공한 경우
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">기본 언어 표시</th>
-                                                <td>
-                                                    주로 사용하는 언어를 명시해야 한다.
+                                                <th scope="row" rowspan="4">
+                                                    <a href="" class="evalList-tit">
+                                                        텍스트 콘텐츠의 명도 대비
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
+                                                    <p>텍스트 콘텐츠와 배경 간의 명도 대비는 
+                                                    4.5대 1 이상이어야 한다.</p>
+                                                    <ul class="lists lists-bar">
+                                                        <li>내비게이션(메뉴) 및 본문 콘텐츠에서 텍스트의 명도 대비가 4.5:1 이상이거나, 18pt 
+                                                            또는 굵은 14pt 이상에서 3:1 이상이거나, 화면 확대가 가능하도록 구현한 콘텐츠는 
+                                                            3:1 이상일 경우 준수한 것으로 인정</li>
+                                                    </ul>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">사용자 요구에 따른 실행</th>
+                                                <th scope="row">5-1</th>
                                                 <td>
-                                                    사용자가 의도하지 않은 기능(새 창, 초점 변화 등)은 실행되지 않아야 한다.
+                                                    일반 텍스트의 경우 보통 크기(18pt 미만, 또는 굵은 14pt 미만)의 텍스트가 4.5:1을 만족하지 않은 경우
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">콘텐츠의 선형화</th>
+                                                <th scope="row">5-2</th>
                                                 <td>
-                                                    콘텐츠는 논리적인 순서로 제공해야 한다.
+                                                    일반 텍스트의 경우 텍스트의 크기가 18pt 이상, 또는 굵은 14pt 이상의 텍스트가 3:1을 만족하지 않은 경우
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">표의 구성</th>
+                                                <th scope="row">5-3</th>
                                                 <td>
-                                                    표는 이해하기 쉽게 구성해야 한다.
+                                                    이미지 텍스트의 경우 폰트 종류와 상관없이 14pt 크기에 해당하는 18.66px 미만인
+                                                    경우 4.5:1 이상을 만족하지 않은 경우나, 18.66px 이상인 경우 3:1 이상을 만족하지 
+                                                    않은 경우(굵은 14pt 기준은 적용하지 않음)
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">레이블 제공</th>
-                                                <td>
-                                                    입력 서식에는 대응하는 레이블을 제공해야 한다.
+                                                <th scope="row" rowspan="3">
+                                                    <a href="" class="evalList-tit">
+                                                        자동재생 금지
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
+                                                    <p>자동으로 소리가 재생되지 않아야 한다.</p>
+                                                    <ul class="lists lists-bar">
+                                                        <li>소리를 사용하지 않았거나 3초 이내 또는 바로 정지 할 수 있는 소리 콘텐츠를 사용
+                                                            한 경우 준수한 것으로 인정</li>
+                                                    </ul>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">오류 정정</th>
+                                                <th scope="row">6-1</th>
                                                 <td>
-                                                    입력 오류를 정정할 수 있는 방법을 제공해야 한다.
+                                                    웹 페이지에서 자동적으로 재생되는 3초 이상의 배경음 콘텐츠를 제공하는 
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">마크업 오류 방지</th>
+                                                <th scope="row">6-2</th>
                                                 <td>
-                                                    마크업 언어의 요소는 열고 닫음, 중첩 관계 및 
-                                                    속성 선언에 오류가 없어야 한다.
+                                                    마우스 오버 또는 키보드 초점을 받아 자동적으로 배경음이 3초 이상 실행되는 경우
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">웹 애플리케이션 접근성 준수</th>
+                                                <th scope="row" colspan="3" class="rule-tit">원칙2) <br/>운용의 용이성</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" rowspan="2">
+                                                    <a href="" class="evalList-tit">
+                                                        콘텐츠 간의 구분
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
+                                                    <p>
+                                                        이웃한 콘텐츠는 구분될 수 있어야 한다.
+                                                    </p>
+                                                    <ul class="lists lists-bar">
+                                                        <li>이웃한 콘텐츠는 시각적으로 구분되도록 충분한 간격을 두도록 구현한 경우 준수한 
+                                                            것으로 인정</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">7-1</th>
                                                 <td>
-                                                    콘텐츠에 포함된 웹 애플리케이션은 
-                                                    접근성이 있어야 한다.
+                                                    이웃한 콘텐츠를 아래 1가지 방법 이상으로 구분하지 않은 경우
+                                                    <ul class="lists lists-num lists-num--braket">
+                                                        <li>테두리를 이용하여 구분함</li>
+                                                        <li>콘텐츠 사이에 시각적인 구분선을 삽입하여 구분함</li>
+                                                        <li>서로 다른 무늬를 이용하여 구분함</li>
+                                                        <li>콘텐츠 배경색 간의 명도대비(채도)를 달리하여 구분함</li>
+                                                        <li>줄 간격 및 글자 간격을 조절하여 구분함</li>
+                                                        <li>기타 콘텐츠를 시각적으로 구분할 수 있는 방법 등</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" rowspan="2">
+                                                    <a href="" class="evalList-tit">
+                                                        키보드 사용 보장
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
+                                                    <p>모든 기능은 키보드만으로도 사용 할 수 있어야 
+                                                    한다.(PC웹)</p>
+                                                    <ul class="lists lists-bar">
+                                                        <li>모든 기능을 키보드로 접근 및 운용 가능하도록 제공한 경우 준수한 것으로 인정</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">8-1-1</th>
+                                                <td>
+                                                    키보드로 접근 및 운용이 불가능한 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" rowspan="3">
+                                                    <a href="" class="evalList-tit">
+                                                        누르기 동작 지원
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
+                                                    <p>터치(touch) 기반 모바일 기기의 모든 컨트롤은 
+                                                    누르기 동작으로 제어할 수 있어야 한다.(모바일 웹)</p>
+                                                    <ul class="lists lists-bar">
+                                                        <li>슬라이드(Slide), 끌기와 놓기(Drag and drop) 등의 복잡한 동작을 단순한 누르기 동
+                                                            작으로 대체할 수 있는 방법을 제공한 경우 준수한 것으로 인정</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">8-2-1</th>
+                                                <td>
+                                                    다중 누르기(Multi-touch) 동작을 대체할 수 있는 방법을 제공하지 않은 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">8-2-2</th>
+                                                <td>
+                                                    슬라이드(Slide), 끌기와 놓기(Drag and drop) 등의 복잡한 동작을 단순한 누르기 동작으로 대체할 수 있는 방법을 제공하지 않은 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" rowspan="6">
+                                                    <a href="" class="evalList-tit">
+                                                        초점 이동
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
+                                                    <p>키보드에 의한 초점은 논리적으로 이동해야 하며 시각적
+                                                    으로 구별할 수 있어야 한다.</p>
+                                                    <ul class="lists lists-bar">
+                                                        <li>운용 가능한 개체(링크, 버튼, 서식 등)들에 키보드로 접근 시 초점을 인지할 수 있고 
+                                                            논리적 순서로 이동되는 경우 준수한 것으로 인정</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">9-1</th>
+                                                <td>
+                                                    초점의 이동순서가 논리적이지 않으며 일관성이 없는 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">9-2</th>
+                                                <td>
+                                                    초점 또는 키보드의 위치를 나타내는 요소가 시각적으로 표시되지 않은 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">9-3</th>
+                                                <td>
+                                                    텍스트 등 운용할 수 없는 요소에 초점이 되는 경우 
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">9-4</th>
+                                                <td>
+                                                    좌·우 쓸기(이전항목, 다음 항목)동작을 할 경우 초점의 이동순서가 논리적이지 않
+                                                    으며 일관성이 없는 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">9-5</th>
+                                                <td>
+                                                    화면에 보이지 않거나 의미 없는 개체에 초점이 이동되는 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" rowspan="3">
+                                                    <a href="" class="evalList-tit">
+                                                        조작 가능
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
+                                                    <p>사용자 입력 및 컨트롤은 조작 가능하도록 제공되어야 한다.</p>
+                                                    <ul class="lists lists-bar">
+                                                        <li>웹 페이지에서 제공하는 모든 이웃한 컨트롤들은 개별적으로 선택하고 사용할 수 있도록
+                                                            대각선 길이가 6.0mm 이상의 크기와 컨트롤의 안쪽 여백이 1픽셀 이상을 갖도록 제공한
+                                                            경우 준수한 것으로 인정</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">10-1</th>
+                                                <td>
+                                                    컨트롤의 크기가 대각선으로 6.0mm 이상 제공하지 않은 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">10-2</th>
+                                                <td>
+                                                    링크, 사용자 입력, 기타 컨트롤의 테두리 안쪽으로 1픽셀 이상의 여백을 제공하지 않은 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" rowspan="3">
+                                                    <a href="" class="evalList-tit">
+                                                        응답시간 조절
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
+                                                    <p>시간제한이 있는 콘텐츠는 응답시간을 조절할 수 있어야 한다.</p>
+                                                    <ul class="lists lists-bar">
+                                                        <li>시간제한 콘텐츠는 배제하되, 불가피할 경우 콘텐츠의 응답시간을 조절할 수 있는 경우
+                                                            준수한 것으로 인정</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">11-1</th>
+                                                <td>
+                                                    시간제한이 있는 콘텐츠를 제어할 수 있는 수단을 제공하지 않은 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">11-2</th>
+                                                <td>
+                                                    시간제한을 해제 또는 연장하는 방법에 충분한 시간을 제공하지 않은 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" rowspan="3">
+                                                    <a href="" class="evalList-tit">
+                                                        정지 기능 제공
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
+                                                    <p>자동으로 변경되는 콘텐츠는 움직임을 제어할 수 있어야 한다</p>
+                                                    <ul class="lists lists-bar">
+                                                        <li> 스크롤 및 자동 갱신되는 콘텐츠는 배제하되, 불가피할 경우 콘텐츠를 제어할 수 있
+                                                            도록 제공한 경우 준수한 것으로 인정</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">12-1</th>
+                                                <td>
+                                                    시간에 따라 자동으로 변경되는 콘텐츠에 정지, 이전, 다음 기능이 없는 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">12-2</th>
+                                                <td>
+                                                    시간에 따라 자동으로 변경되는 콘텐츠를 마우스와 키보드 또는 터치로 제어 불가능한 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" rowspan="2">
+                                                    <a href="" class="evalList-tit">
+                                                        깜빡임과 번쩍임 사용 제한
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
+                                                    <p>초당 3~50회 주기로 깜빡이거나 번쩍이는 콘텐츠를 제공하지 않아야 한다.</p>
+                                                    <ul class="lists lists-bar">
+                                                        <li>초당 3~50회 주기로 깜빡이거나 번쩍이는 콘텐츠를 제공하지 않았거나, 회피할 수 
+                                                            있는 방법을 사전에 알리고 제공한 경우 준수한 것으로 인정</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">13-1</th>
+                                                <td>
+                                                    사전 경고 없이 초당 3~50회 깜빡이는 콘텐츠가 존재할 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" rowspan="3">
+                                                    <a href="" class="evalList-tit">
+                                                        반복 영역 건너뛰기
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
+                                                    <p>콘텐츠의 반복되는 영역은 건너뛸 수 있어야 한다.</p>
+                                                    <ul class="lists lists-bar">
+                                                        <li>반복되는 영역을 건너뛸 수 있는 링크를 시각적으로 구현 및 제공한 경우 준수한 것
+                                                            으로 인정</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">14-1</th>
+                                                <td>
+                                                    건너뛰기 링크를 제공하지 않은 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">14-2</th>
+                                                <td>
+                                                    건너뛰기 링크의 제공방법이 적절하지 않은 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" rowspan="7">
+                                                    <a href="" class="evalList-tit">
+                                                        제목 제공
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
+                                                    <p>페이지, 프레임, 콘텐츠 블록에는 적절한 제목을 제공해야 한다.</p>
+                                                    <ul class="lists lists-bar">
+                                                        <li>페이지, 프레임, 콘텐츠 블록, 팝업창에 적절한 제목을 제공 시 준수한 것으로 인정</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">15-1</th>
+                                                <td>
+                                                    페이지에 제목을 제공하지 않은 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">15-2</th>
+                                                <td>
+                                                    페이지에 제목을 적절하게 제공하지 않은 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">15-3</th>
+                                                <td>
+                                                    프레임 요소에 제목을 제공하지 않은 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">15-4</th>
+                                                <td>
+                                                    프레임 요소에 제목을 적절하게 제공하지 않은 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">15-5</th>
+                                                <td>
+                                                    콘텐츠 블록에 제목을 제공하지 않은 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">15-6</th>
+                                                <td>
+                                                    콘텐츠 블록에 제목을 적절하게 제공하지 않은 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" rowspan="2">
+                                                    <a href="" class="evalList-tit">
+                                                        적절한 링크 텍스트
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
+                                                    <p>링크 텍스트는 용도나 목적을 이해할 수 있도록 제공해야 한다.</p>
+                                                    <ul class="lists lists-bar">
+                                                        <li>링크 텍스트의 용도나 목적을 이해할 수 있도록 제공한 경우 준수한 것으로 인정</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">16-1</th>
+                                                <td>
+                                                    목적이나 용도를 알기 어려운 링크 텍스트를 제공한 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" colspan="3" class="rule-tit">원칙3) <br/>이해의 용이성</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" rowspan="3">
+                                                    <a href="" class="evalList-tit">
+                                                        기본 언어 표시
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
+                                                    <p>주로 사용하는 언어를 명시해야 한다.</p>
+                                                    <ul class="lists lists-bar">
+                                                        <li>기본 언어 표시 속성을 사용하여 언어를 명시한 경우 준수한 것으로 인정</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">17-1</th>
+                                                <td>
+                                                    문서 타입에 맞는 기본언어를 명시하지 않은 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">17-2</th>
+                                                <td>
+                                                    문서 타입에 맞는 기본언어를 적절하지 않게 명시한 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" rowspan="5">
+                                                    <a href="" class="evalList-tit">
+                                                        사용자 요구에 따른 실행
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
+                                                    <p>사용자가 의도하지 않은 기능(새 창, 초점 변화 등)은 실행되지 않아야 한다.</p>
+                                                    <ul class="lists lists-bar">
+                                                        <li>사용자가 의도하지 않은 기능이 실행되지 않도록 한 경우 준수한 것으로 인정</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">18-1</th>
+                                                <td>
+                                                    사용자가 실행하지 않은 상황에서 예측하지 않은 새 창이 열리는 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">18-2</th>
+                                                <td>
+                                                    웹 페이지 시작 시, 새 창 또는 화면을 가리는 레이어 팝업을 제공하는 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">18-3</th>
+                                                <td>
+                                                    사용자가 의도하지 않은 초점 변화나 기능이 발생되어 맥락상 불편을 주는 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">18-4</th>
+                                                <td>
+                                                    입력 서식의 값을 변경하는 것만으로 다른 페이지로 이동하거나 현재 페이지의 의미가 완전히 바뀌는 경우.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" rowspan="3">
+                                                    <a href="" class="evalList-tit">
+                                                        콘텐츠의 선형화
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
+                                                    <p>콘텐츠는 논리적인 순서로 제공해야 한다.</p>
+                                                    <ul class="lists lists-bar">
+                                                        <li>콘텐츠의 순서가 논리적으로 선형화되어 제공한 경우 준수한 것으로 인정</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">19-1</th>
+                                                <td>
+                                                    콘텐츠의 순서를 논리적으로 제공하지 않아 전후 맥락을 이해할 수 없는 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">19-2</th>
+                                                <td>
+                                                    콘텐츠의 구조를 논리적으로 제공하지 않아 주종 관계를 이해할 수 없는 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" rowspan="6">
+                                                    <a href="" class="evalList-tit">
+                                                        표의 구성
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
+                                                    <p>표는 이해하기 쉽게 구성해야 한다.</p>
+                                                    <ul class="lists lists-bar">
+                                                        <li>표를 이해할 수 있도록 정보를 제공한 경우 준수한 것으로 인정</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">20-1</th>
+                                                <td>
+                                                    표의 제목과 요약정보를 제공하지 않은 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">20-2</th>
+                                                <td>
+                                                    표의 제목과 요약정보가 불충분하거나 적절하게 제공되지 않은 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">20-3</th>
+                                                <td>
+                                                    제목 셀과 내용 셀을 구분하지 않거나 잘못 구분한 경
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">20-4</th>
+                                                <td>
+                                                    다단, 병합 등 복잡한 표를 제공 시 headers, id 속성을 통해 제목 셀과 내용 셀을 연결하지 않은 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">20-5</th>
+                                                <td>
+                                                    표의 정보를 이해하기 어려운 중첩 표(표 안의 표)를 넣어 정보를 제공한 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" rowspan="4">
+                                                    <a href="" class="evalList-tit">
+                                                        레이블 제공
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
+                                                    <p>입력 서식에는 대응하는 레이블을 제공해야 한다.</p>
+                                                    <ul class="lists lists-bar">
+                                                        <li>입력 서식에 대응하는 레이블을 제공한 경우 준수한 것으로 인정</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">21-1</th>
+                                                <td>
+                                                    &lt;input&gt;, &lt;textarea&gt;, &lt;select&gt; 요소에 1:1 대응하는 &lt;label&gt;요소 또는 title 속성을 
+                                                        제공하지 않거나 설명이 적절하지 않은 경
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">21-2</th>
+                                                <td>
+                                                    &lt;lable&gt; 텍스트가 존재함에도 불구하고 <label> 생략 후 title 속성만 사용한 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">21-3</th>
+                                                <td>
+                                                    &lt;input&gt의 id와 <label>의 for가 다르거나, 페이지 안에 같은 id가 있는 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" rowspan="5">
+                                                    <a href="" class="evalList-tit">
+                                                        오류 정정
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
+                                                    <p>입력 오류를 정정할 수 있는 방법을 제공해야 한다.</p>
+                                                    <ul class="lists lists-bar">
+                                                        <li>입력 오류를 정정할 수 있는 방법을 제공한 경우 준수한 것으로 인정</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">22-1</th>
+                                                <td>
+                                                    입력 오류 발생 시, 오류 원인 및 내용을 적절한 설명 텍스트로 알려주지 않는거나 적절하지 않은 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">22-2</th>
+                                                <td>
+                                                    입력 오류 발생 시, 정정할 수 있는 수단을 제공하지 않은 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">22-3</th>
+                                                <td>
+                                                    오류 정보 확인 시, 해당 입력 서식으로 초점이 이동하지 않는 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">22-4</th>
+                                                <td>
+                                                    입력 오류 발생 시 입력 내용이 모두 사라지는 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" colspan="3" class="rule-tit">원칙4)<br/> 견고성</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" rowspan="5">
+                                                    <a href="" class="evalList-tit">
+                                                        마크업 오류 방지
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
+                                                    <p>마크업 언어의 요소는 열고 닫음, 중첩 관계 및 
+                                                        속성 선언에 오류가 없어야 한다.</p>
+                                                    <ul class="lists lists-bar">
+                                                        <li>마크업 언어 요소의 열고 닫음, 중첩 관계 및 속성 선언에 오류 없이 제공한 경우 준
+                                                            수한 것으로 인정</li>
+                                                    </ul>
+                                                    
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">23-1</th>
+                                                <td>
+                                                    태그의 열고 닫음 오류
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">23-2</th>
+                                                <td>
+                                                    태그의 중첩 오류
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">23-3</th>
+                                                <td>
+                                                    중복 선언된 속성 오류
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">23-4</th>
+                                                <td>
+                                                    한 페이지 안에 동일한 ID 값이 존재하는 경우
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" rowspan="2">
+                                                    <a href="" class="evalList-tit">
+                                                        웹 애플리케이션 접근성 준수
+                                                    </a>
+                                                </th>
+                                                <td colspan="2">
+                                                    <p>콘텐츠에 포함된 웹 애플리케이션은 
+                                                        접근성이 있어야 한다.</p>
+                                                    <ul class="lists lists-bar">
+                                                        <li>웹 애플리케이션의 자체 접근성을 준수하였거나 대체 콘텐츠를 제공한 경우 준수한 
+                                                            것으로 인정</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">24-1</th>
+                                                <td>
+                                                    웹 애플리케이션이 자체적인 접근성이 없으며 사용자가 선택할 수 있는 대체 콘텐츠가 존재하지 않거나 적절하지 않게 제공한 경우
                                                 </td>
                                             </tr>
                                         </table>
                                     </div>
-
-                                    <h2 class="box-section__tit"></h2>
-                                    <h3 class="box-section__txt">
-                                    </h3>
-                                    <h2 class="box-section__tit"></h2>
-                                    <h3 class="box-section__txt">
-                                    </h3>
-                                    <h2 class="box-section__tit"></h2>
-                                    <h3 class="box-section__txt">
-                                    </h3>
                                 </div>
-                                <div class="box-section" id="box-section--03">3</div>
-                                <div class="box-section" id="box-section--04">4</div>
-                                <div class="box-section" id="box-section--05">5</div>
+                                <div class="box-section" id="box-section--3">
+                                    <div class="evalList-cont" id="evalList-cont--1">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 적절한 대체 텍스트 제공</p>
+                                        <div class="evalList-tab">
+                                            <ul class="evalList-tab__link">
+                                                <li><button type="button" data-id="evalList-tab--01">1-1</button></li>
+                                                <li><button type="button" data-id="evalList-tab--02">1-2</button></li>
+                                                <li><button type="button" data-id="evalList-tab--03">1-3</button></li>
+                                                <li><button type="button" data-id="evalList-tab--04">1-4</button></li>
+                                                <li><button type="button" data-id="evalList-tab--05">1-5</button></li>
+                                                <li><button type="button" data-id="evalList-tab--06">1-6</button></li>
+                                                <li><button type="button" data-id="evalList-tab--07">1-7</button></li>
+                                                <li><button type="button" data-id="evalList-tab--08">1-8</button></li>
+                                                <li><button type="button" data-id="evalList-tab--09">1-9</button></li>
+                                                <li><button type="button" data-id="evalList-tab--10">1-10</button></li>
+                                            </ul>
+                                            <div class="evalList-tab__cont" id="evalList-tab--01">1</div>
+                                            <div class="evalList-tab__cont" id="evalList-tab--02">2</div>
+                                            <div class="evalList-tab__cont" id="evalList-tab--03">3</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-section" id="box-section--4">
+                                    <div class="evalList-cont" id="evalList-cont--2">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 자막 제공</p>
+                                    </div>
+                                </div>
+                                <div class="box-section" id="box-section--5">
+                                    <div class="evalList-cont" id="evalList-cont--3">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 색에 무관한 콘텐츠 인식</p>
+                                    </div>
+                                </div>
+                                <div class="box-section" id="box-section--6">
+                                    <div class="evalList-cont" id="evalList-cont--4">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 명확한 지시사항 제공</p>
+                                    </div>
+                                </div>
+                                <div class="box-section" id="box-section--7">
+                                    <div class="evalList-cont" id="evalList-cont--5">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 텍스트 콘텐츠의 명도 대비</p>
+                                    </div>
+                                </div>
+                                <div class="box-section" id="box-section--8">
+                                    <div class="evalList-cont" id="evalList-cont--6">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 자동재생 금지</p>
+                                    </div>
+                                </div>
+                                <div class="box-section" id="box-section--9">
+                                    <div class="evalList-cont" id="evalList-cont--7">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 콘텐츠 간의 구분</p>
+                                    </div>
+                                </div>
+                                <div class="box-section" id="box-section--10">
+                                    <div class="evalList-cont" id="evalList-cont--8">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 키보드 사용 보장</p>
+                                    </div>
+                                </div>
+                                <div class="box-section" id="box-section--11">
+                                    <div class="evalList-cont" id="evalList-cont--9">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 누르기 동작 지원</p>
+                                    </div>
+                                </div>
+                                <div class="box-section" id="box-section--12">
+                                    <div class="evalList-cont" id="evalList-cont--10">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 초점 이동</p>
+                                    </div>
+                                </div>
+                                <div class="box-section" id="box-section--13">
+                                    <div class="evalList-cont" id="evalList-cont--11">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 조작 가능</p>
+                                    </div>
+                                </div>
+                                <div class="box-section" id="box-section--14">
+                                    <div class="evalList-cont" id="evalList-cont--12">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 응답시간 조절</p>
+                                    </div>
+                                </div>
+                                <div class="box-section" id="box-section--15">
+                                    <div class="evalList-cont" id="evalList-cont--13">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 정지 기능 제공</p>
+                                    </div>
+                                </div>
+                                <div class="box-section" id="box-section--16">
+                                    <div class="evalList-cont" id="evalList-cont--14">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 깜빡임과 번쩍임 사용 제한</p>
+                                    </div>
+                                </div>
+                                <div class="box-section" id="box-section--17">
+                                    <div class="evalList-cont" id="evalList-cont--15">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 반복 영역 건너뛰기</p>
+                                    </div>
+                                </div>
+                                <div class="box-section" id="box-section--18">
+                                    <div class="evalList-cont" id="evalList-cont--16">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 제목 제공</p>
+                                    </div>
+                                </div>
+                                <div class="box-section" id="box-section--19">
+                                    <div class="evalList-cont" id="evalList-cont--17">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 적절한 링크 텍스트</p>
+                                    </div>
+                                </div>
+                                <div class="box-section" id="box-section--20">
+                                    <div class="evalList-cont" id="evalList-cont--18">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 기본 언어 표시</p>
+                                    </div>
+                                </div>
+                                <div class="box-section" id="box-section--21">
+                                    <div class="evalList-cont" id="evalList-cont--19">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 사용자 요구에 따른 실행</p>
+                                    </div>
+                                </div>
+                                <div class="box-section" id="box-section--22">
+                                    <div class="evalList-cont" id="evalList-cont--20">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 콘텐츠의 선형화</p>
+                                    </div>
+                                </div>
+                                <div class="box-section" id="box-section--23">
+                                    <div class="evalList-cont" id="evalList-cont--21">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 표의 구성</p>
+                                    </div>
+                                </div>
+                                <div class="box-section" id="box-section--24">
+                                    <div class="evalList-cont" id="evalList-cont--22">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 레이블 제공</p>
+                                    </div>
+                                </div>
+                                <div class="box-section" id="box-section--25">
+                                    <div class="evalList-cont" id="evalList-cont--23">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 오류 정정</p>
+                                    </div>
+                                </div>
+                                <div class="box-section" id="box-section--26">
+                                    <div class="evalList-cont" id="evalList-cont--24">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 마크업 오류 방지</p>
+                                    </div>
+                                </div>
+                                <div class="box-section" id="box-section--27">
+                                    <div class="evalList-cont" id="evalList-cont--25">
+                                        <p class="evalList-cont__tit fa-solid fa-minus"> 웹 애플리케이션 접근성 준수</p>
+                                    </div>
+                                </div>
                             </article>
-                            <article class="box-wrap box-wrap--right col-2 ml-15">
+                            <article class="box-wrap box-wrap--right col-2 ml-15" id="side-nav">
                                 <div class="side-nav">
-                                    <p class="side-nav--tit">
+                                    <p class="side-nav__tit">
                                         INDEX
                                         <button type="button" data-id="toggle-lightSet" class="btn-modeSwitch fas fa-sun" title="다크모드 변환"></button>
                                     </p>
                                     <div class="swiper">
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
-                                                <a href="" class="is-active">웹접근성의 정의 및 소개</a>
+                                                <a href="" class="is-active">
+                                                    <i class="fas fa-cube"></i>
+                                                    웹접근성의 정의 및 소개
+                                                </a>
                                             </div>
                                             <div class="swiper-slide">
-                                                <a href="">웹접근성 평가 리스트</a>
+                                                <a href="">
+                                                    <i class="fas fa-cube"></i>
+                                                    웹접근성 평가 리스트
+                                                </a>
                                             </div>
                                             <div class="swiper-slide">
-                                                <a href="">3</a>
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    적절한 대체 텍스트 제공
+                                                </a>
                                             </div>
                                             <div class="swiper-slide">
-                                                <a href="">4</a>
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    자막 제공
+                                                </a>
                                             </div>
                                             <div class="swiper-slide">
-                                                <a href="">5</a>
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    색에 무관한 콘텐츠 인식
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    명확한 지시사항 제공
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    텍스트 콘텐츠의 명도 대비
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    자동재생 금지
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide item-seperate">
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    콘텐츠 간의 구분
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    키보드 사용 보장
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    누르기 동작 지원
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    초점 이동
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    조작 가능
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    응답시간 조절
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    정지 기능 제공
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    깜빡임과 번쩍임 사용 제한
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    반복 영역 건너뛰기
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    제목 제공
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    적절한 링크 텍스트
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide item-seperate">
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    기본 언어 표시
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    사용자 요구에 따른 실행
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    콘텐츠의 선형화
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    표의 구성
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    레이블 제공
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    오류 정정
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide item-seperate">
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    마크업 오류 방지
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="" class="side-nav__dep2">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                    웹 애플리케이션 접근성 준수
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -408,7 +1338,16 @@
             </div>
         </section>
         <footer></footer>
+        <div class="scroll-top">
+            <button type="button" class="scroll-top__btn">Top</button>
+        </div>
     </div>
+
+    <script type="text/javascript" src="../../asset/resource/js/lib/jquery/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="../../asset/resource/js/lib/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../asset/resource/js/lib/prism.js"></script>
+    <script type="text/javascript" src="../../asset/resource/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="../../asset/resource/js/guide.js"></script>
 </body>
 
 </html>
