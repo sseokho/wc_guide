@@ -205,8 +205,7 @@ function scrollTop(){
 }
 
 $.fn.tabFn = function () {
-    let tabLi = $('>ul>li', this),
-    $('>button', tabLi);
+    let tabLi = $('>ul>li', this);
 }
 $.fn.setFormFn = function () {
     const $this = $(this),
